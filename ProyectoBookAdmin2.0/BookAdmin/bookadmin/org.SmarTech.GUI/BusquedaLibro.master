@@ -1,0 +1,15 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/org.SmarTech.GUI/Principal.Master" AutoEventWireup="true" CodeBehind="BusquedaLibro.master.cs" Inherits="BookAdmin.org.SmarTech.GUI.BusquedaLibro" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="server">
+ <ul id="menuContextual">
+        <li><a href="RegistroLibro.aspx">Agregar Libros</a></li>
+        <li><a href="BusquedaLibro.aspx">Buscar Libros</a></li>
+    </ul>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" runat="server">
+   <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">       
+  
+   </asp:ContentPlaceHolder>
+
+</asp:Content>
