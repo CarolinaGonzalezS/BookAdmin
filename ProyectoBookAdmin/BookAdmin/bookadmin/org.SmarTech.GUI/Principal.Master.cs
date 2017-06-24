@@ -16,10 +16,9 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void btnBuscadorGen_Click(object sender, EventArgs e)
         {
-            string search = textSearch.Text;
-            Session.Add("search", search);
-            Response.Redirect("ResultSearch.aspx");  
+            string busqueda = textBuscar.Text;
+            Session.Add("busca", busqueda);
+            Response.Redirect("ResultadoBusqueda.aspx");  
         }
-
     }
 }

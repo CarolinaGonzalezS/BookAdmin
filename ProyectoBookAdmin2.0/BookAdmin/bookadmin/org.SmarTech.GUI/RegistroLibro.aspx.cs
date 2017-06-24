@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using BookAdmin.org.SmarTech.entities;
-using BookAdmin.org.SmarTech.Controller;
+using BookAdmin.org.SmarTech.controllers;
 using BookAdmin.org.SmarTech.Bussines;
 
 
@@ -13,144 +13,191 @@ namespace BookAdmin.org.SmarTech.GUI
 {
     public partial class RegistroLibro : System.Web.UI.Page
     {
-        public static int cambio1 = 0;
-        public static int cambio2 = 0;
+        public static int change1 = 0;
+        public static int change2 = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 loadDropDownList();
-                ddlCategoria.AutoPostBack = true;
+                ddlCategory.AutoPostBack = true;
             }
         }
 
         private void loadDropDownList()
         {
-            BsCategoria ngCategoria = new BsCategoria();
-            ddlCategoria.DataSource = ngCategoria.listarCategoria();
-            ddlCategoria.DataValueField = "ID";
-            ddlCategoria.DataTextField = "NOMBRE";
-            ddlCategoria.DataBind();
+            BsnClsCategory bsn_Categoria = new BsnClsCategory();
+            ddlCategory.DataSource = bsn_Categoria.listCategory();
+            ddlCategory.DataValueField = "id";
+            ddlCategory.DataTextField = "name";
+            ddlCategory.DataBind();
         }
 
 
         protected void ddlCategoria_TextChanged(object sender, EventArgs e)
         {
-            BsCategoria ngCategoria = new BsCategoria();
+            BsnClsCategory bsn_Categoria = new BsnClsCategory();
             //ClsCategoria objCategoria = ngCategoria.listarCategoriaid(itemSelec);            
         }
 
-        protected void buttonVeriAutor_Click(object sender, EventArgs e)
+
+
+
+
+        protected void clear()
         {
-
-            BsAutor dtautor = new BsAutor();
-            ClsAutor autorEnc = dtautor.verificarAutor(textNomAut.Text, textApellido.Text);
-            if (autorEnc.Nombre == null)
-            {
-                textNacionalidad.Enabled = true;
-                cambio1 = 1;
-            }
-            else
-            {
-                textNomAut.Text = autorEnc.Nombre;
-                textApellido.Text = autorEnc.Apellido;
-                textNacionalidad.Text = autorEnc.Nacionalidad;
-            }
-
-
-
-        }
-
-        protected void buttonVeriEditorial_Click(object sender, EventArgs e)
-        {
-            DtEditorial dteditorial = new DtEditorial();
-            ClsEditorial editEnc = dteditorial.VerificarEditorial(textNomEdit.Text);
-            if (editEnc.Nombre == null)
-            {
-                textCiudad.Enabled = true;
-                textPais.Enabled = true;
-                cambio2 = 1;
-            }
-            else
-            {
-                textNomEdit.Text = editEnc.Nombre;
-                textPais.Text = editEnc.Pais;
-                textCiudad.Text = editEnc.Ciudad;
-            }
-
-        }
-
-        protected void buttonRegistrar_Click(object sender, EventArgs e)
-        {
-            BsLibro dtLibro = new BsLibro();
-            ClsLibro LibroEnc = dtLibro.verificarLibro(textTitulo.Text);            
-            if (LibroEnc.Codigo == null)
-            {
-                if (cambio1 == 1)
-                {
-
-                    BsAutor autor = new BsAutor();
-                    autor.insertarAutor(textNomAut.Text, textApellido.Text, textNacionalidad.Text);
-                }
-                if (cambio2 == 1)
-                {
-                    BsEditorial editorial = new BsEditorial();
-                    editorial.insertarEditorial(textNomEdit.Text, textPais.Text, textCiudad.Text);
-                }
-                ClsAutor objAutor= registroLibro();
-                BsEscribir dtEscribir = new BsEscribir();
-                dtEscribir.insertarEscribir(objAutor.Id, textCodigo.Text);
-                registroExi();
-            }
-            else
-            {
-                registroFall();
-            }
-            clear();
-        }
-
-        protected void clear() 
-        {
-            textNomAut.Text = "";
-            textNomEdit.Text = "";
-            textFech.Text = "";
-            textCiudad.Text = "";
-            textCodigo.Text = "";
-            textIsbn.Text = "";
-            textNacionalidad.Text = "";
-            textPais.Text = "";
-            textApellido.Text = "";
-            textCodigo.Text = "";
+            textNameAuth.Text = "";
+            textCountry.Text = "";
+            textCode.Text = "";
+            textDate.Text = "";
+            textCity.Text = "";
+            textNameEdit.Text = "";
+            textTitle.Text = "";
             textStock.Text = "";
-            textTitulo.Text = "";
+            textNationality.Text = "";
+            textIsbn.Text = "";
+            textLastName.Text = "";
+            buttonCheckAuthor.Enabled = true;
+            buttonCheckEditorial.Enabled = true;
+
         }
-        protected void registroExi() 
+        protected void registerSucces()
         {
             string script = @"<script type='text/javascript'>
                     alert('Libro registrado exitosamente!');
                     </script>";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
         }
-        protected void registroFall() 
+        protected void registerFail()
         {
             string script = @"<script type='text/javascript'>
                     alert('el libro ya existe en el sistema!');
                     </script>";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
         }
-        protected ClsAutor registroLibro() 
+        protected EntClsAuthor registerBook()
         {
-            int itemSelec = (ddlCategoria.SelectedIndex) + 1;
-            BsLibro bsbook = new BsLibro();
-            BsEditorial dtedit = new BsEditorial();
-            ClsEditorial edito = dtedit.verificarEditorial(textNomEdit.Text);
-            int idedit = edito.Id;
+            int itemSelec = (ddlCategory.SelectedIndex) + 1;
+            BsnClsBook bsn_book = new BsnClsBook();
+            BsnClsEditorial bsn_edit = new BsnClsEditorial();
+            EntClsEditorial obj_edit = bsn_edit.checkEditorial(textNameEdit.Text);
+            int idedit = obj_edit.Id;
             int stock = Convert.ToInt16(textStock.Text);
-            ClsAutor objAutor = new ClsAutor();
-            BsAutor dtAutor = new BsAutor();
-            objAutor = dtAutor.verificarAutor(textNomAut.Text, textApellido.Text);
-            bsbook.insertarLibro(textTitulo.Text, textCodigo.Text, textIsbn.Text, textFech.Text, stock, itemSelec, idedit, "Disponible", 1);
-            return objAutor;
+            EntClsAuthor obj_author = new EntClsAuthor();
+            BsnClsAuthor bsn_author = new BsnClsAuthor();
+            obj_author = bsn_author.checkAuthor(textNameAuth.Text, textLastName.Text);
+            bsn_book.insertBook(textTitle.Text, textCode.Text, textIsbn.Text, textDate.Text, Convert.ToInt16(textStock.Text), itemSelec, idedit, "Disponible", 1);
+            return obj_author;
         }
+
+        protected void buttonCheckAuthor_Click(object sender, EventArgs e)
+        {
+
+            BsnClsAuthor bsn_author = new BsnClsAuthor();
+            EntClsAuthor authorFind = bsn_author.checkAuthor(textNameAuth.Text, textLastName.Text);
+            if (authorFind.Name == null)
+            {
+                textNationality.Enabled = true;
+                change1 = 1;
+            }
+            else
+            {
+                textNameAuth.Text = authorFind.Name;
+                textLastName.Text = authorFind.LastName;
+                textNationality.Text = authorFind.Nationality;
+            }
+            buttonCheckAuthor.Enabled = false;
+        }
+
+        protected void buttonCheckEditorial_Click(object sender, EventArgs e)
+        {
+
+            BsnClsEditorial bsn_editorial = new BsnClsEditorial();
+            EntClsEditorial editFind = bsn_editorial.checkEditorial(textNameEdit.Text);
+            if (editFind.Name == null)
+            {
+                textCity.Enabled = true;
+                textCountry.Enabled = true;
+                change2 = 1;
+            }
+            else
+            {
+                textNameEdit.Text = editFind.Name;
+                textCountry.Text = editFind.Country;
+                textCity.Text = editFind.City;
+            }
+            buttonCheckEditorial.Enabled = false;
+
+        }
+
+        protected void buttonRegister_Click(object sender, EventArgs e)
+        {
+
+            BsnClsBook bsn_Libro = new BsnClsBook();
+            EntClsBook bookFind = bsn_Libro.checkBook(textTitle.Text);
+            if (bookFind.Code == null)
+            {
+                if (change1 == 1)
+                {
+
+                    BsnClsAuthor bsn_author = new BsnClsAuthor();
+                    bsn_author.insertAuthor(textNameAuth.Text, textLastName.Text, textNationality.Text);
+                }
+                if (change2 == 1)
+                {
+                    BsnClsEditorial bsn_editorial = new BsnClsEditorial();
+                    bsn_editorial.insertEditorial(textNameEdit.Text, textCountry.Text, textCity.Text);
+                }
+                EntClsSearch consulExist = new EntClsSearch();
+                BsnClsSearch bsn_search = new BsnClsSearch();
+                consulExist = bsn_search.ForCodeBook(textCode.Text);
+                if (consulExist.Book == null)
+                {
+                    //verificar que no se repita el isbn
+                    consulExist = bsn_search.ForIsbnBook(textIsbn.Text);
+                    if (consulExist.Book == null)
+                    {
+                        //verificar que no se repita el titulo                        
+                        consulExist=bsn_search.ForNameBook(textTitle.Text);
+                        if(consulExist.Book==null)
+                        {                        
+                            EntClsAuthor obj_Author = registerBook();
+                            BsnClsWrite bsn_write = new BsnClsWrite();
+                            bsn_write.insertWrite(obj_Author.Id, textCode.Text);
+                            registerSucces();
+                            clear();
+                        } 
+                        else
+                        {
+                            string script = @"<script type='text/javascript'>
+                            alert('Ya existe este libro ingrese otro');
+                            </script>";
+                            ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+                        }
+                    }
+                    else 
+                    {
+                        string script = @"<script type='text/javascript'>
+                    alert('Ya existe ese ISBN ingrese otro');
+                    </script>";
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+                    }
+                }
+                else 
+                {
+                    string script = @"<script type='text/javascript'>
+                    alert('Ya existe ese codigo ingrese otro');
+                    </script>";
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+                }
+
+                
+            }
+            else
+            {
+                registerFail();
+            }            
+        }
+
     }
 }

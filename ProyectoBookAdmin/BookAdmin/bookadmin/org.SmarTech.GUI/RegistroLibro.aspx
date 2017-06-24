@@ -80,14 +80,14 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>
                 <td class="style4">
-                    <asp:TextBox ID="textNameAuth" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="textNomAut" runat="server"></asp:TextBox>
                 </td>
                 <td class="style3">
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                        ControlToValidate="textNameAuth" ErrorMessage="Ingresar solo letras" 
+                        ControlToValidate="textNomAut" ErrorMessage="Ingresar solo letras" 
                         ValidationExpression="^[a-z &amp; A-Z]*$">*</asp:RegularExpressionValidator>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                        ControlToValidate="textNameAuth" Display="Dynamic" ErrorMessage="Ingrese Nombre">*</asp:RequiredFieldValidator>
+                        ControlToValidate="textNomAut" Display="Dynamic" ErrorMessage="Ingrese Nombre">*</asp:RequiredFieldValidator>
                     <br />
                 </td>
                 <td>
@@ -113,15 +113,15 @@
                     <br />
                 </td>
                 <td class="style2">
-                    <asp:TextBox ID="textLastName" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="textApellido" runat="server"></asp:TextBox>
                 </td>
                 <td class="style3">
                     <br />
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
-                        ControlToValidate="textLastName" ErrorMessage="Ingresar solo letras" 
+                        ControlToValidate="textApellido" ErrorMessage="Ingresar solo letras" 
                         ValidationExpression="^[a-z &amp; A-Z]*$">*</asp:RegularExpressionValidator>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                        ControlToValidate="textLastName" Display="Dynamic" 
+                        ControlToValidate="textApellido" Display="Dynamic" 
                         ErrorMessage="Ingrese Apellido">*</asp:RequiredFieldValidator>
                 </td>
                 <td>
@@ -144,7 +144,7 @@
                     <asp:Label ID="Label4" runat="server" Text="Nacionalidad:"></asp:Label>
                 </td>
                 <td class="style2">
-                    <asp:TextBox ID="textNationality" runat="server" Enabled="False" 
+                    <asp:TextBox ID="textNacionalidad" runat="server" Enabled="False" 
                         style="margin-bottom: 0px"></asp:TextBox>
                 </td>
                 <td class="style3">
@@ -188,8 +188,8 @@
                 <td>
                     &nbsp;</td>
                 <td class="style4" colspan="2">
-                    <asp:Button ID="buttonCheckAuthor" runat="server" Text="Verificar Autor" 
-                        onclick="buttonCheckAuthor_Click" BackColor="ButtonShadow" />
+                    <asp:Button ID="buttonVeriAutor" runat="server" Text="Verificar Autor" 
+                        onclick="buttonVeriAutor_Click" BackColor="ButtonShadow" />
                 </td>
                 <td class="style3">
                     &nbsp;</td>
@@ -277,7 +277,7 @@
                     <br />
                 </td>
                 <td class="style2">
-                    <asp:TextBox ID="textNameEdit" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="textNomEdit" runat="server"></asp:TextBox>
                 </td>
                 <td class="style3">
                     &nbsp;</td>
@@ -303,7 +303,7 @@
                     <br />
                 </td>
                 <td class="style2">
-                    <asp:TextBox ID="textCountry" runat="server" Height="22px" Enabled="False"></asp:TextBox>
+                    <asp:TextBox ID="textPais" runat="server" Height="22px" Enabled="False"></asp:TextBox>
                 </td>
                 <td class="style3">
                     &nbsp;</td>
@@ -328,7 +328,7 @@
                     <br />
                 </td>
                 <td class="style2">
-                    <asp:TextBox ID="textCity" runat="server" Enabled="False"></asp:TextBox>
+                    <asp:TextBox ID="textCiudad" runat="server" Enabled="False"></asp:TextBox>
                 </td>
                 <td class="style3">
                     &nbsp;</td>
@@ -350,8 +350,8 @@
                     &nbsp;</td>
                 <td class="style4">
                     <br />
-                    <asp:Button ID="buttonCheckEditorial" runat="server" Text="Verificar Editorial" 
-                        onclick="buttonCheckEditorial_Click" />
+                    <asp:Button ID="buttonVeriEditorial" runat="server" Text="Verificar Editorial" 
+                        onclick="buttonVeriEditorial_Click" />
                 </td>
                 <td class="style2">
                     &nbsp;</td>
@@ -443,14 +443,14 @@
                     <br />
                 </td>
                 <td class="style2">
-                    <asp:TextBox ID="textTitle" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="textTitulo" runat="server"></asp:TextBox>
                 </td>
                 <td class="style3">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Label ID="Label15" runat="server" Text="Categoria:"></asp:Label>
                 </td>
                 <td>
-                    <asp:DropDownList ID="ddlCategory" runat="server" 
+                    <asp:DropDownList ID="ddlCategoria" runat="server" 
                         ontextchanged="ddlCategoria_TextChanged" Height="47px" Width="187px">
                     </asp:DropDownList>
                 </td>
@@ -474,14 +474,14 @@
                     <br />
                 </td>
                 <td class="style2">
-                    <asp:TextBox ID="textCode" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="textCodigo" runat="server"></asp:TextBox>
                 </td>
                 <td class="style3">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Label ID="Label13" runat="server" Text="Fecha Publicacion:"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="textDate" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="textFech" runat="server"></asp:TextBox>
                 </td>
                 <td>
                     &nbsp;</td>
@@ -552,8 +552,8 @@
                     &nbsp;</td>
                 <td class="style2" colspan="3">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="buttonRegister" runat="server" Text="Registrar" 
-                        onclick="buttonRegister_Click" Width="239px" />
+                    <asp:Button ID="buttonRegistrar" runat="server" Text="Registrar" 
+                        onclick="buttonRegistrar_Click" Width="239px" />
                 </td>
                 <td>
                     &nbsp;</td>

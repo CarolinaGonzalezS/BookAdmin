@@ -10,7 +10,16 @@
 namespace BookAdmin.org.SmarTech.GUI {
     
     
-    public partial class Login {
+    public partial class Principal {
+        
+        /// <summary>
+        /// Control head.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
         /// Control form1.
@@ -22,30 +31,39 @@ namespace BookAdmin.org.SmarTech.GUI {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control textNameUser.
+        /// Control textBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textNameUser;
+        protected global::System.Web.UI.WebControls.TextBox textBuscar;
         
         /// <summary>
-        /// Control textPassword.
+        /// Control btnBuscadorGen.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textPassword;
+        protected global::System.Web.UI.WebControls.Button btnBuscadorGen;
         
         /// <summary>
-        /// Control btnEnter.
+        /// Control contenidoMenuContextual.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnter;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder contenidoMenuContextual;
+        
+        /// <summary>
+        /// Control contenidoPrincipal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder contenidoPrincipal;
     }
 }

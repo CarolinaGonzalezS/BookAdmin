@@ -10,7 +10,7 @@
 namespace BookAdmin.org.SmarTech.GUI {
     
     
-    public partial class Login {
+    public partial class ResultadoBusqueda {
         
         /// <summary>
         /// Control form1.
@@ -22,30 +22,12 @@ namespace BookAdmin.org.SmarTech.GUI {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control textNameUser.
+        /// Control grvResult.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textNameUser;
-        
-        /// <summary>
-        /// Control textPassword.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textPassword;
-        
-        /// <summary>
-        /// Control btnEnter.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnter;
+        protected global::System.Web.UI.WebControls.GridView grvResult;
     }
 }

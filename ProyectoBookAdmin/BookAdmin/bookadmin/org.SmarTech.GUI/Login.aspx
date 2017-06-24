@@ -27,17 +27,16 @@
 			</div>
 			<label for="username">Username</label>
 			<br/>
-			&nbsp;<asp:TextBox ID="textNameUser" runat="server" 
-                placeholder="Ingrese Usuario"></asp:TextBox>
+			&nbsp;<asp:TextBox ID="textNombreUsuario" runat="server" placeholder="Ingrese Usuario"></asp:TextBox>
 			<br/>
 			<label for="password">Password</label>
 			<br/>
-			&nbsp;<asp:TextBox ID="textPassword" runat="server"  
+			&nbsp;<asp:TextBox ID="textClave" runat="server"  
                             placeholder="Ingrese Contraseña" TextMode="Password" 
                             ></asp:TextBox>
 			<br/>
-                    <asp:Button ID="btnEnter" runat="server" Text="INGRESAR" 
-                        onclick="btnEnter_Click" />
+                    <asp:Button ID="btnIngresar" runat="server" Text="INGRESAR" 
+                        onclick="btnIngresar_Click" />
 			<br/>
 			<a href="#"></a>
 		</div>

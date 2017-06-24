@@ -22,30 +22,30 @@ namespace BookAdmin.org.SmarTech.GUI {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control textNameUser.
+        /// Control textNombreUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textNameUser;
+        protected global::System.Web.UI.WebControls.TextBox textNombreUsuario;
         
         /// <summary>
-        /// Control textPassword.
+        /// Control textClave.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textPassword;
+        protected global::System.Web.UI.WebControls.TextBox textClave;
         
         /// <summary>
-        /// Control btnEnter.
+        /// Control btnIngresar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnter;
+        protected global::System.Web.UI.WebControls.Button btnIngresar;
     }
 }

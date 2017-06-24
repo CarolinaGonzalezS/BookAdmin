@@ -30,7 +30,7 @@
             </div>
             <div="titulo">
                 <h1>BookAdmin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:TextBox ID="textSearch" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="textBuscar" runat="server"></asp:TextBox>
 &nbsp;
                     <asp:Button ID="btnBuscadorGen" runat="server" onclick="btnBuscadorGen_Click" 
                         Text="Buscar" />
