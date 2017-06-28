@@ -1,0 +1,48 @@
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin\BookAdmin\BookAdmin\bin\BookAdmin.dll
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin\BookAdmin\BookAdmin\bin\BookAdmin.pdb
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin\BookAdmin\BookAdmin\obj\Debug\BookAdmin.dll
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin\BookAdmin\BookAdmin\obj\Debug\BookAdmin.pdb
+D:\HTML\ProyectoBookAdmin\BookAdmin\BookAdmin\bin\BookAdmin.dll
+D:\HTML\ProyectoBookAdmin\BookAdmin\BookAdmin\bin\BookAdmin.pdb
+D:\HTML\ProyectoBookAdmin\BookAdmin\BookAdmin\obj\Debug\BookAdmin.dll
+D:\HTML\ProyectoBookAdmin\BookAdmin\BookAdmin\obj\Debug\BookAdmin.pdb
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin_1.1\ProyectoBookAdmin\BookAdmin\BookAdmin\bin\BookAdmin.dll
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin_1.1\ProyectoBookAdmin\BookAdmin\BookAdmin\bin\BookAdmin.pdb
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin_1.1\ProyectoBookAdmin\BookAdmin\BookAdmin\obj\Debug\BookAdmin.dll
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin_1.1\ProyectoBookAdmin\BookAdmin\BookAdmin\obj\Debug\BookAdmin.pdb
+C:\Users\pepe\Desktop\ProyectoBookAdmin\BookAdmin\BookAdmin\obj\Debug\BookAdmin.dll
+C:\Users\pepe\Desktop\ProyectoBookAdmin\BookAdmin\BookAdmin\obj\Debug\BookAdmin.pdb
+C:\Users\pepe\Desktop\ProyectoBookAdmin\BookAdmin\BookAdmin\bin\BookAdmin.dll
+C:\Users\pepe\Desktop\ProyectoBookAdmin\BookAdmin\BookAdmin\bin\BookAdmin.pdb
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin_1.1\ProyectoBookAdmin\BookAdmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin_1.1\ProyectoBookAdmin\BookAdmin\BookAdmin\bin\BookAdmin.dll
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin_1.1\ProyectoBookAdmin\BookAdmin\BookAdmin\bin\BookAdmin.pdb
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin_1.1\ProyectoBookAdmin\BookAdmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin_1.1\ProyectoBookAdmin\BookAdmin\BookAdmin\obj\Debug\BookAdmin.dll
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin_1.1\ProyectoBookAdmin\BookAdmin\BookAdmin\obj\Debug\BookAdmin.pdb
+C:\Users\pepe\Desktop\ProyectoBookAdmin\BookAdmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin2.0\BookAdmin\BookAdmin\bin\BookAdmin.dll
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin2.0\BookAdmin\BookAdmin\bin\BookAdmin.pdb
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin2.0\BookAdmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin2.0\BookAdmin\BookAdmin\obj\Debug\BookAdmin.dll
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin2.0\BookAdmin\BookAdmin\obj\Debug\BookAdmin.pdb
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin2.0\BookAdmin\BookAdmin\bin\BookAdmin.dll
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin2.0\BookAdmin\BookAdmin\bin\BookAdmin.pdb
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin2.0\BookAdmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin2.0\BookAdmin\BookAdmin\obj\Debug\BookAdmin.dll
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdmin2.0\BookAdmin\BookAdmin\obj\Debug\BookAdmin.pdb
+D:\usuario\Documentos\Visual Studio 2010\Projects\ProyectoBookAdmin2.0\BookAdmin\BookAdmin\bin\BookAdmin.dll
+D:\usuario\Documentos\Visual Studio 2010\Projects\ProyectoBookAdmin2.0\BookAdmin\BookAdmin\bin\BookAdmin.pdb
+D:\usuario\Documentos\Visual Studio 2010\Projects\ProyectoBookAdmin2.0\BookAdmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache
+D:\usuario\Documentos\Visual Studio 2010\Projects\ProyectoBookAdmin2.0\BookAdmin\BookAdmin\obj\Debug\BookAdmin.dll
+D:\usuario\Documentos\Visual Studio 2010\Projects\ProyectoBookAdmin2.0\BookAdmin\BookAdmin\obj\Debug\BookAdmin.pdb
+C:\Users\pepe\Pictures\ProyectoBookAdminSprint3\BookAdmin\BookAdmin\bin\BookAdmin.dll
+C:\Users\pepe\Pictures\ProyectoBookAdminSprint3\BookAdmin\BookAdmin\bin\BookAdmin.pdb
+C:\Users\pepe\Pictures\ProyectoBookAdminSprint3\BookAdmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache
+C:\Users\pepe\Pictures\ProyectoBookAdminSprint3\BookAdmin\BookAdmin\obj\Debug\BookAdmin.dll
+C:\Users\pepe\Pictures\ProyectoBookAdminSprint3\BookAdmin\BookAdmin\obj\Debug\BookAdmin.pdb
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdminSprint_3.0.1\BookAdmin\BookAdmin\bin\BookAdmin.dll
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdminSprint_3.0.1\BookAdmin\BookAdmin\bin\BookAdmin.pdb
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdminSprint_3.0.1\BookAdmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdminSprint_3.0.1\BookAdmin\BookAdmin\obj\Debug\BookAdmin.dll
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\ProyectoBookAdminSprint_3.0.1\BookAdmin\BookAdmin\obj\Debug\BookAdmin.pdb
