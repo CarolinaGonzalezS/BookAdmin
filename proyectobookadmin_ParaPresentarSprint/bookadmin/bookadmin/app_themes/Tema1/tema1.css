@@ -1,0 +1,145 @@
+﻿body 
+{
+    
+}
+#imagencentral
+{
+    background-image:url("biblioteca.jpg") inherit; 
+    }
+
+
+
+#cabecera
+{
+    height:170px;
+    background-color:cornsilk;
+    color:Black;    
+    border:1px;
+    box-shadow:0px 0px 10px #000;
+    position:relative;
+    z-index:2;
+    
+}
+#contenidoCabecera
+{
+    width:960px;
+    margin:auto;       
+}
+
+#barraHorizontal
+{
+    height:40px;
+    background-color:White;
+    border-radius:0px 0px 10px 10px;
+    box-shadow:0px 0px 10px #000 inset;
+    text-align:center;
+}
+#barraHorizontal > ul
+{
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    }
+
+#barraHorizontal  li
+{
+    display:inline-block;
+    padding:10px;
+    cursor:pointer;
+    background-color:Gray;
+    color:Aqua;
+    box-shadow:0px 0px 5px #000 inset;
+    }
+
+#barraHorizontal  li > a
+{
+    display:block;
+    color:Aqua;
+    text-decoration:none;
+    font:bold;
+    }
+
+#logotipo
+{
+    width:35%;
+    float:left;  
+    text-align:center;
+    margin-top:10px;
+    }
+
+#logotipo > img 
+{
+    width:50%;
+    
+    }
+
+#titulo
+{
+    width:60%;
+    float:left; 
+    text-shadow:2px 3px 3px #000;
+    color:Black;
+    font-family: 'Roboto Slab', serif;
+    }  
+    
+#bajo
+{
+    width:1100px;
+    margin:auto;
+    background-color:cornsilk;
+    border-radius:0px 0px 20px 20px;   
+    overflow:auto;
+    box-shadow:0px 0px 10px #000;
+    } 
+
+#columnIzq, #columnDer
+{
+    float:left;
+    width:15%;
+    min-height:500px;
+    
+    }  
+
+#menuContextual
+{
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    } 
+  
+#menuContextual > li
+{
+    padding:10px;
+    text-align:center;
+    background-color:Gray;
+    border:1px outsed black;
+    color:White;
+    box-shadow:0px 0px 10px #000 intset;
+    }
+#menuContextual > li > a
+{
+        text-decoration:none;
+        color:Aqua;
+       
+       
+        }
+#columnCentro
+{
+    float:left;
+    width:70%;
+    min-height:500px;
+    background-image:url("fondo.png");
+    box-shadow:0px 0px 5px #000 inset;
+    }
+    
+#pie
+{
+    height:40px;
+    background-color:cornsilk;
+    border-radius:0px 0px 20px 20px;
+    clear:both;
+    box-shadow:0px 0px 5px #000 inset;
+    color:Black;
+    text-align:center;
+    padding-top:5px;
+    }
