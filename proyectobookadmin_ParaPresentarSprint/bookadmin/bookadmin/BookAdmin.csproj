@@ -57,6 +57,9 @@
     <Content Include="jquery\jquery-1.10.2.js" />
     <Content Include="jquery\jquery-ui-1.10.4.custom.js" />
     <Content Include="jquery\jquery-ui-1.10.4.custom.min.js" />
+    <Content Include="org.SmarTech.GUI\Autor.aspx" />
+    <Content Include="org.SmarTech.GUI\Book.aspx" />
+    <Content Include="org.SmarTech.GUI\Category.aspx" />
     <Content Include="org.SmarTech.GUI\css\animate.css" />
     <Content Include="org.SmarTech.GUI\css\style.css" />
     <Content Include="org.SmarTech.GUI\images\biblioteca.jpg" />
@@ -109,12 +112,33 @@
     <Compile Include="org.SmarTech.entities\EntClsLoan.cs" />
     <Compile Include="org.SmarTech.entities\EntClsSearch.cs" />
     <Compile Include="org.SmarTech.entities\EntClsWrite.cs" />
+    <Compile Include="org.SmarTech.GUI\Autor.aspx.cs">
+      <DependentUpon>Autor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Autor.aspx.designer.cs">
+      <DependentUpon>Autor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Book.aspx.cs">
+      <DependentUpon>Book.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Book.aspx.designer.cs">
+      <DependentUpon>Book.aspx</DependentUpon>
+    </Compile>
     <Compile Include="org.SmarTech.GUI\BusquedaLibro.master.cs">
       <DependentUpon>BusquedaLibro.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="org.SmarTech.GUI\BusquedaLibro.master.designer.cs">
       <DependentUpon>BusquedaLibro.master</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Category.aspx.designer.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
     </Compile>
     <Compile Include="org.SmarTech.GUI\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

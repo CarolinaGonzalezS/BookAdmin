@@ -6,7 +6,11 @@
 
  <ul id="menuContextual">
         <li><a href="RegistroLibro.aspx">Agregar Libros</a></li>
+        <li><a href="Autor.aspx">Autor</a></li>
+        <li><a href="Category.aspx">Categorias</a></li>
+        <li><a href="Book.aspx">Libros</a></li>
         <li><a href="ResultSearch.aspx">Buscar Libros</a></li>
+
     </ul>
 
 </asp:Content>

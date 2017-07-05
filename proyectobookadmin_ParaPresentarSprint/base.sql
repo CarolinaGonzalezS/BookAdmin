@@ -87,7 +87,7 @@ dateF date not null
 
 --procedimientos 
 
-alter procedure loginAdministrator
+create procedure loginAdministrator
 	@name varchar(30),
 	@passwordA varchar(256)
 	
@@ -98,6 +98,8 @@ alter procedure loginAdministrator
 		 
  Insert dbo.Administrator
  values(1,'Admin','40BD001563085FC35165329EA1FF5C5ECBDBBEEF')
+ 
+
  
 create procedure existAuthor
 @name varchar(30),
