@@ -1,9 +1,0 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/org.SmarTech.GUI/Principal.Master" AutoEventWireup="true" CodeBehind="RegistroPrestamo.master.cs" Inherits="BookAdmin.org.SmarTech.GUI.RegistroPrestamo" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="server">
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" runat="server">
- <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">       
-        </asp:ContentPlaceHolder>
-</asp:Content>
