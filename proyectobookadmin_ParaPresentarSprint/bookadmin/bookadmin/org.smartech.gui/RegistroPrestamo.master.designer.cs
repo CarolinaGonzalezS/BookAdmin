@@ -10,7 +10,7 @@
 namespace BookAdmin.org.SmarTech.GUI {
     
     
-    public partial class RegistrarLibro {
+    public partial class RegistroPrestamo {
         
         /// <summary>
         /// Control contenidoPrincipal.

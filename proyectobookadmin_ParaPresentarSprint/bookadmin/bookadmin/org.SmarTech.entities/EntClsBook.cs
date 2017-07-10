@@ -18,11 +18,17 @@ namespace BookAdmin.org.SmarTech.entities
         private int idAdmin;
         private string stateB;
         private int stock;
+        private int idUser;
         
         #endregion
 
         #region setter and getter
 
+        public int IdUser
+        {
+          get { return idUser; }
+          set { idUser = value; }
+        }
         public string Code
         {
             get { return code; }
@@ -91,6 +97,20 @@ namespace BookAdmin.org.SmarTech.entities
         public EntClsBook(string name)
         {
             this.name = name;
+        }
+        
+        public EntClsBook(int idUser, string code, string isbn, string name, string datePublish, int idEdit, int idCateg, string stateB, int stock, int idAdmin)
+        {
+            this.idUser=idUser;
+            this.code = code;
+            this.isbn = isbn;
+            this.name = name;
+            this.datePublish = datePublish;
+            this.idEdit = idEdit;
+            this.idCateg = idCateg;
+            this.idAdmin = idAdmin;
+            this.stateB = stateB;
+            this.stock = stock;
         }
     }
 }

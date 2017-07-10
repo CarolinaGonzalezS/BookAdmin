@@ -131,6 +131,93 @@ namespace BookAdmin.org.SmarTech.controllers
             return ejecuteNonQuery("insertEditorial", parameters);
         }
 
+        public List<EntClsEditorial> EditorialList()
+        {
+            List<EntClsEditorial> editoriallist = new List<EntClsEditorial>();
+            string storeProcedure = "EditorialList";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            editoriallist.Add(
+                                new EntClsEditorial((int)dr["id"], (string)dr["name"], (string)dr["country"], (string)dr["city"])
+                            );
+                        }
+                    }
+                }
+            }
+            return editoriallist;
+        }
 
+        public int updateEditorial(int id, string name, string country, string city)
+        {
+            List<DbParameter> parameters = new List<DbParameter>();
+
+            DbParameter param1 = dpf.CreateParameter();
+            param1.Value = id;
+            param1.ParameterName = "id";
+            parameters.Add(param1);
+
+            DbParameter param2 = dpf.CreateParameter();
+            param2.Value = name;
+            param2.ParameterName = "name";
+            parameters.Add(param2);
+
+            DbParameter param3 = dpf.CreateParameter();
+            param3.Value = country;
+            param3.ParameterName = "country";
+            parameters.Add(param3);
+
+            DbParameter param4 = dpf.CreateParameter();
+            param4.Value = city;
+            param4.ParameterName = "city";
+            parameters.Add(param4);
+
+            return ejecuteNonQuery("updateEditorial", parameters);
+        }
+
+
+        public EntClsEditorial listEditorialForid(int id)
+        {
+            EntClsEditorial objEditorial = new EntClsEditorial();
+            string storeProcedure = "checkEditorialId";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbParameter param = cmd.CreateParameter();
+                    param.DbType = DbType.String;
+                    param.ParameterName = "id";
+                    param.Value = id;
+                    cmd.Parameters.Add(param);
+                    con.Open();
+
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            objEditorial = new EntClsEditorial((string)dr["name"], (string)dr["country"], (string)dr["city"]);
+
+                        }
+
+                    }
+                }
+
+            }
+            return objEditorial;
+        }
     }
 }

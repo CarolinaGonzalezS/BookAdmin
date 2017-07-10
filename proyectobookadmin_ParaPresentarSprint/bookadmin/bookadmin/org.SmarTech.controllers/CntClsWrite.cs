@@ -91,5 +91,74 @@ namespace BookAdmin.org.SmarTech.controllers
 
             return ejecuteNonQuery("InsertWrite", parameters);
         }
+
+        public EntClsWrite listWriteForCode(string code)
+        {
+            EntClsWrite objWrite = new EntClsWrite();
+            string storeProcedure = "listAuthorWithBook";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbParameter param = cmd.CreateParameter();
+                    param.DbType = DbType.String;
+                    param.ParameterName = "code";
+                    param.Value = code;
+                    cmd.Parameters.Add(param);
+                    con.Open();
+
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            objWrite = new EntClsWrite((int)dr["id"]);
+
+                        }
+
+                    }
+                }
+
+            }
+            return objWrite;
+        }
+
+
+        public List<EntClsWrite> SearchBookForIdAuthor(int id)
+        {
+            List<EntClsWrite> book_author = new List<EntClsWrite>();
+            string storeProcedure = "SearchBookForIdAuthor";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbParameter param = cmd.CreateParameter();
+                    param.DbType = DbType.String;
+                    param.ParameterName = "id";
+                    param.Value = id;
+                    cmd.Parameters.Add(param);
+
+                    con.Open();
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            book_author.Add(
+                                new EntClsWrite((int)dr["id"])
+                            );
+                        }
+                    }
+                }
+            }
+            return book_author;
+        }
     }
 }

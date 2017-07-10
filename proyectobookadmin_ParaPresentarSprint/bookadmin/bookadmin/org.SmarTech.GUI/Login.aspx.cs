@@ -41,11 +41,10 @@ namespace BookAdmin.org.SmarTech.GUI
         {
 
             BsnClsAdministrator bsn_administrator = new BsnClsAdministrator();            
-            string pass = encryptPassw(textPassword.Text);
+            string pass = encryptPassw(textPassword.Text);            
             EntClsAdministrator obj_administrator = bsn_administrator.Login(textNameUser.Text, pass);            
             Session.Add("admin", obj_administrator.PasswordA);
-            Response.Redirect("Principal.aspx");           
-            
+            Response.Redirect("Principal.aspx");                       
         }
     }
 }

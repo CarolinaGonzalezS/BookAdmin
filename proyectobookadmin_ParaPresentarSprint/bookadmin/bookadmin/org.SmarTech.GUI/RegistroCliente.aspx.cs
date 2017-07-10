@@ -34,7 +34,9 @@ namespace BookAdmin.org.SmarTech.GUI
             else 
             {
                 errorMessage();
-            }            
+            }
+           
+            
         }
 
         protected void errorMessage()
@@ -55,6 +57,38 @@ namespace BookAdmin.org.SmarTech.GUI
             textphone.Text = "";
             textCelphone.Text = "";
             textMail.Text = "";
-        }       
+        }
+
+        protected void cedulavalidation()
+        {
+            string IdentificationCard = textIdentificationCard.Text;
+            char[] vector = IdentificationCard.ToArray();
+            int sumaTotal = 0;
+            if (vector.Length == 10)
+            {
+                for (int i = 0; i < vector.Length-1; i++)
+                {
+                    int number = Convert.ToInt32(vector[i].ToString());
+                    if((i+1)%2==1)
+                    {
+                        number = Convert.ToInt32(vector[i].ToString())*2;
+                        if (number<9)
+                        {
+                            number = number - 9;
+                        }
+                    }
+                    sumaTotal +=  number;
+                }
+                sumaTotal=10-(sumaTotal % 10);
+   
+            }
+            else
+            {
+                string script = @"<script type='text/javascript'>
+                    alert('Esta no es una cedula');
+                    </script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);  
+            }
+        }
     }
 }

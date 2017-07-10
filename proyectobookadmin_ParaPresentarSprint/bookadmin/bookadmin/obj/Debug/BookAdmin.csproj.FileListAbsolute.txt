@@ -64,3 +64,24 @@ D:\usuario\Documentos\Visual Studio 2010\Projects\BookAdmin-master\proyectobooka
 D:\usuario\Documentos\Visual Studio 2010\Projects\BookAdmin-master\proyectobookadminsprint_3.0.1\bookadmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache
 D:\usuario\Documentos\Visual Studio 2010\Projects\BookAdmin-master\proyectobookadminsprint_3.0.1\bookadmin\BookAdmin\obj\Debug\BookAdmin.dll
 D:\usuario\Documentos\Visual Studio 2010\Projects\BookAdmin-master\proyectobookadminsprint_3.0.1\bookadmin\BookAdmin\obj\Debug\BookAdmin.pdb
+C:\Users\pepe\Documents\BookAdmin\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.dll
+C:\Users\pepe\Documents\BookAdmin\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.pdb
+C:\Users\pepe\Documents\BookAdmin\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.dll
+C:\Users\pepe\Documents\BookAdmin\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.pdb
+C:\Users\Pacha\Downloads\BookAdmin-master\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.dll
+C:\Users\Pacha\Downloads\BookAdmin-master\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.pdb
+C:\Users\Pacha\Downloads\BookAdmin-master\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.dll
+C:\Users\Pacha\Downloads\BookAdmin-master\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.pdb
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\BookAdmin-master2\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.dll
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\BookAdmin-master2\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.pdb
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\BookAdmin-master2\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.dll
+C:\Users\pepe\Dropbox\TECNICAS_PROYECTO\BookAdmin-master2\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.pdb
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\BookAdmin-master2\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.dll
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\BookAdmin-master2\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.pdb
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\BookAdmin-master2\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.dll
+C:\Users\Pacha\Dropbox\TECNICAS_PROYECTO\BookAdmin-master2\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.pdb
+D:\usuario\Documentos\Visual Studio 2010\Projects\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.dll
+D:\usuario\Documentos\Visual Studio 2010\Projects\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.pdb
+D:\usuario\Documentos\Visual Studio 2010\Projects\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.dll
+D:\usuario\Documentos\Visual Studio 2010\Projects\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.pdb
+D:\usuario\Documentos\Visual Studio 2010\Projects\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache

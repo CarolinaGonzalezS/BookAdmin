@@ -95,9 +95,13 @@ alter procedure loginAdministrator
 		select name,passwordA from Administrator 
 		where  name= @name and 
 				passwordA=@passwordA
+				
+				select * from book
 		 
  Insert dbo.Administrator
- values(1,'Admin','40BD001563085FC35165329EA1FF5C5ECBDBBEEF')
+ values(1,'Admin','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3')
+ 
+select * from administrator
  
 create procedure existAuthor
 @name varchar(30),
@@ -278,3 +282,156 @@ where identificationCard like @identificationCard
 select * from write
 select * from category
 exec ForNameBook '%100%'
+
+create procedure AuthorList
+as
+select id,name,lastName,nationality
+from dbo.Author
+
+create procedure IdAuthor
+@name varchar(30),
+@lastName varchar(30)
+as
+select dbo.Author.id,name,lastName,nationality from dbo.Author
+where   lastName like @lastName and
+		name like @name 
+		
+create procedure EditorialList
+as
+select id, name, country, city from dbo.Editorial
+
+exec EditorialList
+
+
+create procedure registerLoan
+@dateLoan varchar(30),
+@dateLimit varchar(30),
+@identificationCard varchar(10),
+@code varchar (10)
+as
+insert into dbo.Loan(dateLoan,dateLimit,identificationCard,code) 
+values(convert(date,@dateLoan),convert(date,@dateLimit),@identificationCard,@code)
+
+-- Actualizaciones de Tabla
+alter procedure updateBook
+@code varchar(10),
+@isbn varchar(15),
+@name varchar(30),
+@datePublish varchar(30),
+@idEdit int, 
+@idCateg int,
+@stateB varchar(30),
+@stock int
+as
+update dbo.Book 
+set isbn=@isbn,name=@name,datePublish=Convert(date,@datePublish),idEdit=@idEdit,idCateg=@idCateg,stateB=@stateB,stock=@stock
+where code=@code
+
+select *
+from book
+
+select *
+from write
+create procedure updateEditorial
+@id int,
+@name varchar(30),
+@country varchar(30),
+@city varchar(30)
+as
+update dbo.Editorial
+set name=@name, country=@country, city=@city
+where id=@id
+
+create procedure updateAuthor
+@id int,
+@name varchar(30),
+@lastName varchar(30),
+@nationality varchar(30)
+as
+update dbo.Author
+set name=@name, lastName=@lastName, nationality=@nationality
+where id=@id
+
+create procedure updateCustomer
+@identificationCard varchar(10),
+@name varchar(30),
+@lastName varchar(30),
+@phone varchar(30),
+@celphone varchar(30),
+@addres varchar(30),
+@mail varchar(30)
+as
+update dbo.Customer
+set name=@name, lastName=@lastName, phone=@phone, celphone=@celphone, addres=@addres, mail=@mail
+where identificationCard=@identificationCard
+
+-- Eliminacion de Contenido de Tabla
+alter procedure deleteBook
+@code varchar(10)
+as
+delete dbo.Write
+where code=@code
+delete dbo.Book 
+where code=@code
+
+exec deleteBook 'dfsg'
+
+create procedure deleteAuthor
+@id int
+as
+delete dbo.Author
+where id=@id
+
+create procedure deleteCustomer
+@identificationCard varchar(10)
+as
+delete dbo.Customer
+where identificationCard=@identificationCard 
+
+create procedure deleteEditorial
+@id int
+as
+delete dbo.Editorial
+where id=@id 
+
+create procedure listBook
+as
+select code, isbn,name,datePublish=Convert(varchar(30),datePublish),idEdit,idCateg,stateB,stock,idAdmin
+from dbo.Book
+
+create procedure listAuthorWithBook
+@code varchar(10)
+as 
+select id
+from dbo.Write
+where code=@code
+
+alter procedure AuthorforId
+@id int
+as
+select name,lastName,nationality
+from dbo.Author
+where id=@id
+exec listAuthorWithBook
+
+
+alter procedure checkEditorialId
+@id int
+as 
+select name,country,city
+from dbo.Editorial
+where id=@id
+
+alter procedure SearchBookForCode
+
+select * from editorial
+select * from book
+select * from write
+@code varchar(30)
+as
+select id,Book.code,isbn,name,Convert(varchar(30),datePublish) as datePublish,idEdit,idCateg,stateB,stock,idAdmin
+from dbo.Book,dbo.Write
+where Book.code=Write.code and
+		Book.code=@code
+
+exec SearchBookForCode 'sfgd'

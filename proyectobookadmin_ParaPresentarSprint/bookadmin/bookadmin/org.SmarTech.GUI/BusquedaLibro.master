@@ -3,8 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="server">
  <ul id="menuContextual">
-        <li><a href="RegistroLibro.aspx">Agregar Libros</a></li>
-        <li><a href="BusquedaLibro.aspx">Buscar Libros</a></li>
+        <li><a href="Autor.aspx">Agregar Libros</a></li>        
     </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" runat="server">

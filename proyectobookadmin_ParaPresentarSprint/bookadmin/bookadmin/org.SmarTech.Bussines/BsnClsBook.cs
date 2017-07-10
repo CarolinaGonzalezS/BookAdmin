@@ -14,10 +14,34 @@ namespace BookAdmin.org.SmarTech.Bussines
             CntClsBook cnt_book = new CntClsBook();
             return cnt_book.insertBook(name, code, isbn, datePublish, stock, idCateg, idEdit, state, idAdmin);
         }
+
         public EntClsBook checkBook(string name)
         {
             CntClsBook dtLibro = new CntClsBook();
             return dtLibro.CheckBook(name);
         }
+
+        public int updateBook(string code, string isbn, string name, string datePublish, int idEdit, int idCateg, string stateB, int stock)
+        {
+            CntClsBook cnt_book = new CntClsBook();
+            return cnt_book.updateBook(code, isbn, name, datePublish, idEdit, idCateg, stateB, stock);
+        }
+
+        public int deleteBook(string code)
+        {
+            CntClsBook cnt_book = new CntClsBook();
+            return cnt_book.deleteBook(code);
+        }
+        public List<EntClsBook> listBook() 
+        {
+            CntClsBook cnt_book = new CntClsBook();
+            return cnt_book.listBook();
+        }
+        public EntClsBook SearchBookForCode(string code)
+        {
+            CntClsBook cnt_book = new CntClsBook();
+            return cnt_book.SearchBookForCode(code);
+        }
+
     }
 }

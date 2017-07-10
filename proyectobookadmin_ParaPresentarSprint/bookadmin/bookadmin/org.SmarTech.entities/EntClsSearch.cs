@@ -68,5 +68,6 @@ namespace BookAdmin.org.SmarTech.entities
             this.author = author;
             this.lastNameAuthor = lastNameAuthor;            
         }
+        
     }
 }

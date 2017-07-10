@@ -160,6 +160,7 @@ namespace BookAdmin.org.SmarTech.GUI
             }
             return resultList;
         }
+
         public List<EntClsSearch> queryForNameEditorial()
         {
             char signo = '%';

@@ -159,5 +159,127 @@ namespace BookAdmin.org.SmarTech.controllers
             return ejecuteNonQuery("insertBook", parameters);
         }
 
+        public int updateBook(string code , string isbn, string name, string datePublish, int idEdit, int idCateg, string stateB, int stock)
+        {
+            List<DbParameter> parameters = new List<DbParameter>();
+
+            DbParameter param1 = dpf.CreateParameter();
+            param1.Value = code;
+            param1.ParameterName = "code";
+            parameters.Add(param1);
+
+            DbParameter param2 = dpf.CreateParameter();
+            param2.Value = isbn;
+            param2.ParameterName = "isbn";
+            parameters.Add(param2);
+
+            DbParameter param3 = dpf.CreateParameter();
+            param3.Value = name;
+            param3.ParameterName = "name";
+            parameters.Add(param3);
+
+            DbParameter param4 = dpf.CreateParameter();
+            param4.Value = datePublish;
+            param4.ParameterName = "datePublish";
+            parameters.Add(param4);
+
+            DbParameter param5 = dpf.CreateParameter();
+            param5.Value = idEdit;
+            param5.ParameterName = "idEdit";
+            parameters.Add(param5);
+
+            DbParameter param6 = dpf.CreateParameter();
+            param6.Value = idCateg;
+            param6.ParameterName = "idCateg";
+            parameters.Add(param6);
+
+            DbParameter param7 = dpf.CreateParameter();
+            param7.Value = stateB;
+            param7.ParameterName = "stateB";
+            parameters.Add(param7);
+
+            DbParameter param8 = dpf.CreateParameter();
+            param8.Value = stock;
+            param8.ParameterName = "stock";
+            parameters.Add(param8);
+
+            return ejecuteNonQuery("updateBook", parameters);
+        }
+
+        public int deleteBook(string code)
+        {
+            List<DbParameter> parameters = new List<DbParameter>();
+
+            DbParameter param1 = dpf.CreateParameter();
+            param1.Value = code;
+            param1.ParameterName = "code";
+            parameters.Add(param1);
+
+            return ejecuteNonQuery("deleteBook", parameters);
+        }
+
+        public List<EntClsBook> listBook() 
+        {
+            List<EntClsBook> booklist = new List<EntClsBook>();
+            string storeProcedure = "listBook";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;                    
+
+                    con.Open();
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            booklist.Add(                                   
+                                new EntClsBook((string)dr["code"], (string)dr["isbn"], (string)dr["name"], (string)dr["datePublish"], (int)dr["idEdit"], (int)dr["idCateg"], (int)dr["idAdmin"], (string)dr["stateB"], (int)dr["stock"])
+                            );
+                        }
+                    }
+                }
+            }
+            return booklist;
+        }
+
+
+        public EntClsBook SearchBookForCode(string code)
+        {
+            EntClsBook obj_book = new EntClsBook();
+            string storeProcedure = "SearchBookForCode";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbParameter param = cmd.CreateParameter();
+                    param.DbType = DbType.String;
+                    param.ParameterName = "code";
+                    param.Value = code;
+                    cmd.Parameters.Add(param);
+
+                    con.Open();
+
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {                           
+                            obj_book = new EntClsBook((int)dr["id"], (string)dr["code"], (string)dr["isbn"], (string)dr["name"], (string)dr["datePublish"], (int)dr["idEdit"], (int)dr["idCateg"], (string)dr["stateB"], (int)dr["stock"], (int)dr["idadmin"]);
+
+                        }
+                    }
+                }
+
+            }
+            return obj_book;
+        }
+
     }
 }

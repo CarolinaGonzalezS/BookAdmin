@@ -56,9 +56,13 @@ namespace BookAdmin.org.SmarTech.entities
             this.country = country;
             this.city = city;
         }
+        public EntClsEditorial(string name)
+        {
+            this.name = name;
+        }
+
         public EntClsEditorial()
         {
-
         }
 
     }

@@ -137,5 +137,107 @@ namespace BookAdmin.org.SmarTech.controllers
             return ejecuteNonQuery("insertAuthor", parameters);
         }
 
+        public List<EntClsAuthor> AuthorList()
+        {
+            List<EntClsAuthor> authorlist = new List<EntClsAuthor>();
+            string storeProcedure = "AuthorList";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;                    
+                    con.Open();
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            authorlist.Add(
+                                new EntClsAuthor((int)dr["id"], (string)dr["name"], (string)dr["lastName"], (string)dr["nationality"])
+                            );
+                        }
+                    }
+                }
+            }
+            return authorlist;
+        }
+
+        public int updateAuthor(int id, string name, string lastName, string nationality)
+        {
+            List<DbParameter> parameters = new List<DbParameter>();
+
+            DbParameter param1 = dpf.CreateParameter();
+            param1.Value = id;
+            param1.ParameterName = "id";
+            parameters.Add(param1);
+
+            DbParameter param2 = dpf.CreateParameter();
+            param2.Value = name;
+            param2.ParameterName = "name";
+            parameters.Add(param2);
+
+            DbParameter param3 = dpf.CreateParameter();
+            param3.Value = lastName;
+            param3.ParameterName = "lastName";
+            parameters.Add(param3);
+
+            DbParameter param4 = dpf.CreateParameter();
+            param4.Value = nationality;
+            param4.ParameterName = "nationality";
+            parameters.Add(param4);
+
+            return ejecuteNonQuery("updateAuthor", parameters);
+        }
+
+        public EntClsAuthor CheckAuthorForId(int id)
+        {
+            EntClsAuthor obj_author = new EntClsAuthor();
+            string storeProcedure = "AuthorforId";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbParameter param = cmd.CreateParameter();
+                    param.DbType = DbType.String;
+                    param.ParameterName = "id";
+                    param.Value = id;
+                    cmd.Parameters.Add(param);
+
+                    con.Open();
+
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            obj_author = new EntClsAuthor((string)dr["name"], (string)dr["lastName"],(string)dr["nationality"]);
+
+                        }
+
+                    }
+                }
+
+            }
+            return obj_author;
+        }
+
+        public int deleteAuthor(int id)
+        {
+            List<DbParameter> parameters = new List<DbParameter>();
+
+            DbParameter param1 = dpf.CreateParameter();
+            param1.Value = id;
+            param1.ParameterName = "id";
+            parameters.Add(param1);
+
+            return ejecuteNonQuery("deleteAuthor", parameters);
+        }
+
+        
     }
 }

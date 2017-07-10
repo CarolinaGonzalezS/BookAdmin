@@ -37,5 +37,9 @@ namespace BookAdmin.org.SmarTech.entities
             this.idAuthor = idAuthor;
             this.bookCode = bookCode;
         }
+        public EntClsWrite(int idAuthor)
+        {
+            this.idAuthor = idAuthor;
+        }
     }
 }

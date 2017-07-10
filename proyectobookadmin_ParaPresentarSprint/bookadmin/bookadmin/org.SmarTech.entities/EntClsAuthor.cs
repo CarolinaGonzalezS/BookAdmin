@@ -50,11 +50,13 @@ namespace BookAdmin.org.SmarTech.entities
             this.lastName = lastName;
             this.nationality = nationality;
         }
-        public EntClsAuthor(string name, string lastName)
+        public EntClsAuthor(string name, string lastName,string nationality)
         {
             this.name = name;
             this.lastName = lastName;
+            this.nationality = nationality;
         }
+        
         public EntClsAuthor() { }
 
     }

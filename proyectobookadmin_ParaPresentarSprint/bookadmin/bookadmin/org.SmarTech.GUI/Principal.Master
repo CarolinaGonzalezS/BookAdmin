@@ -16,9 +16,9 @@
     <div id="cabecera">
         <div id="contenidoCabecera">
             <div id="barraHorizontal">
-            <li><a href="RegistroLibro.aspx">Libros</a></li>
+            <li><a href="BookView.aspx">Libros</a></li>
             <li><a href="RegistroCliente.aspx">Clientes</a></li>
-            <li><a href="#">Prestamos</a></li>
+            <li><a href="RegistroPrestamo.aspx">Prestamos</a></li>
             <li><a href="#">Multas</a></li>
             <li><a href="#">Reportes</a></li>
             <li><a href="Principal.aspx">Atras</a></li>
@@ -29,28 +29,24 @@
 
             </div>
             <div="titulo">
-                <h1>BookAdmin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button 
+                <h1>BookAdmin&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button 
                         ID="btnCiencia" runat="server" onclick="btnCiencia_Click" Text="Ciencia" />
-&nbsp;
-                    <asp:Button ID="btnTerror" runat="server" onclick="btnTerror_Click" 
+&nbsp;<asp:Button ID="btnTerror" runat="server" onclick="btnTerror_Click" 
                         Text="Terror" />
-&nbsp;
-                    <asp:Button ID="btnSuspenso" runat="server" onclick="btnSuspenso_Click" 
+&nbsp;<asp:Button ID="btnSuspenso" runat="server" onclick="btnSuspenso_Click" 
                         Text="Suspenso" />
-&nbsp;
-                    <asp:Button ID="btnBiografia" runat="server" onclick="btnBiografia_Click" 
+&nbsp;<asp:Button ID="btnBiografia" runat="server" onclick="btnBiografia_Click" 
                         Text="Biografias" />
-&nbsp;
-                    <asp:Button ID="btnMisterio" runat="server" onclick="btnMisterio_Click" 
+&nbsp;<asp:Button ID="btnMisterio" runat="server" onclick="btnMisterio_Click" 
                         Text="Misterio" />
             </h1>
-            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:TextBox ID="textSearch" runat="server" placeholder="Ingrese Autor"></asp:TextBox>
-&nbsp;
-                    <asp:Button ID="btnBuscadorGen" runat="server" onclick="btnBuscadorGen_Click" 
+            
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+                    <asp:TextBox ID="textSearch" runat="server" placeholder="Ingrese palabra clave"></asp:TextBox>
+&nbsp;<asp:Button ID="btnBuscadorGen" runat="server" onclick="btnBuscadorGen_Click" 
                         Text="Buscar" />
-            </h1>
-                <h5></h5>
+                
             </div>
         
         </div>

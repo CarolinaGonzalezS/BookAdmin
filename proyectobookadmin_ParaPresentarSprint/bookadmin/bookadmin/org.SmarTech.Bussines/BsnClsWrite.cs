@@ -14,5 +14,16 @@ namespace BookAdmin.org.SmarTech.Bussines
             CntClsWrite Cnt_write = new CntClsWrite();
             return Cnt_write.insertWrite(id, code);
         }
+        public EntClsWrite listWriteForCode(string code) 
+        {
+            CntClsWrite cnt_write = new CntClsWrite();
+            return cnt_write.listWriteForCode(code);
+        }
+
+        public List<EntClsWrite> SearchBookForIdAuthor(int id)
+        {
+            CntClsWrite cnt_write = new CntClsWrite();
+            return cnt_write.SearchBookForIdAuthor(id);
+        }
     }
 }
