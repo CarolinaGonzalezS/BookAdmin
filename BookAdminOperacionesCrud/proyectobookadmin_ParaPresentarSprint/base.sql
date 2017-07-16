@@ -313,7 +313,7 @@ insert into dbo.Loan(dateLoan,dateLimit,identificationCard,code)
 values(convert(date,@dateLoan),convert(date,@dateLimit),@identificationCard,@code)
 
 -- Actualizaciones de Tabla
-alter procedure updateBook
+create procedure updateBook
 @code varchar(10),
 @isbn varchar(15),
 @name varchar(30),
@@ -366,7 +366,7 @@ set name=@name, lastName=@lastName, phone=@phone, celphone=@celphone, addres=@ad
 where identificationCard=@identificationCard
 
 -- Eliminacion de Contenido de Tabla
-alter procedure deleteBook
+create procedure deleteBook
 @code varchar(10)
 as
 delete dbo.Write
@@ -406,7 +406,7 @@ select id
 from dbo.Write
 where code=@code
 
-alter procedure AuthorforId
+create procedure AuthorforId
 @id int
 as
 select name,lastName,nationality
@@ -415,18 +415,14 @@ where id=@id
 exec listAuthorWithBook
 
 
-alter procedure checkEditorialId
+create procedure checkEditorialId
 @id int
 as 
 select name,country,city
 from dbo.Editorial
 where id=@id
 
-alter procedure SearchBookForCode
-
-select * from editorial
-select * from book
-select * from write
+create procedure SearchBookForCode
 @code varchar(30)
 as
 select id,Book.code,isbn,name,Convert(varchar(30),datePublish) as datePublish,idEdit,idCateg,stateB,stock,idAdmin
@@ -435,3 +431,24 @@ where Book.code=Write.code and
 		Book.code=@code
 
 exec SearchBookForCode 'sfgd'
+
+
+-- Devolver libro
+alter procedure ReturnBook 
+@id int
+as
+select Customer.identificationCard,Customer.name,Customer.lastName,Book.name,Book.isbn
+from Loan,Customer,Book
+where book.code=Loan.code and customer.identificationCard=Loan.IdentificationCard and
+
+	Loan.id=@id
+
+exec ReturnBook 2
+	
+select * from book
+select * from customer
+select * from loan
+select * from fine
+insert into dbo.Loan values('12/12/2015','01/02/2017','0000000001','333')		
+exec 
+		

@@ -85,3 +85,7 @@ D:\usuario\Documentos\Visual Studio 2010\Projects\proyectobookadmin_ParaPresenta
 D:\usuario\Documentos\Visual Studio 2010\Projects\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.dll
 D:\usuario\Documentos\Visual Studio 2010\Projects\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.pdb
 D:\usuario\Documentos\Visual Studio 2010\Projects\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache
+C:\Users\pepe\Documents\BookAdmin\BookAdminOperacionesCrud\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.dll
+C:\Users\pepe\Documents\BookAdmin\BookAdminOperacionesCrud\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.pdb
+C:\Users\pepe\Documents\BookAdmin\BookAdminOperacionesCrud\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.dll
+C:\Users\pepe\Documents\BookAdmin\BookAdminOperacionesCrud\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.pdb

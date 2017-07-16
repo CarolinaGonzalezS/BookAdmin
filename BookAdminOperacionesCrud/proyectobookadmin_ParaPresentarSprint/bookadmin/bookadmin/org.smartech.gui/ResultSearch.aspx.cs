@@ -30,6 +30,7 @@ namespace BookAdmin.org.SmarTech.GUI
                 searchvalue = Session["search"].ToString();
                 List<EntClsSearch> result = new List<EntClsSearch>();
                 result = queryForNameEditorial();
+               
                 if (result == null)
                 {
                     result = queryForBookName();

@@ -73,6 +73,7 @@
     <Content Include="org.SmarTech.GUI\RegistroPrestamo.aspx" />
     <Content Include="org.SmarTech.GUI\ResultCategorySearch.aspx" />
     <Content Include="org.SmarTech.GUI\ResultSearch.aspx" />
+    <Content Include="org.SmarTech.GUI\ReturnBook.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -94,6 +95,7 @@
     <Compile Include="org.SmarTech.Bussines\BsnClsCustomer.cs" />
     <Compile Include="org.SmarTech.Bussines\BsnClsEditorial.cs" />
     <Compile Include="org.SmarTech.Bussines\BsnClsLoan.cs" />
+    <Compile Include="org.SmarTech.Bussines\BsnClsReturnBook.cs" />
     <Compile Include="org.SmarTech.Bussines\BsnClsSearch.cs" />
     <Compile Include="org.SmarTech.Bussines\BsnClsWrite.cs" />
     <Compile Include="org.SmarTech.controllers\CntClsAdministrator.cs" />
@@ -103,6 +105,7 @@
     <Compile Include="org.SmarTech.controllers\CntClsCustomer.cs" />
     <Compile Include="org.SmarTech.controllers\CntClsEditorial.cs" />
     <Compile Include="org.SmarTech.controllers\CntClsLoan.cs" />
+    <Compile Include="org.SmarTech.controllers\CntClsReturnBook.cs" />
     <Compile Include="org.SmarTech.controllers\CntClsSearch.cs" />
     <Compile Include="org.SmarTech.controllers\CntClsWrite.cs" />
     <Compile Include="org.SmarTech.entities\EntClsAdministrator.cs" />
@@ -113,6 +116,7 @@
     <Compile Include="org.SmarTech.entities\EntClsEditorial.cs" />
     <Compile Include="org.SmarTech.entities\EntClsFine.cs" />
     <Compile Include="org.SmarTech.entities\EntClsLoan.cs" />
+    <Compile Include="org.SmarTech.entities\EntClsReturnBook.cs" />
     <Compile Include="org.SmarTech.entities\EntClsSearch.cs" />
     <Compile Include="org.SmarTech.entities\EntClsWrite.cs" />
     <Compile Include="org.SmarTech.GUI\Autor.aspx.cs">
@@ -213,6 +217,20 @@
     <Compile Include="org.SmarTech.GUI\ResultSearch.aspx.designer.cs">
       <DependentUpon>ResultSearch.aspx</DependentUpon>
     </Compile>
+    <Compile Include="org.SmarTech.GUI\ReturnBook.aspx.cs">
+      <DependentUpon>ReturnBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\ReturnBook.aspx.designer.cs">
+      <DependentUpon>ReturnBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\ReturnBook.master.cs">
+      <DependentUpon>ReturnBook.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\ReturnBook.master.designer.cs">
+      <DependentUpon>ReturnBook.master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -226,6 +244,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="org.SmarTech.GUI\RegistroPrestamo.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="org.SmarTech.GUI\ReturnBook.master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
