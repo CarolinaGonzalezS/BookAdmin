@@ -8,7 +8,13 @@ namespace BookAdmin.org.SmarTech.entities
     public class EntClsReturnBook
     {
         #region Attributes
+        private int id;
 
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
         
         private string identificationCard;
 
@@ -51,9 +57,9 @@ namespace BookAdmin.org.SmarTech.entities
         #region contructores
         public EntClsReturnBook() { }
 
-        public EntClsReturnBook(string identificationCard, string name,string lastName,string nameB,string isbn) 
+        public EntClsReturnBook(int id,string identificationCard, string name,string lastName,string nameB,string isbn) 
         {
-           
+            this.id = id;
             this.identificationCard = identificationCard;
             this.name = name;
             this.lastName = lastName;

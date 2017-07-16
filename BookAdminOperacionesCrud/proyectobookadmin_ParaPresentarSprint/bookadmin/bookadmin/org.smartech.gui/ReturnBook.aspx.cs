@@ -19,27 +19,42 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
+          
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-           
+
             int search = Convert.ToInt32(textticket.Text);
-            if (search == null)
+            foreach(EntClsReturnBook return_book in lstReturnBook)
             {
-                errorMessage();
-            }
-            else
-            {
-                textName.Text = ent_returnBook.Name;
-                textIdentificationCard.Text = ent_returnBook.IdentificationCard;
-                textName.Text = ent_returnBook.Name;
-                textNameBook.Text = ent_returnBook.NameB;
-                textISBN.Text = ent_returnBook.Isbn;
+                if (return_book.Id == search)
+                {
+                    ent_returnBook = return_book;
+                }
+                else
+                {
+                    showReturnBook(ent_returnBook);
+                }
+
             }
             
+           
+            
         }
+
+        protected void showReturnBook(EntClsReturnBook ReturnBook)
+        {
+            textName.Text = ReturnBook.Name;
+            textIdentificationCard.Text = ReturnBook.IdentificationCard;
+            textName.Text = ReturnBook.Name;
+            textNameBook.Text = ReturnBook.NameB;
+            textISBN.Text = ReturnBook.Isbn;
+        }
+
+    
+
         protected void errorMessage()
         {
             string script = @"<script type='text/javascript'>

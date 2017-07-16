@@ -95,7 +95,7 @@ namespace BookAdmin.org.SmarTech.controllers
                         while (dr.Read())
                         {
                             loanlist.Add(
-                                new EntClsReturnBook((string)dr["identificationCard"], (string)dr["name"], (string)dr["lastName"], (string)dr["nameB"], (string)dr["isbn"])
+                                new EntClsReturnBook((int)dr["id"],(string)dr["identificationCard"], (string)dr["name"], (string)dr["lastName"], (string)dr["nameB"], (string)dr["isbn"])
                             );
                         }
                     }
