@@ -3,16 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="server">
  <ul id="menuContextual">
-<<<<<<< HEAD:BookAdminOperacionesCrud/proyectobookadmin_ParaPresentarSprint/bookadmin/bookadmin/org.smartech.gui/BusquedaLibro.master
         <li><a href="Autor.aspx">Agregar Libros</a></li>        
-=======
         <li><a href="RegistroLibro.aspx">Agregar Libros</a></li>
         <li><a href="Autor.aspx">Autor</a></li>
         <li><a href="Category.aspx">Categorias</a></li>
         <li><a href="Book.aspx">Libros</a></li>
         <li><a href="ResultSearch.aspx">Buscar Libros</a></li>
-
->>>>>>> 787846290ee106ccf6e17bbe6e46f207de8984ee:proyectobookadmin_ParaPresentarSprint/bookadmin/bookadmin/org.SmarTech.GUI/RegistroLibro.master
     </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" runat="server">

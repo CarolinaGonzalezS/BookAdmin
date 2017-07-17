@@ -8,18 +8,22 @@ namespace BookAdmin.org.SmarTech.entities
     public class EntClsSearch
     {
         #region Attributes
-
+        private string code;
         private string author;
         private string lastNameAuthor;
         private string editorial;
         private string state;
         private int stock;
-        private string book;
-        
+        private string book;        
         #endregion
 
         #region setter and getter
 
+        public string Code
+        {
+            get { return code; }
+            set { code = value; }
+        }        
         public string Book
         {
             get { return book; }
@@ -59,8 +63,9 @@ namespace BookAdmin.org.SmarTech.entities
 
         }
 
-        public EntClsSearch(string book, string state, int stock, string editorial, string author, string lastNameAuthor)
-        {                       
+        public EntClsSearch(string code,string book, string state, int stock, string editorial, string author, string lastNameAuthor)
+        {      
+            this.code=code;     
             this.book = book;
             this.state = state;
             this.stock = stock;

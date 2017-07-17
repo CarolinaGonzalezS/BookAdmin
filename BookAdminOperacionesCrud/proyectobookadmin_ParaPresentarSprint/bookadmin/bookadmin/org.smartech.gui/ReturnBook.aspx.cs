@@ -12,48 +12,46 @@ namespace BookAdmin.org.SmarTech.GUI
 {
     public partial class ReturnBook1 : System.Web.UI.Page
     {
-        static private List<EntClsReturnBook> lstReturnBook = new List<EntClsReturnBook>();
+        static private EntClsReturnBook objReturnBook = new EntClsReturnBook();
         static private BsnClsReturnBook bsn_returnBook = new BsnClsReturnBook();
         static private EntClsReturnBook ent_returnBook= new EntClsReturnBook();
         List<EntClsReturnBook> result = new List<EntClsReturnBook>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-          
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }            
+
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
 
             int search = Convert.ToInt32(textticket.Text);
-            foreach(EntClsReturnBook return_book in lstReturnBook)
+            ent_returnBook=bsn_returnBook.ReturnBook(search);
+            if(ent_returnBook.Isbn==null)
             {
-                if (return_book.Id == search)
-                {
-                    ent_returnBook = return_book;
-                }
-                else
-                {
-                    showReturnBook(ent_returnBook);
-                }
+                errorMessage();
+            }
+            else
+            {
+                showReturnBook(ent_returnBook);
+            }
 
             }
-            
-           
-            
-        }
+                     
 
         protected void showReturnBook(EntClsReturnBook ReturnBook)
         {
             textName.Text = ReturnBook.Name;
             textIdentificationCard.Text = ReturnBook.IdentificationCard;
             textName.Text = ReturnBook.Name;
-            textNameBook.Text = ReturnBook.NameB;
+            textLastname.Text = ReturnBook.LastName;
+            textNameBook.Text = ReturnBook.NameBook;
             textISBN.Text = ReturnBook.Isbn;
         }
-
-    
 
         protected void errorMessage()
         {
@@ -61,6 +59,14 @@ namespace BookAdmin.org.SmarTech.GUI
                     alert('No existe ningun Libro');
                     </script>";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+        }
+
+        protected void btnReturnBook_Click(object sender, EventArgs e)
+        {
+            bsn_returnBook.UpdateStateLoan(Convert.ToInt32(textticket.Text));
+            EntClsSearch ent_seachInReturn=bsn_returnBook.searchBook(textNameBook.Text);
+            int Newstock=bsn_returnBook.UpdateStock(ent_seachInReturn.Stock);
+            bsn_returnBook.UpdateStockBook(ent_seachInReturn.Code, Newstock);                                  
         }
     }
 }

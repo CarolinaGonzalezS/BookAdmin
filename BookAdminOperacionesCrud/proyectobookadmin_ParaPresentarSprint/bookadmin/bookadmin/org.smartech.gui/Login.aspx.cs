@@ -17,10 +17,25 @@ namespace BookAdmin.org.SmarTech.GUI
     public partial class Login : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {            
-            
+        {
+            if (Session["error"] == null)
+            {
+                
+            }
+            else 
+            {
+                errorMessage();
+            }
+        }
 
-        } 
+
+        protected void errorMessage()
+        {
+            string script = @"<script type='text/javascript'>
+                    alert('Datos erroneos, intentelo de nuevo');
+                    </script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+        }
 
         public string encryptPassw(string input)
         {

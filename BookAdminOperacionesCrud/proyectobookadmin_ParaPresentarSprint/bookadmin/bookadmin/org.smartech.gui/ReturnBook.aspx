@@ -4,6 +4,8 @@
 
     <tr>
         <td style="width: 693px">
+            <br />
+            <center>
             <asp:Label ID="Label1" runat="server" Text="Ticket:"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="textticket" runat="server"></asp:TextBox>
@@ -13,19 +15,24 @@
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;
+</center>
             <asp:Label ID="Label2" runat="server" Text="Datos Personales:"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
             <br />
-            <asp:Label ID="Label3" runat="server" Text="Nombre:"></asp:Label>
-            <asp:TextBox ID="textName" runat="server" Enabled="False"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="Label4" runat="server" Text="Cedula:"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="textIdentificationCard" runat="server" Enabled="False"></asp:TextBox>
             <br />
+            <br />
+            <asp:Label ID="Label3" runat="server" Text="Nombre:"></asp:Label>
+            &nbsp;&nbsp;
+            <asp:TextBox ID="textName" runat="server" Enabled="False"></asp:TextBox>
+            <br />
+            <br />
             <asp:Label ID="Label9" runat="server" Text="Apellido:"></asp:Label>
-            <asp:TextBox ID="textLastname" runat="server"></asp:TextBox>
+            &nbsp;&nbsp;
+            <asp:TextBox ID="textLastname" runat="server" Enabled="False"></asp:TextBox>
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;
@@ -40,6 +47,11 @@
             <asp:Label ID="Label8" runat="server" Text="ISBN:"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="textISBN" runat="server" Enabled="False"></asp:TextBox>
+            <br />
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnReturnBook" runat="server" onclick="btnReturnBook_Click" 
+                Text="Devolver Libro" />
         </td>
     </tr>
 

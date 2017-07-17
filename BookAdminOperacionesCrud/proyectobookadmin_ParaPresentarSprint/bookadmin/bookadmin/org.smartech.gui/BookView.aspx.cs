@@ -92,7 +92,7 @@ namespace BookAdmin.org.SmarTech.GUI
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             Session.Add("book",ent_book.Code);
-            Response.Redirect("Autor.aspx");
+            Response.Redirect("AuthorOfBook.aspx");
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)

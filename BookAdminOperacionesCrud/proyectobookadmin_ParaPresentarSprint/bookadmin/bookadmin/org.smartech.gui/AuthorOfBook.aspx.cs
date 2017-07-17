@@ -11,7 +11,7 @@ using BookAdmin.org.SmarTech.Bussines;
 
 namespace BookAdmin.org.SmarTech.GUI
 {
-    public partial class Autor : System.Web.UI.Page
+    public partial class AuthorOfBook : System.Web.UI.Page
     {
         static private List<EntClsAuthor> lstAuthor = new List<EntClsAuthor>();
         static private BsnClsAuthor bsn_author = new BsnClsAuthor();
@@ -22,6 +22,11 @@ namespace BookAdmin.org.SmarTech.GUI
         static EntClsAuthor obj_Auth = new EntClsAuthor();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+
             if (Session["book"] != null)
             {
                 ent_book = bsn_book.SearchBookForCode(Session["book"].ToString());
@@ -34,7 +39,7 @@ namespace BookAdmin.org.SmarTech.GUI
                 insert = 3;
                 Session["book"] = null;
             }
-            else 
+            else
             {
                 btnNextEditorial.Visible = true;
                 btnUpdateCont.Visible = false;
@@ -42,9 +47,8 @@ namespace BookAdmin.org.SmarTech.GUI
             if (!IsPostBack)
             {
                 rblAuthor.AutoPostBack = true;
-                
-            }
 
+            }
 
         }
 
@@ -102,6 +106,32 @@ namespace BookAdmin.org.SmarTech.GUI
             textNationality.Text = author.Nationality;
         }
 
+        protected void btnUpdateCont_Click(object sender, EventArgs e)
+        {
+
+            if (insert == 1)
+            {
+                Session["book"] = ent_book.Code;
+                bsn_author.insertAuthor(textName.Text, textLastName.Text, textNationality.Text);
+                ent_Auth = bsn_author.checkAuthor(textName.Text, textLastName.Text);
+                Session.Add("author", ent_Auth.Id);
+                Response.Redirect("EditorialOfBook.aspx");
+            }
+
+            if (insert == 0)
+            {
+                Session["book"] = ent_book.Code;
+                Session.Add("author", ent_Auth.Id);
+                Response.Redirect("EditorialOfBook.aspx");
+            }
+            else
+            {
+                Session["book"] = ent_book.Code;
+                Session.Add("author", ent_book.IdUser);
+                Response.Redirect("EditorialOfBook.aspx");
+            }
+        }
+
         protected void btnNextEditorial_Click(object sender, EventArgs e)
         {
             if (insert == 1)
@@ -109,23 +139,16 @@ namespace BookAdmin.org.SmarTech.GUI
                 bsn_author.insertAuthor(textName.Text, textLastName.Text, textNationality.Text);
                 ent_Auth = bsn_author.checkAuthor(textName.Text, textLastName.Text);
                 Session.Add("author", ent_Auth.Id);
-                Response.Redirect("Editorial.aspx");
+                Response.Redirect("EditorialOfBook.aspx");
             }
 
             if (insert == 0)
             {
                 Session.Add("author", ent_Auth.Id);
-                Response.Redirect("Editorial.aspx");
+                Response.Redirect("EditorialOfBook.aspx");
             }
 
         }
-
-        protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
         protected void clean()
         {
             textName.Text = "";
@@ -133,31 +156,6 @@ namespace BookAdmin.org.SmarTech.GUI
             textNationality.Text = "";
         }
 
-        protected void btnUpdateCont_Click(object sender, EventArgs e)
-        {
-            if (insert == 1)
-            {
-                Session["book"] = ent_book.Code;
-                bsn_author.insertAuthor(textName.Text, textLastName.Text, textNationality.Text);
-                ent_Auth = bsn_author.checkAuthor(textName.Text, textLastName.Text);
-                Session.Add("author", ent_Auth.Id);
-                Response.Redirect("Editorial.aspx");
-            }
-
-            if (insert == 0)
-            {
-                Session["book"] = ent_book.Code;
-                Session.Add("author", ent_Auth.Id);
-                Response.Redirect("Editorial.aspx");
-            }
-            else
-            {
-                Session["book"] = ent_book.Code;
-                Session.Add("author", ent_book.IdUser);
-                Response.Redirect("Editorial.aspx");
-            }
-
-        }
 
         protected void btnUpdateAuthor_Click(object sender, EventArgs e)
         {
@@ -173,15 +171,12 @@ namespace BookAdmin.org.SmarTech.GUI
                 </script>";
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
             }
+
         }
 
         protected void btnDeleteAuthor_Click(object sender, EventArgs e)
         {
-            List<EntClsWrite> lstWrite = new List<EntClsWrite>();
-            BsnClsWrite bsn_write = new BsnClsWrite();
-            int id = Convert.ToInt16(ddlAuthor.SelectedValue);
-            lstWrite = bsn_write.SearchBookForIdAuthor(id);
-            if (lstWrite.Count() == 0)
+            try
             {
                 bsn_author.deleteAuthor(Convert.ToInt16(ddlAuthor.SelectedValue));
 
@@ -194,14 +189,14 @@ namespace BookAdmin.org.SmarTech.GUI
                 </script>";
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
             }
-            else
+            catch 
             {
                 string script = @"<script type='text/javascript'>
                 
                 alert('No se puede Eliminar el Autor');
                 </script>";
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
-            }
+            }            
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Theme="Tema1" Language="C#" MasterPageFile="~/org.SmarTech.GUI/RegistroLibro.master" AutoEventWireup="true" CodeBehind="Book.aspx.cs" Inherits="BookAdmin.org.SmarTech.GUI.Book" %>
+﻿<%@ Page Title="" Theme="Tema1" Language="C#" MasterPageFile="~/org.SmarTech.GUI/BusquedaLibro.master" AutoEventWireup="true" CodeBehind="BookRegister.aspx.cs" Inherits="BookAdmin.org.SmarTech.GUI.BookRegister" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="contenidoPrincipal" runat="server">
 <table>
 <tr>
@@ -239,4 +239,5 @@
             </tr>
             </table>
 </table>
+
 </asp:Content>

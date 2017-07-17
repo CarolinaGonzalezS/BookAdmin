@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Theme="Tema1" Language="C#" MasterPageFile="~/org.SmarTech.GUI/BusquedaLibro.master" AutoEventWireup="true" CodeBehind="Autor.aspx.cs" Inherits="BookAdmin.org.SmarTech.GUI.Autor" %>
+﻿<%@ Page Title="" Theme="Tema1" Language="C#" MasterPageFile="~/org.SmarTech.GUI/BusquedaLibro.master" AutoEventWireup="true" CodeBehind="AuthorOfBook.aspx.cs" Inherits="BookAdmin.org.SmarTech.GUI.AuthorOfBook" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="contenidoPrincipal" runat="server">
-    <table style="width: 100%">
+<table style="width: 100%">
         <tr>
             <td>
                 &nbsp;</td>

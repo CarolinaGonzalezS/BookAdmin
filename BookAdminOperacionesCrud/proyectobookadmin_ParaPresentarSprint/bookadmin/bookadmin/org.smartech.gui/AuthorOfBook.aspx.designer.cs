@@ -10,25 +10,25 @@
 namespace BookAdmin.org.SmarTech.GUI {
     
     
-    public partial class Editorial {
+    public partial class AuthorOfBook {
         
         /// <summary>
-        /// Control rblEditorial.
+        /// Control rblAuthor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rblEditorial;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblAuthor;
         
         /// <summary>
-        /// Control ddlEditorial.
+        /// Control ddlAuthor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEditorial;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAuthor;
         
         /// <summary>
         /// Control Label1.
@@ -49,6 +49,15 @@ namespace BookAdmin.org.SmarTech.GUI {
         protected global::System.Web.UI.WebControls.TextBox textName;
         
         /// <summary>
+        /// Control btnUpdateAuthor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdateAuthor;
+        
+        /// <summary>
         /// Control Label2.
         /// </summary>
         /// <remarks>
@@ -58,13 +67,22 @@ namespace BookAdmin.org.SmarTech.GUI {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Control textCountry.
+        /// Control textLastName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textCountry;
+        protected global::System.Web.UI.WebControls.TextBox textLastName;
+        
+        /// <summary>
+        /// Control btnDeleteAuthor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeleteAuthor;
         
         /// <summary>
         /// Control Label3.
@@ -76,22 +94,13 @@ namespace BookAdmin.org.SmarTech.GUI {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Control textCity.
+        /// Control textNationality.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textCity;
-        
-        /// <summary>
-        /// Control btnNextBook.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNextBook;
+        protected global::System.Web.UI.WebControls.TextBox textNationality;
         
         /// <summary>
         /// Control btnNextEditorial.
@@ -101,15 +110,6 @@ namespace BookAdmin.org.SmarTech.GUI {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnNextEditorial;
-        
-        /// <summary>
-        /// Control btnBack.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBack;
         
         /// <summary>
         /// Control btnUpdateCont.

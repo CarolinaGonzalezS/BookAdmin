@@ -103,7 +103,7 @@ namespace BookAdmin.org.SmarTech.controllers
                         while (dr.Read())
                         {
                             booklist.Add(
-                                new EntClsSearch((string)dr["NameBook"], (string)dr["stateB"], (int)dr["stock"], (string)dr["nameEdit"], (string)dr["nameAuth"], (string)dr["lastName"])
+                                new EntClsSearch((string)dr["code"], (string)dr["NameBook"], (string)dr["stateB"], (int)dr["stock"], (string)dr["nameEdit"], (string)dr["nameAuth"], (string)dr["lastName"])
                             );
                         }
                     }
@@ -137,7 +137,7 @@ namespace BookAdmin.org.SmarTech.controllers
                         while (dr.Read())
                         {
                             bookList.Add(
-                                new EntClsSearch((string)dr["NameBook"], (string)dr["stateB"], (int)dr["stock"], (string)dr["nameEdit"], (string)dr["nameAuth"], (string)dr["lastName"])
+                                new EntClsSearch((string)dr["code"], (string)dr["NameBook"], (string)dr["stateB"], (int)dr["stock"], (string)dr["nameEdit"], (string)dr["nameAuth"], (string)dr["lastName"])
                             );
                         }
                     }
@@ -170,7 +170,7 @@ namespace BookAdmin.org.SmarTech.controllers
                         while (dr.Read())
                         {
                             bookList.Add(
-                                new EntClsSearch((string)dr["NameBook"], (string)dr["stateB"], (int)dr["stock"], (string)dr["nameEdit"], (string)dr["nameAuth"], (string)dr["lastName"])
+                                new EntClsSearch((string)dr["code"], (string)dr["NameBook"], (string)dr["stateB"], (int)dr["stock"], (string)dr["nameEdit"], (string)dr["nameAuth"], (string)dr["lastName"])
                             );
                         }
                     }
@@ -203,7 +203,7 @@ namespace BookAdmin.org.SmarTech.controllers
                         while (dr.Read())
                         {
                             bookList.Add(
-                                new EntClsSearch((string)dr["NameBook"], (string)dr["stateB"], (int)dr["stock"], (string)dr["nameEdit"], (string)dr["nameAuth"], (string)dr["lastName"])
+                                new EntClsSearch((string)dr["code"], (string)dr["NameBook"], (string)dr["stateB"], (int)dr["stock"], (string)dr["nameEdit"], (string)dr["nameAuth"], (string)dr["lastName"])
                             );
                         }
                     }
@@ -238,7 +238,7 @@ namespace BookAdmin.org.SmarTech.controllers
                         while (dr.Read())
                         {
                             bookList.Add(
-                                new EntClsSearch((string)dr["NameBook"], (string)dr["stateB"], (int)dr["stock"], (string)dr["nameEdit"], (string)dr["nameAuth"], (string)dr["lastName"])
+                                new EntClsSearch((string)dr["code"], (string)dr["NameBook"], (string)dr["stateB"], (int)dr["stock"], (string)dr["nameEdit"], (string)dr["nameAuth"], (string)dr["lastName"])
                             );
                         }
                     }
@@ -272,7 +272,7 @@ namespace BookAdmin.org.SmarTech.controllers
                         while (dr.Read())
                         {
                             bookList.Add(
-                                new EntClsSearch((string)dr["NameBook"], (string)dr["stateB"], (int)dr["stock"], (string)dr["nameEdit"], (string)dr["nameAuth"], (string)dr["lastName"])
+                                new EntClsSearch((string)dr["code"], (string)dr["NameBook"], (string)dr["stateB"], (int)dr["stock"], (string)dr["nameEdit"], (string)dr["nameAuth"], (string)dr["lastName"])
                             );
                         }
                     }
@@ -304,7 +304,7 @@ namespace BookAdmin.org.SmarTech.controllers
                         while (dr.Read())
                         {
                             bookList.Add(
-                                new EntClsSearch((string)dr["NameBook"], (string)dr["stateB"], (int)dr["stock"], (string)dr["nameEdit"], (string)dr["nameAuth"], (string)dr["lastName"])
+                                new EntClsSearch((string)dr["code"], (string)dr["NameBook"], (string)dr["stateB"], (int)dr["stock"], (string)dr["nameEdit"], (string)dr["nameAuth"], (string)dr["lastName"])
                             );
                         }
                     }
@@ -337,7 +337,7 @@ namespace BookAdmin.org.SmarTech.controllers
                         while (dr.Read())
                         {
                             bookList.Add(
-                                new EntClsSearch((string)dr["NameBook"], (string)dr["stateB"], (int)dr["stock"], (string)dr["nameEdit"], (string)dr["nameAuth"], (string)dr["lastName"])
+                                new EntClsSearch((string)dr["code"], (string)dr["NameBook"], (string)dr["stateB"], (int)dr["stock"], (string)dr["nameEdit"], (string)dr["nameAuth"], (string)dr["lastName"])
                             );
                         }
                     }

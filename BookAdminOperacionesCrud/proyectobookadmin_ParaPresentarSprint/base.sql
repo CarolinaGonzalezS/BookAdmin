@@ -68,7 +68,8 @@ id int identity(1,1) primary key not null,
 dateLoan date not null,
 dateLimit date null,
 identificationCard varchar(10) foreign key references Customer(identificationCard)not null,
-code varchar(10) foreign key references book(code) not null
+code varchar(10) foreign key references book(code) not null,
+stateL varchar(20) not null
 )
 
 create table Fine
@@ -227,10 +228,10 @@ select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,d
 where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 		editorial.name like @name  
 	
-create procedure ForNameBook
+alter procedure ForNameBook
 @name varchar(30)
 as
-select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 		Book.name like @name  
 	
@@ -437,18 +438,52 @@ exec SearchBookForCode 'sfgd'
 alter procedure ReturnBook 
 @id int
 as
-select Customer.identificationCard,Customer.name,Customer.lastName,Book.name,Book.isbn
+select Loan.id,Customer.identificationCard,Customer.name,Customer.lastName,Book.name as nameBook,Book.isbn
 from Loan,Customer,Book
-where book.code=Loan.code and customer.identificationCard=Loan.IdentificationCard and
-
-	Loan.id=@id
-
-exec ReturnBook 2
+where book.code=Loan.code and 
+		customer.identificationCard=Loan.IdentificationCard and
+		Loan.id=@id
+exec ReturnBook 1
 	
 select * from book
 select * from customer
 select * from loan
 select * from fine
-insert into dbo.Loan values('12/12/2015','01/02/2017','0000000001','333')		
+insert into dbo.Loan values('12/12/2016','12/01/2017','1723842314','1s34añ','pendiente')		
 exec 
+		
+update dbo.Book
+ set stock=12
+ where 	code='dgf457657'
+
+	
+CREATE TRIGGER Nonavailable
+ON Book
+AFTER UPDATE
+      AS
+BEGIN
+SET NOCOUNT ON;
+ update dbo.Book
+ set stateB='No disponible'
+ where stock=0
+END		
+
+create procedure UpdateStockBook
+@code varchar(10),
+@stock int
+as
+update dbo.Book
+ set stock=@stock,stateB='Disponible'
+ where code=@code and
+		@stock>0
+		
+
+
+create procedure UpdateStateLoan
+@id int
+as
+update dbo.Loan
+ set stateL='Finalizado'
+ where id=@id
+		
 		

@@ -70,9 +70,9 @@ namespace BookAdmin.org.SmarTech.controllers
             return id;
         }
 
-        public List<EntClsReturnBook> ReturnBook(int id)
+        public EntClsReturnBook ReturnBook(int id)
         {
-            List<EntClsReturnBook> loanlist = new List<EntClsReturnBook>();
+            EntClsReturnBook objReturn = new EntClsReturnBook();
             string storeProcedure = "ReturnBook";
             using (DbConnection con = dpf.CreateConnection())
             {
@@ -92,17 +92,82 @@ namespace BookAdmin.org.SmarTech.controllers
                     con.Open();
                     using (DbDataReader dr = cmd.ExecuteReader())
                     {
-                        while (dr.Read())
+                        if (dr.Read())
                         {
-                            loanlist.Add(
-                                new EntClsReturnBook((int)dr["id"],(string)dr["identificationCard"], (string)dr["name"], (string)dr["lastName"], (string)dr["nameB"], (string)dr["isbn"])
-                            );
+                            objReturn = new EntClsReturnBook((int)dr["id"], (string)dr["identificationCard"], (string)dr["name"], (string)dr["lastName"], (string)dr["nameBook"], (string)dr["isbn"]);
                         }
                     }
                 }
             }
-            return loanlist;
+            return objReturn;
         }
+
+        public int UpdateStateLoan(int id)
+        {
+            List<DbParameter> parameters = new List<DbParameter>();
+
+            DbParameter param1 = dpf.CreateParameter();
+            param1.Value = id;
+            param1.ParameterName = "id";
+            parameters.Add(param1);
+
+            return ejecuteNonQuery("UpdateStateLoan", parameters);
+        }
+
+
+        public int UpdateStockBook(string code, int stock)
+        {
+            List<DbParameter> parameters = new List<DbParameter>();
+
+            DbParameter param1 = dpf.CreateParameter();
+            param1.Value = code;
+            param1.ParameterName = "code";
+            parameters.Add(param1);
+
+            DbParameter param2 = dpf.CreateParameter();
+            param2.Value = stock;
+            param2.ParameterName = "stock";
+            parameters.Add(param2);
+
+            return ejecuteNonQuery("UpdateStockBook", parameters);
+        }
+
+        
+        public EntClsSearch searchBook(string name)
+        {
+            EntClsSearch objSearch = new EntClsSearch();
+            string storeProcedure = "ForNameBook";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbParameter param = cmd.CreateParameter();
+                    param.DbType = DbType.String;
+                    param.ParameterName = "name";
+                    param.Value = name;
+                    cmd.Parameters.Add(param);
+                    con.Open();
+                
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            objSearch = new EntClsSearch((string)dr["code"], (string)dr["NameBook"], (string)dr["stateB"], (int)dr["stock"], (string)dr["nameEdit"], (string)dr["nameAuth"], (string)dr["lastName"]);
+
+                        }
+
+                    }
+                }
+
+            }
+            return objSearch;
+        }
+
+
     }
 
 

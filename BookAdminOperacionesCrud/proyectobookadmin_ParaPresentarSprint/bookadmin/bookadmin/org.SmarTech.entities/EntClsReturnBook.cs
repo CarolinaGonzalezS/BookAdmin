@@ -37,12 +37,12 @@ namespace BookAdmin.org.SmarTech.entities
             get { return lastName; }
             set { lastName = value; }
         }
-        private string nameB;
+        private string nameBook;
 
-        public string NameB
+        public string NameBook
         {
-            get { return nameB; }
-            set { nameB = value; }
+            get { return nameBook; }
+            set { nameBook = value; }
         }
         private string isbn;
 
@@ -57,13 +57,13 @@ namespace BookAdmin.org.SmarTech.entities
         #region contructores
         public EntClsReturnBook() { }
 
-        public EntClsReturnBook(int id,string identificationCard, string name,string lastName,string nameB,string isbn) 
+        public EntClsReturnBook(int id, string identificationCard, string name, string lastName, string nameBook, string isbn) 
         {
             this.id = id;
             this.identificationCard = identificationCard;
             this.name = name;
             this.lastName = lastName;
-            this.nameB = nameB;
+            this.nameBook = nameBook;
             this.isbn = isbn;
         }
 

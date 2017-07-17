@@ -13,6 +13,7 @@ namespace BookAdmin.org.SmarTech.GUI
         {
             if (Session["admin"] == null)
             {
+                Session.Add("error", 1);
                 Response.Redirect("Login.aspx");
             }            
 

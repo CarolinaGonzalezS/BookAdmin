@@ -10,35 +10,38 @@ using BookAdmin.org.SmarTech.Bussines;
 
 namespace BookAdmin.org.SmarTech.GUI
 {
-    public partial class Editorial : System.Web.UI.Page
+    public partial class EditorialOfBook : System.Web.UI.Page
     {
         static List<EntClsEditorial> lstEditorial = new List<EntClsEditorial>();
         static BsnClsEditorial bsn_edit = new BsnClsEditorial();
         static EntClsEditorial ent_edit = new EntClsEditorial();
         static EntClsEditorial obj_edit = new EntClsEditorial();
         static EntClsBook ent_book = new EntClsBook();
-        static BsnClsBook bsn_book = new BsnClsBook(); 
+        static BsnClsBook bsn_book = new BsnClsBook();
         static int insert = 0;        
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
             if (Session["author"] == null)
             {
                 Response.Redirect("Autor.aspx");
             }
-            
+
             if (Session["book"] != null)
             {
-                 ent_book = bsn_book.SearchBookForCode(Session["book"].ToString());
-                 obj_edit = bsn_edit.checkEditorialForId(ent_book.IdEdit);
-                 textName.Text = obj_edit.Name;
-                 textCity.Text=obj_edit.City;
-                 textCountry.Text=obj_edit.Country;
-                 btnNextBook.Visible = true;                
-                 btnNextEditorial.Visible = false;
-                 btnUpdateCont.Enabled = true;
-                 insert = 3;                 
-                 Session["book"] = null;                 
+                ent_book = bsn_book.SearchBookForCode(Session["book"].ToString());
+                obj_edit = bsn_edit.checkEditorialForId(ent_book.IdEdit);
+                textName.Text = obj_edit.Name;
+                textCity.Text = obj_edit.City;
+                textCountry.Text = obj_edit.Country;
+                btnNextBook.Visible = true;
+                btnNextEditorial.Visible = false;
+                btnUpdateCont.Enabled = true;                
+                Session["book"] = null;
             }
 
             if (!IsPostBack)
@@ -56,8 +59,8 @@ namespace BookAdmin.org.SmarTech.GUI
                 textCountry.Enabled = true;
                 textCity.Enabled = true;
                 btnNextBook.Enabled = true;
-                insert = 1;
                 clean();
+                insert = 1;                
             }
             else
             {
@@ -81,6 +84,7 @@ namespace BookAdmin.org.SmarTech.GUI
             }
         }
 
+
         protected void ddlEditorial_SelectedIndexChanged(object sender, EventArgs e)
         {
             int valor = Convert.ToInt32(ddlEditorial.SelectedValue);
@@ -94,7 +98,8 @@ namespace BookAdmin.org.SmarTech.GUI
             ShowEditorial(ent_edit);
         }
 
-        protected void ShowEditorial(EntClsEditorial objEdit) {
+        protected void ShowEditorial(EntClsEditorial objEdit)
+        {
             textName.Text = objEdit.Name;
             textCountry.Text = objEdit.Country;
             textCity.Text = objEdit.City;
@@ -105,23 +110,11 @@ namespace BookAdmin.org.SmarTech.GUI
             textName.Text = "";
             textCity.Text = "";
             textCountry.Text = "";
-        }
-        
-        protected void btnNextBook_Click(object sender, EventArgs e)
-        {
-            if (insert == 1)
-            {
-                bsn_edit.insertEditorial(textName.Text, textCountry.Text, textCity.Text);
-                ent_edit = bsn_edit.checkEditorial(textName.Text);
-                Session.Add("edit", ent_edit.Id);
-                Response.Redirect("Book.aspx");
-            }
+        }        
 
-            if (insert == 0)
-            {                
-                Session.Add("edit", ent_edit.Id);
-                Response.Redirect("Book.aspx");
-            }            
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AuthorOfBook.aspx");
         }
 
         protected void btnUpdateCont_Click(object sender, EventArgs e)
@@ -141,21 +134,30 @@ namespace BookAdmin.org.SmarTech.GUI
                 Session.Add("edit", ent_edit.Id);
                 Response.Redirect("Book.aspx");
             }
-            else{
-            Session["book"] = ent_book.Code;
-            Session.Add("edit", ent_book.IdEdit);
-            Response.Redirect("Book.aspx");
-        }
+            else
+            {
+                Session["book"] = ent_book.Code;
+                Session.Add("edit", ent_book.IdEdit);
+                Response.Redirect("Book.aspx");
+            }
         }
 
-        protected void btnBack_Click(object sender, EventArgs e)
+        protected void btnNextBook_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Autor.aspx");
+            if (insert == 1)
+            {
+                bsn_edit.insertEditorial(textName.Text, textCountry.Text, textCity.Text);
+                ent_edit = bsn_edit.checkEditorial(textName.Text);
+                Session.Add("edit", ent_edit.Id);
+                Response.Redirect("Book.aspx");
+            }
+
+            if (insert == 0)
+            {
+                Session.Add("edit", ent_edit.Id);
+                Response.Redirect("BookRegister.aspx");
+            }
         }
-
-
-        
-
 
     }
 }
