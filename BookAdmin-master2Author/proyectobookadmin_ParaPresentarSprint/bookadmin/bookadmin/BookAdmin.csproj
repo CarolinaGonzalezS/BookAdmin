@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE8EFD49-E679-4C87-A9CB-1A583DFD72B5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BookAdmin</RootNamespace>
+    <AssemblyName>BookAdmin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Tema1\biblioteca.jpg" />
+    <Content Include="App_Themes\Tema1\fondo.png" />
+    <Content Include="App_Themes\Tema1\tema1.css" />
+    <Content Include="Global.asax" />
+    <Content Include="jquery\jquery-1.10.2.js" />
+    <Content Include="jquery\jquery-ui-1.10.4.custom.js" />
+    <Content Include="jquery\jquery-ui-1.10.4.custom.min.js" />
+    <Content Include="org.SmarTech.GUI\Autor.aspx" />
+    <Content Include="org.SmarTech.GUI\Book.aspx" />
+    <Content Include="org.SmarTech.GUI\BookView.aspx" />
+    <Content Include="org.SmarTech.GUI\css\animate.css" />
+    <Content Include="org.SmarTech.GUI\css\style.css" />
+    <Content Include="org.SmarTech.GUI\Editorial.aspx" />
+    <Content Include="org.SmarTech.GUI\FinalizarPrestamo.aspx" />
+    <Content Include="org.SmarTech.GUI\images\biblioteca.jpg" />
+    <Content Include="org.SmarTech.GUI\images\calendario.png" />
+    <Content Include="org.SmarTech.GUI\images\construccion.jpg" />
+    <Content Include="org.SmarTech.GUI\images\logo.jpg" />
+    <Content Include="org.SmarTech.GUI\Login.aspx" />
+    <Content Include="org.SmarTech.GUI\Principal.aspx" />
+    <Content Include="org.SmarTech.GUI\RegistroCliente.aspx" />
+    <Content Include="org.SmarTech.GUI\RegistroLibro.aspx" />
+    <Content Include="org.SmarTech.GUI\RegistroPrestamo.aspx" />
+    <Content Include="org.SmarTech.GUI\ResultCategorySearch.aspx" />
+    <Content Include="org.SmarTech.GUI\ResultSearch.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.Bussines\BsnClsAdministrator.cs" />
+    <Compile Include="org.SmarTech.Bussines\BsnClsAuthor.cs" />
+    <Compile Include="org.SmarTech.Bussines\BsnClsBook.cs" />
+    <Compile Include="org.SmarTech.Bussines\BsnClsCategory.cs" />
+    <Compile Include="org.SmarTech.Bussines\BsnClsCustomer.cs" />
+    <Compile Include="org.SmarTech.Bussines\BsnClsEditorial.cs" />
+    <Compile Include="org.SmarTech.Bussines\BsnClsLoan.cs" />
+    <Compile Include="org.SmarTech.Bussines\BsnClsSearch.cs" />
+    <Compile Include="org.SmarTech.Bussines\BsnClsWrite.cs" />
+    <Compile Include="org.SmarTech.controllers\CntClsAdministrator.cs" />
+    <Compile Include="org.SmarTech.controllers\CntClsAuthor.cs" />
+    <Compile Include="org.SmarTech.controllers\CntClsBook.cs" />
+    <Compile Include="org.SmarTech.controllers\CntClsCategory.cs" />
+    <Compile Include="org.SmarTech.controllers\CntClsCustomer.cs" />
+    <Compile Include="org.SmarTech.controllers\CntClsEditorial.cs" />
+    <Compile Include="org.SmarTech.controllers\CntClsLoan.cs" />
+    <Compile Include="org.SmarTech.controllers\CntClsSearch.cs" />
+    <Compile Include="org.SmarTech.controllers\CntClsWrite.cs" />
+    <Compile Include="org.SmarTech.entities\EntClsAdministrator.cs" />
+    <Compile Include="org.SmarTech.entities\EntClsAuthor.cs" />
+    <Compile Include="org.SmarTech.entities\EntClsBook.cs" />
+    <Compile Include="org.SmarTech.entities\EntClsCategory.cs" />
+    <Compile Include="org.SmarTech.entities\EntClsCustomer.cs" />
+    <Compile Include="org.SmarTech.entities\EntClsEditorial.cs" />
+    <Compile Include="org.SmarTech.entities\EntClsFine.cs" />
+    <Compile Include="org.SmarTech.entities\EntClsLoan.cs" />
+    <Compile Include="org.SmarTech.entities\EntClsSearch.cs" />
+    <Compile Include="org.SmarTech.entities\EntClsWrite.cs" />
+    <Compile Include="org.SmarTech.GUI\Autor.aspx.cs">
+      <DependentUpon>Autor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Autor.aspx.designer.cs">
+      <DependentUpon>Autor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Book.aspx.cs">
+      <DependentUpon>Book.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Book.aspx.designer.cs">
+      <DependentUpon>Book.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\BookView.aspx.cs">
+      <DependentUpon>BookView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\BookView.aspx.designer.cs">
+      <DependentUpon>BookView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\BusquedaLibro.master.cs">
+      <DependentUpon>BusquedaLibro.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\BusquedaLibro.master.designer.cs">
+      <DependentUpon>BusquedaLibro.master</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Editorial.aspx.cs">
+      <DependentUpon>Editorial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Editorial.aspx.designer.cs">
+      <DependentUpon>Editorial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\FinalizarPrestamo.aspx.cs">
+      <DependentUpon>FinalizarPrestamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\FinalizarPrestamo.aspx.designer.cs">
+      <DependentUpon>FinalizarPrestamo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Principal.aspx.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Principal.aspx.designer.cs">
+      <DependentUpon>Principal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Principal.Master.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Principal.Master.designer.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\RegistroCliente.aspx.cs">
+      <DependentUpon>RegistroCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\RegistroCliente.aspx.designer.cs">
+      <DependentUpon>RegistroCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\RegistroLibro.aspx.cs">
+      <DependentUpon>RegistroLibro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\RegistroLibro.aspx.designer.cs">
+      <DependentUpon>RegistroLibro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\RegistroLibro.master.cs">
+      <DependentUpon>RegistroLibro.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\RegistroLibro.master.designer.cs">
+      <DependentUpon>RegistroLibro.master</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\RegistroCliente.master.cs">
+      <DependentUpon>RegistroCliente.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\RegistroCliente.master.designer.cs">
+      <DependentUpon>RegistroCliente.master</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\RegistroPrestamo.aspx.cs">
+      <DependentUpon>RegistroPrestamo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\RegistroPrestamo.aspx.designer.cs">
+      <DependentUpon>RegistroPrestamo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\RegistroPrestamo.master.cs">
+      <DependentUpon>RegistroPrestamo.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\RegistroPrestamo.master.designer.cs">
+      <DependentUpon>RegistroPrestamo.master</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\ResultCategorySearch.aspx.cs">
+      <DependentUpon>ResultCategorySearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\ResultCategorySearch.aspx.designer.cs">
+      <DependentUpon>ResultCategorySearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\ResultSearch.aspx.cs">
+      <DependentUpon>ResultSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\ResultSearch.aspx.designer.cs">
+      <DependentUpon>ResultSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="org.SmarTech.GUI\Principal.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="org.SmarTech.GUI\RegistroCliente.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="org.SmarTech.GUI\BusquedaLibro.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="org.SmarTech.GUI\RegistroLibro.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="org.SmarTech.GUI\RegistroPrestamo.master" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52041</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
