@@ -9,12 +9,18 @@ namespace BookAdmin.org.SmarTech.GUI
 {
     public partial class FinalizarPrestamo : System.Web.UI.Page
     {
+        private static string code;
+        private static string nameCustomer;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["bookview"] == null)
-            {
-                Response.Redirect("BookView.aspx");
-            }
+
+            code = Convert.ToString(Session["bookview"]);
+            textCodeLoan.Text = code;
+
+            nameCustomer = Convert.ToString(Session["idCustomer"]);
+            textNameCustomer.Text = nameCustomer;
+
+            
         }
 
 

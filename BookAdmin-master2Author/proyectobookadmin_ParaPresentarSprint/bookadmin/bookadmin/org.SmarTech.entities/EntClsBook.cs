@@ -92,5 +92,14 @@ namespace BookAdmin.org.SmarTech.entities
         {
             this.name = name;
         }
+
+        public EntClsBook(string name, string code, int stock, string stateB)
+        {
+            this.name = name;
+            this.code = code;
+            this.stock = stock;
+            this.stateB = stateB;
+            
+        }
     }
 }

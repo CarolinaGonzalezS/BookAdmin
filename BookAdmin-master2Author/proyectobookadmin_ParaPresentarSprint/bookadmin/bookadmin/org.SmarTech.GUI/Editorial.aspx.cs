@@ -15,6 +15,9 @@ namespace BookAdmin.org.SmarTech.GUI
         static List<EntClsEditorial> lstEditorial = new List<EntClsEditorial>();
         static BsnClsEditorial bsn_edit = new BsnClsEditorial();
         static EntClsEditorial ent_edit = new EntClsEditorial();
+        public static BsnClsEditorial bsn_editorial = new BsnClsEditorial();
+        public static EntClsEditorial ent_editorial = new EntClsEditorial();
+        public static CntClsEditorial cnt_editorial = new CntClsEditorial();
         static int insert = 0;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -91,6 +94,58 @@ namespace BookAdmin.org.SmarTech.GUI
                 Session.Add("edit", ent_edit.Id);
                 Response.Redirect("Book.aspx");
             }
+        }
+
+        protected void btnUpdateEditorial_Click(object sender, EventArgs e)
+        {
+            //insertar el nuevo registro actualizado
+            textName.Enabled = true;
+            textCountry.Enabled = true;
+            textCity.Enabled = true;
+            
+                string valor = ddlEditorial.SelectedValue;
+                int valor2 = ddlEditorial.SelectedIndex + 1;
+                foreach (EntClsEditorial edit in lstEditorial)
+                {
+                    if (Convert.ToString(edit.Id) == valor)
+                    {
+                        ent_editorial = edit;
+                    }
+                }
+                cnt_editorial.updateEditorial(valor2, textName.Text, textCountry.Text, textCity.Text);
+                loadDrop();
+                //updateMessage();
+                clear();
+            
+            
+        }
+
+        public void loadDrop()
+        {
+            lstEditorial = bsn_editorial.listEditorial();
+            if (lstEditorial != null)
+            {
+                ddlEditorial.DataSource = lstEditorial;
+                ddlEditorial.DataValueField = "id";
+                ddlEditorial.DataTextField = "name";
+                ddlEditorial.DataBind();
+            }
+        }
+
+        protected void clear()
+        {
+            textName.Text = "";
+            textCountry.Text = "";
+            textCity.Text = "";
+
+        }
+
+        protected void updateMessage()
+        {
+            string script = @"<script type='text/javascript'>
+                    alert('Actualizacion exitosa');
+                    </script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
         }
 
     }

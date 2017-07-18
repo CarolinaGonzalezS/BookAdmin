@@ -40,42 +40,6 @@ namespace BookAdmin.org.SmarTech.GUI {
         protected global::System.Web.UI.WebControls.TextBox textTitle;
         
         /// <summary>
-        /// Control textIsbn.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textIsbn;
-        
-        /// <summary>
-        /// Control textDatePublish.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textDatePublish;
-        
-        /// <summary>
-        /// Control textEdit.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textEdit;
-        
-        /// <summary>
-        /// Control textCategory.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textCategory;
-        
-        /// <summary>
         /// Control textAuthor.
         /// </summary>
         /// <remarks>
@@ -101,6 +65,15 @@ namespace BookAdmin.org.SmarTech.GUI {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox textState;
+        
+        /// <summary>
+        /// Control textCodeBook.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textCodeBook;
         
         /// <summary>
         /// Control btnNextLoan.

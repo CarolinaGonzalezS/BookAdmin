@@ -244,6 +244,44 @@ namespace BookAdmin.org.SmarTech.controllers
                 }
             }
             return booklist;
-        } 
+        }
+        
+        public EntClsBook CheckBook2(string name)
+        {
+            EntClsBook obj_book = new EntClsBook();
+            string storeProcedure = "existBook";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbParameter param = cmd.CreateParameter();
+                    param.DbType = DbType.String;
+                    param.ParameterName = "name";
+                    param.Value = name;
+                    cmd.Parameters.Add(param);
+
+
+
+                    con.Open();
+
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            obj_book = new EntClsBook((string)dr["name"], (string)dr["code"],(int)dr["stock"],(string)dr["stateB"]);
+
+                        }
+
+                    }
+                }
+
+            }
+            return obj_book;
+        }
+
     }
 }

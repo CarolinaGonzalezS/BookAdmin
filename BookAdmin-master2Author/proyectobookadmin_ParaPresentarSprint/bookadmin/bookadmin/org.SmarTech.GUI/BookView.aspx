@@ -64,7 +64,7 @@
             <td class="style2">
                 &nbsp;</td>
             <td class="style2">
-                &nbsp;</td>
+                Ingrese el nombre del libro:</td>
             <td class="style2">
                 &nbsp;</td>
             <td class="style2">
@@ -90,7 +90,7 @@
             </td>
             <td class="style2">
                 <asp:Button ID="btnSearchBook" runat="server" onclick="btnSearchBook_Click" 
-                    Text="Buscar" />
+                    Text="BUSCAR" />
             </td>
             <td class="style2">
                 &nbsp;</td>
@@ -134,99 +134,7 @@
                 <asp:TextBox ID="textTitle" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
-                ISBN: </td>
-            <td>
-                <asp:TextBox ID="textIsbn" runat="server" Enabled="False"></asp:TextBox>
-            </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td>
-                Fecha de Publicacion: </td>
-            <td>
-                <asp:TextBox ID="textDatePublish" runat="server" Enabled="False"></asp:TextBox>
-            </td>
-            <td>
-                Editorial:</td>
-            <td>
-                <asp:TextBox ID="textEdit" runat="server" Enabled="False"></asp:TextBox>
-            </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td>
-                Categoria: </td>
-            <td>
-                <asp:TextBox ID="textCategory" runat="server" Enabled="False"></asp:TextBox>
-            </td>
-            <td>
-                Autor: </td>
+                Autor:</td>
             <td>
                 <asp:TextBox ID="textAuthor" runat="server" Enabled="False"></asp:TextBox>
             </td>
@@ -267,15 +175,104 @@
             <td>
                 &nbsp;</td>
             <td>
-                Stock: </td>
+                Stock:</td>
             <td>
                 <asp:TextBox ID="textStock" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
-                Estado: </td>
+                Estado:</td>
             <td>
                 <asp:TextBox ID="textState" runat="server" Enabled="False"></asp:TextBox>
             </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                Codigo Libro:</td>
+            <td>
+                <asp:TextBox ID="textCodeBook" runat="server" Enabled="False"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>

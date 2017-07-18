@@ -31,5 +31,11 @@ namespace BookAdmin.org.SmarTech.Bussines
             CntClsEditorial cnt_edit = new CntClsEditorial();
             return cnt_edit.listEditorialForid(id);
         }
+
+        public List<EntClsEditorial> listEditorial()
+        {
+            CntClsEditorial cnt_editorial = new CntClsEditorial();
+            return cnt_editorial.listEditorial();
+        }
     }
 }

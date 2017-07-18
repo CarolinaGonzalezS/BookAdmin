@@ -3,7 +3,7 @@
 <h1>REGISTRO PRESTAMOS</h1>
     <table style="width: 100%">
         <tr>
-            <td>
+            <td style="width: 11px">
                 &nbsp;</td>
             <td>
                 <br />
@@ -26,7 +26,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td style="width: 11px">
                 &nbsp;</td>
             <td colspan="2">
                 &nbsp;</td>
@@ -46,7 +46,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td style="width: 11px">
                 &nbsp;</td>
             <td colspan="2">
                 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -67,7 +67,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td style="width: 11px">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
@@ -87,12 +87,13 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td style="width: 11px">
                 &nbsp;</td>
             <td>
-                &nbsp;</td>
+                Codigo de Préstamo:</td>
             <td>
-                &nbsp;</td>
+                <asp:TextBox ID="textCodeLoan" runat="server"></asp:TextBox>
+            </td>
             <td>
                 &nbsp;</td>
             <td>
@@ -109,12 +110,58 @@
                 &nbsp;</td>
         </tr>
         <tr>
+            <td style="width: 11px">
+                &nbsp;</td>
             <td>
+                Nombre Cliente:</td>
+            <td>
+                <asp:TextBox ID="textNameCustomer" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 11px">
+                &nbsp;</td>
+            <td>
+                Nombre Libro:</td>
+            <td>
+                <asp:TextBox ID="textTitleBook" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 11px">
                 &nbsp;</td>
             <td>
                 Fecha de Inicio:</td>
             <td>
-                <asp:TextBox ID="txtDateLoan" runat="server" Enabled="False"></asp:TextBox>
+                <asp:TextBox ID="txtDateLoan" runat="server"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -132,12 +179,12 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td style="width: 11px">
                 &nbsp;</td>
             <td>
                 Fecha Limite:</td>
             <td>
-                <asp:TextBox ID="txtDateLimit" runat="server" Enabled="False"></asp:TextBox>
+                <asp:TextBox ID="txtDateLimit" runat="server"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -155,51 +202,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
+            <td style="width: 11px">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
@@ -222,7 +225,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td style="width: 11px">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
@@ -244,7 +247,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td style="width: 11px">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
@@ -266,7 +269,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td style="width: 11px">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
@@ -288,7 +291,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td style="width: 11px">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
@@ -310,7 +313,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td style="width: 11px">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
@@ -332,7 +335,7 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td style="width: 11px">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>

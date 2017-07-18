@@ -424,6 +424,8 @@ select id
 from dbo.Write
 where code=@code
 
+--exec listAuthorWithBook '122jk'
+
 create procedure AuthorforId
 @id int
 as
@@ -498,3 +500,8 @@ create procedure registerLoan
 as
 insert into dbo.Loan(dateLoan,dateLimit,identificationCard,code) 
 values(convert(date,@dateLoan),convert(date,@dateLimit),@identificationCard,@code)
+
+select * from dbo.Book
+
+select * from dbo.Loan
+

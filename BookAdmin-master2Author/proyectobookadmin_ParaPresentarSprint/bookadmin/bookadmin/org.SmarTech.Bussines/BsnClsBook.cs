@@ -21,6 +21,12 @@ namespace BookAdmin.org.SmarTech.Bussines
             return dtLibro.CheckBook(name);
         }
 
+        public EntClsBook checkBook2(string name)
+        {
+            CntClsBook dtLibro = new CntClsBook();
+            return dtLibro.CheckBook2(name);
+        }
+
         public int updateBook(string code, string isbn, string name, string datePublish, int idEdit, int idCateg, string stateB, int stock)
         {
             CntClsBook cnt_book = new CntClsBook();
