@@ -113,7 +113,7 @@
             <td style="width: 11px">
                 &nbsp;</td>
             <td>
-                Nombre Cliente:</td>
+                ID Cliente:</td>
             <td>
                 <asp:TextBox ID="textNameCustomer" runat="server"></asp:TextBox>
             </td>
@@ -136,7 +136,7 @@
             <td style="width: 11px">
                 &nbsp;</td>
             <td>
-                Nombre Libro:</td>
+                Codigo Libro:</td>
             <td>
                 <asp:TextBox ID="textTitleBook" runat="server"></asp:TextBox>
             </td>
