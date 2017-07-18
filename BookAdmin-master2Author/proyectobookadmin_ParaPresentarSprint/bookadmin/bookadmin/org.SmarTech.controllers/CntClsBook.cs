@@ -283,5 +283,22 @@ namespace BookAdmin.org.SmarTech.controllers
             return obj_book;
         }
 
+        public int updateStockBook(string code, int stock)
+        {
+            List<DbParameter> parameters = new List<DbParameter>();
+
+            DbParameter param1 = dpf.CreateParameter();
+            param1.Value = code;
+            param1.ParameterName = "code";
+            parameters.Add(param1);
+
+            DbParameter param2 = dpf.CreateParameter();
+            param2.Value = stock;
+            param2.ParameterName = "stock";
+            parameters.Add(param2);
+
+            return ejecuteNonQuery("updateStockBook", parameters);
+        }
+
     }
 }

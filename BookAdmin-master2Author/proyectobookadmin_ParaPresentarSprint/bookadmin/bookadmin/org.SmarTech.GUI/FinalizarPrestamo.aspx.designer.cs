@@ -13,49 +13,40 @@ namespace BookAdmin.org.SmarTech.GUI {
     public partial class FinalizarPrestamo {
         
         /// <summary>
-        /// Control textCodeLoan.
+        /// Control textIdCustomer.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textCodeLoan;
+        protected global::System.Web.UI.WebControls.TextBox textIdCustomer;
         
         /// <summary>
-        /// Control textNameCustomer.
+        /// Control textCodeBook.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textNameCustomer;
+        protected global::System.Web.UI.WebControls.TextBox textCodeBook;
         
         /// <summary>
-        /// Control textTitleBook.
+        /// Control textDateLoan.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textTitleBook;
+        protected global::System.Web.UI.WebControls.TextBox textDateLoan;
         
         /// <summary>
-        /// Control txtDateLoan.
+        /// Control textDateLimit.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDateLoan;
-        
-        /// <summary>
-        /// Control txtDateLimit.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDateLimit;
+        protected global::System.Web.UI.WebControls.TextBox textDateLimit;
         
         /// <summary>
         /// Control btnDoLoan.

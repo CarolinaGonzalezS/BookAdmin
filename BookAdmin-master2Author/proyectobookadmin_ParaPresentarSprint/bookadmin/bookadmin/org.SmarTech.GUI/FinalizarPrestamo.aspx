@@ -90,10 +90,9 @@
             <td style="width: 11px">
                 &nbsp;</td>
             <td>
-                Codigo de Préstamo:</td>
+                &nbsp;</td>
             <td>
-                <asp:TextBox ID="textCodeLoan" runat="server"></asp:TextBox>
-            </td>
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>
@@ -115,7 +114,7 @@
             <td>
                 ID Cliente:</td>
             <td>
-                <asp:TextBox ID="textNameCustomer" runat="server"></asp:TextBox>
+                <asp:TextBox ID="textIdCustomer" runat="server"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -138,7 +137,7 @@
             <td>
                 Codigo Libro:</td>
             <td>
-                <asp:TextBox ID="textTitleBook" runat="server"></asp:TextBox>
+                <asp:TextBox ID="textCodeBook" runat="server"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -161,7 +160,7 @@
             <td>
                 Fecha de Inicio:</td>
             <td>
-                <asp:TextBox ID="txtDateLoan" runat="server"></asp:TextBox>
+                <asp:TextBox ID="textDateLoan" runat="server"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -184,7 +183,7 @@
             <td>
                 Fecha Limite:</td>
             <td>
-                <asp:TextBox ID="txtDateLimit" runat="server"></asp:TextBox>
+                <asp:TextBox ID="textDateLimit" runat="server"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -209,7 +208,8 @@
             <td>
                 &nbsp;</td>
             <td>
-                <asp:Button ID="btnDoLoan" runat="server" Text="Prestar" />
+                <asp:Button ID="btnDoLoan" runat="server" Text="Prestar" 
+                    onclick="btnDoLoan_Click" />
             </td>
             <td>
                 &nbsp;</td>

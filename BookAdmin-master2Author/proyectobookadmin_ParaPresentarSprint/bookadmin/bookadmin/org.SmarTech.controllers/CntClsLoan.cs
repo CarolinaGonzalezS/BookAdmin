@@ -70,14 +70,9 @@ namespace BookAdmin.org.SmarTech.controllers
             return id;
         }
 
-        public int insertLoan(int id, string dateLoan, string dateLimit, string identificationCard, string code)
+        public int insertLoan(string dateLoan, string dateLimit, string identificationCard, string code)
         {
             List<DbParameter> parameters = new List<DbParameter>();
-
-            DbParameter param1 = dpf.CreateParameter();
-            param1.Value = id;
-            param1.ParameterName = "id";
-            parameters.Add(param1);
 
             DbParameter param2 = dpf.CreateParameter();
             param2.Value = dateLoan;

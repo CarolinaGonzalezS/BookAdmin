@@ -57,6 +57,7 @@ namespace BookAdmin.org.SmarTech.GUI
             else
             {
                 string idCustomer=Convert.ToString(Session["customer"]);
+                Session.Add("stock", stock);
                 Session.Add("bookview", ent_book.Code=textCodeBook.Text);
                 Session.Add("IdCustomer", idCustomer);
                 Response.Redirect("FinalizarPrestamo.aspx");

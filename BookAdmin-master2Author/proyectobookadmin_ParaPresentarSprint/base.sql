@@ -505,3 +505,22 @@ select * from dbo.Book
 
 select * from dbo.Loan
 
+alter proc insertLoan
+@dateLoan varchar(10),
+@dateLimit varchar(10),
+@identificationCard varchar(10),
+@code varchar(10)
+as
+insert into dbo.Loan 
+values(convert(date,@dateLoan),convert(date,@dateLimit),@identificationCard,@code)
+
+
+create procedure updateStockBook
+@stock int,
+@code varchar(10)
+as
+update dbo.Book set stock=@stock
+where code=@code
+
+select * from dbo.Loan
+select * from dbo.Book
