@@ -151,6 +151,42 @@ namespace BookAdmin.org.SmarTech.controllers
             return obj_customer;
         }
 
+
+        public EntClsCustomer CustomerSearch(string identificationCard)
+        {
+            EntClsCustomer ent_customer = new EntClsCustomer();
+            string storeProcedure = "CustomerSearch";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbParameter param = cmd.CreateParameter();
+                    param.DbType = DbType.String;
+                    param.ParameterName = "identificationCard";
+                    param.Value = identificationCard;
+                    cmd.Parameters.Add(param);
+
+                    con.Open();
+
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            ent_customer = new EntClsCustomer((string)dr["identificationCard"], (string)dr["name"], (string)dr["lastname"], (string)dr["phone"], (string)dr["celphone"], (string)dr["addres"], (string)dr["mail"]);
+
+                        }
+
+                    }
+                }
+
+            }
+            return ent_customer;
+        }
+
         
     }
 

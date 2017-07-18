@@ -43,5 +43,12 @@ namespace BookAdmin.org.SmarTech.Bussines
             return cnt_book.SearchBookForCode(code);
         }
 
+        public EntClsBook checkBook2(string name)
+        {
+            CntClsBook dtLibro = new CntClsBook();
+            return dtLibro.CheckBook2(name);
+        }
+
+
     }
 }

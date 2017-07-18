@@ -92,3 +92,4 @@ C:\Users\Pacha\Documents\BookAdmin\BookAdmin-master2Author\proyectobookadmin_Par
 C:\Users\Pacha\Documents\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.pdb
 C:\Users\Pacha\Documents\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.dll
 C:\Users\Pacha\Documents\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.pdb
+C:\Users\Pacha\Documents\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache

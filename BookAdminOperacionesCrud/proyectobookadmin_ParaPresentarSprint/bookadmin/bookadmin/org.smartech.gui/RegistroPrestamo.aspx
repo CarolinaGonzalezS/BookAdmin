@@ -6,6 +6,7 @@
             <td>
                 &nbsp;</td>
             <td>
+                <asp:Label ID="Label10" runat="server" Text="Ingrese un número de cédula: "></asp:Label>
                 <br />
             </td>
             <td>
@@ -28,17 +29,13 @@
         <tr>
             <td>
                 &nbsp;</td>
-            <td colspan="2">
-                <asp:RadioButtonList ID="rblLoan" runat="server"  Width="203px" 
-                    onselectedindexchanged="rblLoan_SelectedIndexChanged">
-                    <asp:ListItem Text="Nuevo" Value="1"></asp:ListItem>
-                    <asp:ListItem Text="Ya existe" Value="2"></asp:ListItem>
-                </asp:RadioButtonList>
+            <td colspan="3">
+                <asp:TextBox ID="txtIdCustomer" runat="server"></asp:TextBox>
             </td>
             <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
+                <asp:Button ID="btnCustomerSearch" runat="server" 
+                    onclick="btnCustomerSearch_Click" Text="Buscar Cliente" />
+            </td>
             <td>
                 &nbsp;</td>
             <td>
@@ -79,7 +76,83 @@
                 <asp:Label ID="Label4" runat="server" Text="Cédula:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textIdentifiCard" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtIdentificationCard" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                <asp:Label ID="Label3" runat="server" Text="Nombre:"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="txtName" runat="server" Enabled="False"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                <asp:Label ID="Label7" runat="server" Text="Apellido:"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                <asp:Label ID="Label5" runat="server" Text="Teléfono:"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="txtPhone" runat="server" Enabled="False"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                <asp:Label ID="Label9" runat="server" Text="Dirección:"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="txtAddress" runat="server" Enabled="False"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                <asp:Label ID="Label8" runat="server" Text="Cwlular:"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="txtCellPhone" runat="server"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -87,33 +160,7 @@
                 <asp:Label ID="Label6" runat="server" Text="Email:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textEmail" runat="server" Enabled="False"></asp:TextBox>
-            </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td>
-                <asp:Label ID="Label3" runat="server" Text="Nombre:"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="textName" runat="server" Enabled="False"></asp:TextBox>
-            </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                <asp:Label ID="Label5" runat="server" Text="Teléfono:"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="textPhone" runat="server" Enabled="False"></asp:TextBox>
+                <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -180,52 +227,9 @@
             <td>
                 &nbsp;</td>
             <td>
-                <asp:Button ID="btnNextBook" runat="server" Text="SIGUIENTE" Enabled="False" />
+                <asp:Button ID="btnNextBook" runat="server" Text="Seleccionar Cliente" 
+                    Enabled="False" />
             </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>

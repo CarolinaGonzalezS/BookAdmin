@@ -281,5 +281,63 @@ namespace BookAdmin.org.SmarTech.controllers
             return obj_book;
         }
 
+
+        public EntClsBook CheckBook2(string name)
+        {
+            EntClsBook obj_book = new EntClsBook();
+            string storeProcedure = "existBook";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbParameter param = cmd.CreateParameter();
+                    param.DbType = DbType.String;
+                    param.ParameterName = "name";
+                    param.Value = name;
+                    cmd.Parameters.Add(param);
+
+
+
+                    con.Open();
+
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            obj_book = new EntClsBook((string)dr["name"], (string)dr["code"], (int)dr["stock"], (string)dr["stateB"]);
+
+                        }
+
+                    }
+                }
+
+            }
+            return obj_book;
+        }
+
+        public int updateStockBook(string code, int stock)
+        {
+            List<DbParameter> parameters = new List<DbParameter>();
+
+            DbParameter param1 = dpf.CreateParameter();
+            param1.Value = code;
+            param1.ParameterName = "code";
+            parameters.Add(param1);
+
+            DbParameter param2 = dpf.CreateParameter();
+            param2.Value = stock;
+            param2.ParameterName = "stock";
+            parameters.Add(param2);
+
+            return ejecuteNonQuery("updateStockBook", parameters);
+        }
+
+
+
+
     }
 }

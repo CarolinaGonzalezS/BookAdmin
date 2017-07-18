@@ -58,11 +58,13 @@
     <Content Include="jquery\jquery-ui-1.10.4.custom.js" />
     <Content Include="jquery\jquery-ui-1.10.4.custom.min.js" />
     <Content Include="org.SmarTech.GUI\AuthorOfBook.aspx" />
+    <Content Include="org.SmarTech.GUI\BookLoan.aspx" />
     <Content Include="org.SmarTech.GUI\BookRegister.aspx" />
     <Content Include="org.SmarTech.GUI\BookView.aspx" />
     <Content Include="org.SmarTech.GUI\css\animate.css" />
     <Content Include="org.SmarTech.GUI\css\style.css" />
     <Content Include="org.SmarTech.GUI\EditorialOfBook.aspx" />
+    <Content Include="org.SmarTech.GUI\FinishLoan.aspx" />
     <Content Include="org.SmarTech.GUI\images\biblioteca.jpg" />
     <Content Include="org.SmarTech.GUI\images\calendario.png" />
     <Content Include="org.SmarTech.GUI\images\construccion.jpg" />
@@ -126,6 +128,13 @@
     <Compile Include="org.SmarTech.GUI\AuthorOfBook.aspx.designer.cs">
       <DependentUpon>AuthorOfBook.aspx</DependentUpon>
     </Compile>
+    <Compile Include="org.SmarTech.GUI\BookLoan.aspx.cs">
+      <DependentUpon>BookLoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\BookLoan.aspx.designer.cs">
+      <DependentUpon>BookLoan.aspx</DependentUpon>
+    </Compile>
     <Compile Include="org.SmarTech.GUI\BookRegister.aspx.cs">
       <DependentUpon>BookRegister.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -153,6 +162,13 @@
     </Compile>
     <Compile Include="org.SmarTech.GUI\EditorialOfBook.aspx.designer.cs">
       <DependentUpon>EditorialOfBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\FinishLoan.aspx.cs">
+      <DependentUpon>FinishLoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\FinishLoan.aspx.designer.cs">
+      <DependentUpon>FinishLoan.aspx</DependentUpon>
     </Compile>
     <Compile Include="org.SmarTech.GUI\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

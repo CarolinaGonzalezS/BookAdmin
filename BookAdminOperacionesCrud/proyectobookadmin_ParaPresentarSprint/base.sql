@@ -487,3 +487,27 @@ update dbo.Loan
  where id=@id
 		
 		
+create procedure CustomerSearch
+@identificationCard varchar(10)
+as
+select *
+from dbo.Customer
+where identificationCard = @identificationCard
+
+
+create proc insertLoan
+@dateLoan varchar(10),
+@dateLimit varchar(10),
+@identificationCard varchar(10),
+@code varchar(10)
+as
+insert into dbo.Loan 
+values(convert(date,@dateLoan),convert(date,@dateLimit),@identificationCard,@code)
+
+
+create procedure updateStockBook
+@stock int,
+@code varchar(10)
+as
+update dbo.Book set stock=@stock
+where code=@code

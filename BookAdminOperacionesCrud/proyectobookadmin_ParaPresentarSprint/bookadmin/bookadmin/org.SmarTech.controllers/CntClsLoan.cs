@@ -101,5 +101,32 @@ namespace BookAdmin.org.SmarTech.controllers
              
             return ejecuteNonQuery("insertLoan", parameters);
         }
+
+        public int insertLoan(string dateLoan, string dateLimit, string identificationCard, string code)
+        {
+            List<DbParameter> parameters = new List<DbParameter>();
+
+            DbParameter param2 = dpf.CreateParameter();
+            param2.Value = dateLoan;
+            param2.ParameterName = "dateLoan";
+            parameters.Add(param2);
+
+            DbParameter param3 = dpf.CreateParameter();
+            param3.Value = dateLimit;
+            param3.ParameterName = "dateLimit";
+            parameters.Add(param3);
+
+            DbParameter param4 = dpf.CreateParameter();
+            param4.Value = identificationCard;
+            param4.ParameterName = "identificationCard";
+            parameters.Add(param4);
+
+            DbParameter param5 = dpf.CreateParameter();
+            param5.Value = code;
+            param5.ParameterName = "code";
+            parameters.Add(param5);
+
+            return ejecuteNonQuery("insertLoan", parameters);
+        }
     }
 }

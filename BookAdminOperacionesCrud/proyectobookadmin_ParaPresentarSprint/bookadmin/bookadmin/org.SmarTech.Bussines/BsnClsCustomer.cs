@@ -21,5 +21,11 @@ namespace BookAdmin.org.SmarTech.Bussines
             CntClsCustomer cnt_customer = new CntClsCustomer();
             return cnt_customer.CheckCustomer(identificationCard);
         }
+
+        public EntClsCustomer CustomerSearch(string identificationCard)
+        {
+            CntClsCustomer cnt_customer = new CntClsCustomer();
+            return cnt_customer.CustomerSearch(identificationCard);
+        }
     }
 }
