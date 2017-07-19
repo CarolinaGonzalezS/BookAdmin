@@ -524,3 +524,19 @@ where code=@code
 
 select * from dbo.Loan
 select * from dbo.Book
+
+create proc reportLoan
+@identificationCard varchar(10)
+as
+select C.name,C.lastName,C.identificationCard,L.id,dateLoan,dateLimit,B.code,B.name
+from Customer C inner join Loan L on C.identificationCard=L.identificationCard
+	 inner join dbo.Book B on B.code = L.code 
+	 where C.identificationCard=@identificationCard
+	 
+select * from Customer
+select * from Book
+select * from Loan
+
+
+exec reportLoan '1733427101'
+

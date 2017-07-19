@@ -512,3 +512,11 @@ as
 update dbo.Book set stock=@stock
 where code=@code
 
+--procedimiento para el reporte del prestamo
+create proc reportLoan
+@identificationCard varchar(10)
+as
+select C.name,C.lastName,C.identificationCard,L.id,dateLoan,dateLimit,B.code,B.name
+from Customer C inner join Loan L on C.identificationCard=L.identificationCard
+	 inner join dbo.Book B on B.code = L.code 
+	 where C.identificationCard=@identificationCard
