@@ -494,7 +494,7 @@ select *
 from dbo.Customer
 where identificationCard = @identificationCard
 
-
+--procedimientos para el prestamo
 create proc insertLoan
 @dateLoan varchar(10),
 @dateLimit varchar(10),
@@ -511,3 +511,4 @@ create procedure updateStockBook
 as
 update dbo.Book set stock=@stock
 where code=@code
+

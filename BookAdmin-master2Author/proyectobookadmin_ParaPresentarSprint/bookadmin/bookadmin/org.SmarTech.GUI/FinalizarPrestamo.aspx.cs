@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using BookAdmin.org.SmarTech.entities;
 using BookAdmin.org.SmarTech.controllers;
 using BookAdmin.org.SmarTech.Bussines;
+using BookAdmin.Reportes;
+
 
 namespace BookAdmin.org.SmarTech.GUI
 {
@@ -57,6 +59,10 @@ namespace BookAdmin.org.SmarTech.GUI
 
             cnt_loan.insertLoan(textDateLoan.Text, textDateLimit.Text, textIdCustomer.Text, textCodeBook.Text);
             updateBook();
+
+            Session.Add("idCustomer", nameCustomer);
+            Response.Redirect("frm_PrestamoCliente.aspx");
+            
         }
 
 

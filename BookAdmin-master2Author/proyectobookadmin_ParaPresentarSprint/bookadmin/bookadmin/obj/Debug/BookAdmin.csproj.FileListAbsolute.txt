@@ -93,3 +93,5 @@ C:\Users\Pacha\Documents\BookAdmin\BookAdmin-master2Author\proyectobookadmin_Par
 C:\Users\Pacha\Documents\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.dll
 C:\Users\Pacha\Documents\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.pdb
 C:\Users\Pacha\Documents\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache
+C:\Users\Pacha\Documents\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.csproj.GenerateResource.Cache
+C:\Users\Pacha\Documents\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.org.SmarTech.GUI.rptPrestamoCliente.resources

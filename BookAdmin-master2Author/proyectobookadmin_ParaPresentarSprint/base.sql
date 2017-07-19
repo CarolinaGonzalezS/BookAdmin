@@ -505,7 +505,7 @@ select * from dbo.Book
 
 select * from dbo.Loan
 
-alter proc insertLoan
+create proc insertLoan
 @dateLoan varchar(10),
 @dateLimit varchar(10),
 @identificationCard varchar(10),
