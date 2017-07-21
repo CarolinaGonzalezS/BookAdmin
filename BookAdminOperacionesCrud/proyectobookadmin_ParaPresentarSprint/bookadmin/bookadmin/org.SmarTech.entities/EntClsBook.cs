@@ -120,7 +120,24 @@ namespace BookAdmin.org.SmarTech.entities
             this.code = code;
             this.stock = stock;
             this.stateB = stateB;
+        }
 
+
+        public EntClsBook(string code, string isbn, string name, string datePublish, int idCateg, string stateB, int stock)
+        {            
+            this.code = code;
+            this.isbn = isbn;
+            this.name = name;
+            this.datePublish = datePublish;            
+            this.idCateg = idCateg;            
+            this.stateB = stateB;
+            this.stock = stock;
+        }
+        
+        public EntClsBook(int idEdit)
+        {
+
+            this.idEdit = idEdit;
         }
 
     }

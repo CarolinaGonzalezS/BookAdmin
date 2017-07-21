@@ -247,10 +247,10 @@ namespace BookAdmin.org.SmarTech.controllers
         }
 
 
-        public EntClsBook SearchBookForCode(string code)
+        public EntClsBook SearchEditOfBook(string code)
         {
             EntClsBook obj_book = new EntClsBook();
-            string storeProcedure = "SearchBookForCode";
+            string storeProcedure = "SearchEditOfBook";
             using (DbConnection con = dpf.CreateConnection())
             {
                 con.ConnectionString = constr;
@@ -270,8 +270,8 @@ namespace BookAdmin.org.SmarTech.controllers
                     using (DbDataReader dr = cmd.ExecuteReader())
                     {
                         if (dr.Read())
-                        {                           
-                            obj_book = new EntClsBook((int)dr["id"], (string)dr["code"], (string)dr["isbn"], (string)dr["name"], (string)dr["datePublish"], (int)dr["idEdit"], (int)dr["idCateg"], (string)dr["stateB"], (int)dr["stock"], (int)dr["idadmin"]);
+                        {
+                            obj_book = new EntClsBook((int)dr["idEdit"]);
 
                         }
                     }
@@ -281,6 +281,39 @@ namespace BookAdmin.org.SmarTech.controllers
             return obj_book;
         }
 
+        public EntClsBook SearchBook(string code)
+        {
+            EntClsBook obj_book = new EntClsBook();
+            string storeProcedure = "SearchBook";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbParameter param = cmd.CreateParameter();
+                    param.DbType = DbType.String;
+                    param.ParameterName = "code";
+                    param.Value = code;
+                    cmd.Parameters.Add(param);
+
+                    con.Open();
+
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            obj_book = new EntClsBook((string)dr["code"], (string)dr["isbn"], (string)dr["name"], (string)dr["datePublish"], (int)dr["idCateg"], (string)dr["stateB"], (int)dr["stock"]);
+
+                        }
+                    }
+                }
+
+            }
+            return obj_book;
+        }
 
         public EntClsBook CheckBook2(string name)
         {

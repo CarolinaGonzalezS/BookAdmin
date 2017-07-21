@@ -9,6 +9,15 @@
         {
             height: 23px;
         }
+        .style3
+        {
+            width: 155px;
+        }
+        .style4
+        {
+            height: 23px;
+            width: 155px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="server">
@@ -19,7 +28,81 @@
         <tr>
             <td>
                 &nbsp;</td>
+            <td class="style3">
+                &nbsp;</td>
             <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td class="style3">
+                &nbsp;</td>
+            <td>
+                <asp:Button ID="btnNewBook" runat="server" onclick="btnNewBook_Click" 
+                    Text="Insertar Libro" />
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td class="style3">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td class="style3">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
@@ -46,7 +129,7 @@
         <tr>
             <td class="style2">
             </td>
-            <td class="style2">
+            <td class="style4">
             </td>
             <td class="style2">
             </td>
@@ -70,8 +153,8 @@
         <tr>
             <td>
                 &nbsp;</td>
-            <td>
-                <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <td class="style3">
+                <asp:Label ID="Label1" runat="server" Text="Titulo:"></asp:Label>
             </td>
             <td>
                 <asp:TextBox ID="textTitle" runat="server"></asp:TextBox>
@@ -79,7 +162,7 @@
             <td>
                 &nbsp;</td>
             <td>
-                <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label2" runat="server" Text="ISBN:"></asp:Label>
             </td>
             <td>
                 <asp:TextBox ID="textIsbn" runat="server"></asp:TextBox>
@@ -98,7 +181,7 @@
         <tr>
             <td>
                 &nbsp;</td>
-            <td>
+            <td class="style3">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
@@ -122,8 +205,8 @@
         <tr>
             <td>
                 &nbsp;</td>
-            <td>
-                <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+            <td class="style3">
+                <asp:Label ID="Label3" runat="server" Text="Fecha de publicacion:"></asp:Label>
             </td>
             <td>
                 <asp:TextBox ID="textDatePublish" runat="server"></asp:TextBox>
@@ -131,7 +214,7 @@
             <td>
                 &nbsp;</td>
             <td>
-                <asp:Label ID="Label8" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label8" runat="server" Text="Editorial:"></asp:Label>
             </td>
             <td>
                 <asp:TextBox ID="textEdit" runat="server"></asp:TextBox>
@@ -150,7 +233,7 @@
         <tr>
             <td>
                 &nbsp;</td>
-            <td>
+            <td class="style3">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
@@ -174,8 +257,8 @@
         <tr>
             <td>
                 &nbsp;</td>
-            <td>
-                <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+            <td class="style3">
+                <asp:Label ID="Label4" runat="server" Text="Categoria:"></asp:Label>
             </td>
             <td>
                 <asp:TextBox ID="textCategory" runat="server"></asp:TextBox>
@@ -183,7 +266,7 @@
             <td>
                 &nbsp;</td>
             <td>
-                <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label7" runat="server" Text="Autor:"></asp:Label>
             </td>
             <td>
                 <asp:TextBox ID="textAuthor" runat="server"></asp:TextBox>
@@ -202,7 +285,7 @@
         <tr>
             <td>
                 &nbsp;</td>
-            <td>
+            <td class="style3">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
@@ -226,8 +309,8 @@
         <tr>
             <td>
                 &nbsp;</td>
-            <td>
-                <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+            <td class="style3">
+                <asp:Label ID="Label5" runat="server" Text="Stock:"></asp:Label>
             </td>
             <td>
                 <asp:TextBox ID="textStock" runat="server"></asp:TextBox>
@@ -254,7 +337,7 @@
         <tr>
             <td>
                 &nbsp;</td>
-            <td>
+            <td class="style3">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
@@ -278,7 +361,7 @@
         <tr>
             <td>
                 &nbsp;</td>
-            <td>
+            <td class="style3">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>

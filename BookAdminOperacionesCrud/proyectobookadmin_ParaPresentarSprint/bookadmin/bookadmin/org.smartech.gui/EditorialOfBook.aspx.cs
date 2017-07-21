@@ -18,7 +18,8 @@ namespace BookAdmin.org.SmarTech.GUI
         static EntClsEditorial obj_edit = new EntClsEditorial();
         static EntClsBook ent_book = new EntClsBook();
         static BsnClsBook bsn_book = new BsnClsBook();
-        static int insert = 0;        
+        static int insert = 0;
+        private static string code = "";  
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,17 +34,27 @@ namespace BookAdmin.org.SmarTech.GUI
 
             if (Session["book"] != null)
             {
-                ent_book = bsn_book.SearchBookForCode(Session["book"].ToString());
+                ent_book = bsn_book.SearchEditorialOfBook(Session["book"].ToString());
                 obj_edit = bsn_edit.checkEditorialForId(ent_book.IdEdit);
                 textName.Text = obj_edit.Name;
                 textCity.Text = obj_edit.City;
-                textCountry.Text = obj_edit.Country;
-                btnNextBook.Visible = true;
-                btnNextEditorial.Visible = false;
-                btnUpdateCont.Enabled = true;                
+                textCountry.Text = obj_edit.Country;                
+                btnNextBook.Visible = false;
+                btnUpdateCont.Visible = true;
+                btnUpdateCont.Enabled = true;
+                code = Session["book"].ToString();
+                insert = 3;
                 Session["book"] = null;
             }
-
+            else
+            {
+                if (Session["regis"] != null)
+                {
+                    btnNextBook.Visible = true;                    
+                    btnUpdateCont.Visible = false;
+                }
+            }
+            
             if (!IsPostBack)
             {
                 rblEditorial.AutoPostBack = true;
@@ -121,24 +132,25 @@ namespace BookAdmin.org.SmarTech.GUI
         {
             if (insert == 1)
             {
-                Session["book"] = ent_book.Code;
+                Session["book"] = code;
                 bsn_edit.insertEditorial(textName.Text, textCountry.Text, textCity.Text);
                 ent_edit = bsn_edit.checkEditorial(textName.Text);
                 Session.Add("edit", ent_edit.Id);
-                Response.Redirect("Book.aspx");
+                Response.Redirect("BookRegister.aspx");
             }
 
             if (insert == 0)
             {
-                Session["book"] = ent_book.Code;
+                Session["book"] = code;                
                 Session.Add("edit", ent_edit.Id);
-                Response.Redirect("Book.aspx");
+                Response.Redirect("BookRegister.aspx");
             }
             else
             {
-                Session["book"] = ent_book.Code;
-                Session.Add("edit", ent_book.IdEdit);
-                Response.Redirect("Book.aspx");
+                Session["book"] = code;
+                ent_edit = bsn_edit.checkEditorial(textName.Text);
+                Session.Add("edit", ent_edit.Id);
+                Response.Redirect("BookRegister.aspx");
             }
         }
 
@@ -149,7 +161,7 @@ namespace BookAdmin.org.SmarTech.GUI
                 bsn_edit.insertEditorial(textName.Text, textCountry.Text, textCity.Text);
                 ent_edit = bsn_edit.checkEditorial(textName.Text);
                 Session.Add("edit", ent_edit.Id);
-                Response.Redirect("Book.aspx");
+                Response.Redirect("BookRegister.aspx");
             }
 
             if (insert == 0)

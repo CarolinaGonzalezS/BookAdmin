@@ -371,7 +371,7 @@
                 &nbsp;</td>
             <td>
                 <asp:Button ID="btnUpdateCont" runat="server" onclick="btnUpdateCont_Click" 
-                    Text="SIGUIENTE &gt;&gt;" Visible="False" />
+                    Text="SIGUIENTEA &gt;&gt;" Visible="False" />
             </td>
             <td>
                 &nbsp;</td>

@@ -11,18 +11,17 @@ passwordA varchar(256) not null
 create table Category
 (
 id int identity(1,1) primary key not null,
-name varchar(30) not null,
+name varchar(30) unique not null,
 descriptionC varchar(100) not null
 )
 
 create table Editorial
 (
 id int identity(1,1) primary key not null,
-name varchar(30) not null,
+name varchar(30) unique not null,
 country varchar(30) null,
 city varchar(30) null
 )
-
 
 create table Author
 (
@@ -35,8 +34,8 @@ nationality varchar(30) null
 create table Book
 (
 code varchar(10) primary key not null,
-isbn varchar(15) not null,
-name varchar(30)null,
+isbn varchar(15) unique not null,
+name varchar(30) unique null,
 datePublish date null,
 idEdit int foreign key references Editorial(id)not null,
 idCateg int foreign key references Category(id)not null,
@@ -322,14 +321,13 @@ create procedure updateBook
 @idEdit int, 
 @idCateg int,
 @stateB varchar(30),
-@stock int
+@stock int,
 as
 update dbo.Book 
 set isbn=@isbn,name=@name,datePublish=Convert(date,@datePublish),idEdit=@idEdit,idCateg=@idCateg,stateB=@stateB,stock=@stock
 where code=@code
 
-select *
-from book
+
 
 select *
 from write
@@ -468,6 +466,15 @@ SET NOCOUNT ON;
  where stock=0
 END		
 
+
+alter procedure DeleteWrite
+@id int,
+@code varchar(10)
+as
+delete dbo.Write
+where id=@id and
+		code like @code
+
 create procedure UpdateStockBook
 @code varchar(10),
 @stock int
@@ -505,6 +512,7 @@ insert into dbo.Loan
 values(convert(date,@dateLoan),convert(date,@dateLimit),@identificationCard,@code)
 
 
+
 create procedure updateStockBook
 @stock int,
 @code varchar(10)
@@ -520,3 +528,33 @@ select C.name,C.lastName,C.identificationCard,L.id,dateLoan,dateLimit,B.code,B.n
 from Customer C inner join Loan L on C.identificationCard=L.identificationCard
 	 inner join dbo.Book B on B.code = L.code 
 	 where C.identificationCard=@identificationCard
+
+exec CodeBook 'asd345'
+
+
+
+alter procedure SearchBook
+@code varchar(20)
+as
+select code,isbn,name,Convert(varchar(20),datePublish) as datePublish,idCateg,stateB,stock
+from dbo.Book
+where   Book.code like @code  
+
+
+create procedure SearchEditOfBook
+@code varchar(20)
+as
+select idEdit
+from dbo.Book,dbo.Editorial
+where   Book.code like @code 
+
+
+create procedure SearchAuthorOfBook
+@code varchar(20)
+as
+select id
+from dbo.Write
+where Write.code like @code
+		
+
+

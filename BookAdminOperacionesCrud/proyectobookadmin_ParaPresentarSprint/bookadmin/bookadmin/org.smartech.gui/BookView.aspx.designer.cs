@@ -13,6 +13,15 @@ namespace BookAdmin.org.SmarTech.GUI {
     public partial class BookView {
         
         /// <summary>
+        /// Control btnNewBook.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNewBook;
+        
+        /// <summary>
         /// Control ddlBook.
         /// </summary>
         /// <remarks>

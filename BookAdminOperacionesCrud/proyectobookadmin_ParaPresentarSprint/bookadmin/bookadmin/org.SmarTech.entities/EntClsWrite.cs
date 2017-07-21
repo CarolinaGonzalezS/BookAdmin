@@ -41,5 +41,6 @@ namespace BookAdmin.org.SmarTech.entities
         {
             this.idAuthor = idAuthor;
         }
+
     }
 }

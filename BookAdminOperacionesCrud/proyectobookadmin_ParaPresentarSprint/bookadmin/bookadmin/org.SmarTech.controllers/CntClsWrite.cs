@@ -92,6 +92,25 @@ namespace BookAdmin.org.SmarTech.controllers
             return ejecuteNonQuery("InsertWrite", parameters);
         }
 
+
+        public int deleteWrite(int id, string code)
+        {
+            List<DbParameter> parameters = new List<DbParameter>();
+
+            DbParameter param1 = dpf.CreateParameter();
+            param1.Value = id;
+            param1.ParameterName = "id";
+            parameters.Add(param1);
+
+            DbParameter param2 = dpf.CreateParameter();
+            param2.Value = code;
+            param2.ParameterName = "code";
+            parameters.Add(param2);
+
+
+            return ejecuteNonQuery("deleteWrite", parameters);
+        }
+
         public EntClsWrite listWriteForCode(string code)
         {
             EntClsWrite objWrite = new EntClsWrite();
@@ -124,6 +143,41 @@ namespace BookAdmin.org.SmarTech.controllers
 
             }
             return objWrite;
+        }
+
+
+        public EntClsWrite SearchAuthorOfBook(string code)
+        {
+            EntClsWrite obj_book = new EntClsWrite();
+            string storeProcedure = "SearchAuthorOfBook";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbParameter param = cmd.CreateParameter();
+                    param.DbType = DbType.String;
+                    param.ParameterName = "code";
+                    param.Value = code;
+                    cmd.Parameters.Add(param);
+
+                    con.Open();
+
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            obj_book = new EntClsWrite((int)dr["id"]);
+
+                        }
+                    }
+                }
+
+            }
+            return obj_book;
         }
 
 

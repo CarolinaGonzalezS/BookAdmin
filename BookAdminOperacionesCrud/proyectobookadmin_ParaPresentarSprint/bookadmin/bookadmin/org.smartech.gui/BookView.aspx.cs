@@ -22,6 +22,11 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["succe"] != null) 
+            {
+                SuccMessage();
+                Session["succe"] = null;
+            }
             if (Session["admin"] == null)
             {
                 Response.Redirect("Login.aspx");
@@ -100,5 +105,21 @@ namespace BookAdmin.org.SmarTech.GUI
             bsn_book.deleteBook(ent_book.Code);
             clean();
         }
+
+        protected void btnNewBook_Click(object sender, EventArgs e)
+        {
+            Session.Add("regis",1);
+            Response.Redirect("AuthorOfBook.aspx");
+        }
+
+        protected void SuccMessage()
+        {
+            string script = @"<script type='text/javascript'>
+                    alert('Operacion Exitosa');
+                    </script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+        }
+
+        
     }
 }
