@@ -8,63 +8,69 @@ namespace BookAdmin.org.SmarTech.entities
     public class EntClsReturnBook
     {
         #region Attributes
-        private int id;
 
+        private int id;
+        private string identificationCard;
+        private string name;
+        private string lastName;
+        private string nameBook;
+        private string code;
+
+        #endregion
+
+        #region Setters and Getters
         public int Id
         {
             get { return id; }
             set { id = value; }
         }
-        
-        private string identificationCard;
 
         public string IdentificationCard
         {
             get { return identificationCard; }
             set { identificationCard = value; }
         }
-        private string name;
-
+       
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
-        private string lastName;
-
+       
         public string LastName
         {
             get { return lastName; }
             set { lastName = value; }
         }
-        private string nameBook;
-
+        
         public string NameBook
         {
             get { return nameBook; }
             set { nameBook = value; }
         }
-        private string isbn;
 
-        public string Isbn
+        public string Code
         {
-            get { return isbn; }
-            set { isbn = value; }
+            get { return code; }
+            set { code = value; }
         }
 
         #endregion
 
-        #region contructores
-        public EntClsReturnBook() { }
+        #region Builders
+        
+        public EntClsReturnBook()
+        { 
+        }
 
-        public EntClsReturnBook(int id, string identificationCard, string name, string lastName, string nameBook, string isbn) 
+        public EntClsReturnBook(int id, string identificationCard, string name, string lastName, string nameBook, string code) 
         {
             this.id = id;
             this.identificationCard = identificationCard;
             this.name = name;
             this.lastName = lastName;
             this.nameBook = nameBook;
-            this.isbn = isbn;
+            this.code = code;
         }
 
         #endregion

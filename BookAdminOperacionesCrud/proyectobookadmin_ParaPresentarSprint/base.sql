@@ -230,7 +230,7 @@ where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write
 alter procedure ForNameBook
 @name varchar(30)
 as
-select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+select book.code,book.name as NameBook,stateB,stock,lastName,dbo.Editorial.name as nameEdit,dbo.Author.name as nameAuth from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 		Book.name like @name  
 	
@@ -307,10 +307,11 @@ create procedure registerLoan
 @dateLoan varchar(30),
 @dateLimit varchar(30),
 @identificationCard varchar(10),
-@code varchar (10)
+@code varchar (10),
+@stateL varchar(20)
 as
-insert into dbo.Loan(dateLoan,dateLimit,identificationCard,code) 
-values(convert(date,@dateLoan),convert(date,@dateLimit),@identificationCard,@code)
+insert into dbo.Loan(dateLoan,dateLimit,identificationCard,code,stateL) 
+values(convert(date,@dateLoan),convert(date,@dateLimit),@identificationCard,@code,@stateL)
 
 -- Actualizaciones de Tabla
 create procedure updateBook
@@ -436,17 +437,19 @@ exec SearchBookForCode 'sfgd'
 alter procedure ReturnBook 
 @id int
 as
-select Loan.id,Customer.identificationCard,Customer.name,Customer.lastName,Book.name as nameBook,Book.isbn
+select Loan.id,Customer.identificationCard,Customer.name,Customer.lastName,Book.name as nameBook,Book.code
 from Loan,Customer,Book
 where book.code=Loan.code and 
 		customer.identificationCard=Loan.IdentificationCard and
 		Loan.id=@id
+		
 exec ReturnBook 1
 	
 select * from book
 select * from customer
 select * from loan
 select * from fine
+
 insert into dbo.Loan values('12/12/2016','12/01/2017','1723842314','1s34añ','pendiente')		
 exec 
 		
@@ -454,7 +457,6 @@ update dbo.Book
  set stock=12
  where 	code='dgf457657'
 
-	
 CREATE TRIGGER Nonavailable
 ON Book
 AFTER UPDATE
@@ -464,9 +466,8 @@ SET NOCOUNT ON;
  update dbo.Book
  set stateB='No disponible'
  where stock=0
-END		
-
-
+END	
+	
 alter procedure DeleteWrite
 @id int,
 @code varchar(10)
@@ -475,24 +476,29 @@ delete dbo.Write
 where id=@id and
 		code like @code
 
-create procedure UpdateStockBook
+alter procedure UpdateStockBook
 @code varchar(10),
 @stock int
 as
 update dbo.Book
- set stock=@stock,stateB='Disponible'
- where code=@code and
-		@stock>0
+ set stock=@stock, stateB= 'Disponible'
+ where code=@code and @stock>0
+	
+create procedure updateStockBook
+@stock int,
+@code varchar(10)
+as
+update dbo.Book set stock=@stock
+where code=@code
+
+exec updateStockBook 3
 		
-
-
-create procedure UpdateStateLoan
+alter procedure UpdateStateLoan
 @id int
 as
 update dbo.Loan
  set stateL='Finalizado'
  where id=@id
-		
 		
 create procedure CustomerSearch
 @identificationCard varchar(10)
@@ -502,16 +508,15 @@ from dbo.Customer
 where identificationCard = @identificationCard
 
 --procedimientos para el prestamo
-create proc insertLoan
+alter procedure insertLoan
 @dateLoan varchar(10),
 @dateLimit varchar(10),
 @identificationCard varchar(10),
-@code varchar(10)
+@code varchar(10),
+@stateL varchar(20)
 as
 insert into dbo.Loan 
-values(convert(date,@dateLoan),convert(date,@dateLimit),@identificationCard,@code)
-
-
+values(convert(date,@dateLoan),convert(date,@dateLimit),@identificationCard,@code,@stateL)
 
 create procedure updateStockBook
 @stock int,
@@ -521,17 +526,15 @@ update dbo.Book set stock=@stock
 where code=@code
 
 --procedimiento para el reporte del prestamo
-create proc reportLoan
+alter proc reportLoan
 @identificationCard varchar(10)
 as
-select C.name,C.lastName,C.identificationCard,L.id,dateLoan,dateLimit,B.code,B.name
+select C.name,C.lastName,C.identificationCard,L.id,dateLoan,dateLimit,stateL,B.code,B.name
 from Customer C inner join Loan L on C.identificationCard=L.identificationCard
 	 inner join dbo.Book B on B.code = L.code 
 	 where C.identificationCard=@identificationCard
 
 exec CodeBook 'asd345'
-
-
 
 alter procedure SearchBook
 @code varchar(20)
@@ -540,6 +543,7 @@ select code,isbn,name,Convert(varchar(20),datePublish) as datePublish,idCateg,st
 from dbo.Book
 where   Book.code like @code  
 
+exec SearchBook '1001'
 
 create procedure SearchEditOfBook
 @code varchar(20)
@@ -548,13 +552,42 @@ select idEdit
 from dbo.Book,dbo.Editorial
 where   Book.code like @code 
 
-
 create procedure SearchAuthorOfBook
 @code varchar(20)
 as
 select id
 from dbo.Write
 where Write.code like @code
-		
 
+create procedure searchLoan
+@id int
+as
+select id, stateL
+from loan
+where id= @id 
 
+exec searchLoan 4
+
+alter procedure updateStateB
+@code varchar(10),
+@stock int
+as
+update dbo.Book
+ set stock=@stock, stateB= 'No Disponible'
+ where code=@code and @stock= 0 
+update dbo.Book
+ set stock=@stock, stateB= 'Disponible'
+ where code=@code and @stock>0 
+
+exec updateStateB 10001,0
+
+select * from book
+select * from loan
+
+insert into loan
+values
+('2016-12-12', '2017-01-12', '1723434203', '1001', 'En Proceso'),
+('2017-07-22', '2017-08-22', '1723434211', '2001', 'Finalizado'),
+('2017-07-22', '2017-08-22', '1723434203', '3001', 'En Proceso'),
+('2017-07-22', '2017-08-22', '1723434211', '3001', 'En Proceso'),
+('2017-07-22', '2017-08-22', '1723434203', '8001', 'En Proceso')

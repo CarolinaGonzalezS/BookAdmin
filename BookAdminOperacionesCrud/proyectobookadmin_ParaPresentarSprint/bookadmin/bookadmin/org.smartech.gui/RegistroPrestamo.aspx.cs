@@ -15,9 +15,13 @@ namespace BookAdmin.org.SmarTech.GUI
 
         static BsnClsCustomer bsn_customer = new BsnClsCustomer();
         static EntClsCustomer ent_customer = new EntClsCustomer(); 
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            } 
         }
 
         protected void btnCustomerSearch_Click(object sender, EventArgs e)
@@ -59,12 +63,7 @@ namespace BookAdmin.org.SmarTech.GUI
         protected void btnNextBook_Click(object sender, EventArgs e)
         {
             Session.Add("customer", ent_customer.IdentificationCard);
-            Response.Redirect("BookView.aspx");
+            Response.Redirect("BookLoan.aspx");
         }
-
-     
-
-
-        
     }
 }

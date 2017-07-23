@@ -352,7 +352,7 @@ namespace BookAdmin.org.SmarTech.controllers
             return obj_book;
         }
 
-        public int updateStockBook(string code, int stock)
+        public int updateStateB(string code, int stock)
         {
             List<DbParameter> parameters = new List<DbParameter>();
 
@@ -366,11 +366,8 @@ namespace BookAdmin.org.SmarTech.controllers
             param2.ParameterName = "stock";
             parameters.Add(param2);
 
-            return ejecuteNonQuery("updateStockBook", parameters);
+            return ejecuteNonQuery("updateStateB", parameters);
         }
-
-
-
 
     }
 }

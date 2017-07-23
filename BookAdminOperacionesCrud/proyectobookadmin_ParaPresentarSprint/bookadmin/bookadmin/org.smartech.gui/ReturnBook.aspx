@@ -44,14 +44,13 @@
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;
             <br />
-            <asp:Label ID="Label8" runat="server" Text="ISBN:"></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="textISBN" runat="server" Enabled="False"></asp:TextBox>
+            Codigo:&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="textCode" runat="server" Enabled="False"></asp:TextBox>
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnReturnBook" runat="server" onclick="btnReturnBook_Click" 
-                Text="Devolver Libro" />
+                Text="Devolver Libro" Enabled="False" />
         </td>
     </tr>
 

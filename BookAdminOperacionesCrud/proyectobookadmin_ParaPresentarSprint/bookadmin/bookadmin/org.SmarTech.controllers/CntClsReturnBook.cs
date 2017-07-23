@@ -94,7 +94,7 @@ namespace BookAdmin.org.SmarTech.controllers
                     {
                         if (dr.Read())
                         {
-                            objReturn = new EntClsReturnBook((int)dr["id"], (string)dr["identificationCard"], (string)dr["name"], (string)dr["lastName"], (string)dr["nameBook"], (string)dr["isbn"]);
+                            objReturn = new EntClsReturnBook((int)dr["id"], (string)dr["identificationCard"], (string)dr["name"], (string)dr["lastName"], (string)dr["nameBook"], (string)dr["code"]);
                         }
                     }
                 }
@@ -132,7 +132,6 @@ namespace BookAdmin.org.SmarTech.controllers
             return ejecuteNonQuery("UpdateStockBook", parameters);
         }
 
-        
         public EntClsSearch searchBook(string name)
         {
             EntClsSearch objSearch = new EntClsSearch();

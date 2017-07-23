@@ -70,39 +70,7 @@ namespace BookAdmin.org.SmarTech.controllers
             return id;
         }
 
-        public int insertLoan(int id, string dateLoan, string dateLimit, string identificationCard, string code)
-        {
-            List<DbParameter> parameters = new List<DbParameter>();
-
-            DbParameter param1 = dpf.CreateParameter();
-            param1.Value = id;
-            param1.ParameterName = "id";
-            parameters.Add(param1);
-
-            DbParameter param2 = dpf.CreateParameter();
-            param2.Value = dateLoan;
-            param2.ParameterName = "dateLoan";
-            parameters.Add(param2);
-
-            DbParameter param3 = dpf.CreateParameter();
-            param3.Value = dateLimit;
-            param3.ParameterName = "dateLimit";
-            parameters.Add(param3);
-
-            DbParameter param4 = dpf.CreateParameter();
-            param4.Value = identificationCard;
-            param4.ParameterName = "identificationCard";
-            parameters.Add(param4);
-
-            DbParameter param5 = dpf.CreateParameter();
-            param5.Value = code;
-            param5.ParameterName = "code";
-            parameters.Add(param5);
-             
-            return ejecuteNonQuery("insertLoan", parameters);
-        }
-
-        public int insertLoan(string dateLoan, string dateLimit, string identificationCard, string code)
+        public int insertLoan(string dateLoan, string dateLimit, string identificationCard, string code, string stateL)
         {
             List<DbParameter> parameters = new List<DbParameter>();
 
@@ -126,7 +94,47 @@ namespace BookAdmin.org.SmarTech.controllers
             param5.ParameterName = "code";
             parameters.Add(param5);
 
+            DbParameter param6 = dpf.CreateParameter();
+            param6.Value = stateL;
+            param6.ParameterName = "stateL";
+            parameters.Add(param6);
+
             return ejecuteNonQuery("insertLoan", parameters);
         }
+
+        public EntClsLoan searchLoan(int id)
+        {
+            EntClsLoan ent_loan = new EntClsLoan();
+            string storeProcedure = "searchLoan";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbParameter param = cmd.CreateParameter();
+                    param.DbType = DbType.String;
+                    param.ParameterName = "id";
+                    param.Value = id;
+                    cmd.Parameters.Add(param);
+
+                    con.Open();
+
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            ent_loan = new EntClsLoan((int)dr["id"], (string)dr["stateL"]);
+
+                        }
+                    }
+                }
+
+            }
+            return ent_loan;
+        }
+
     }
 }

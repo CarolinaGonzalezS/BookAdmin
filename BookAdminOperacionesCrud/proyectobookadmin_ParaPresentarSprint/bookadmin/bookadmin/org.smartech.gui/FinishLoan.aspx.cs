@@ -16,14 +16,21 @@ namespace BookAdmin.org.SmarTech.GUI
         private static string code;
         private static int stock;
         private static string nameCustomer;
+        private static EntClsBook ent_book = new EntClsBook();
         private static BsnClsBook bsn_book = new BsnClsBook();
         private static CntClsBook cnt_book = new CntClsBook();
+        private static EntClsLoan ent_loan = new EntClsLoan();
+        private static BsnClsLoan bsn_loan = new BsnClsLoan();
         private static CntClsLoan cnt_loan = new CntClsLoan();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            loadInformation();
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }  
 
+            loadInformation();
         }
 
         protected void loadInformation()
@@ -34,6 +41,9 @@ namespace BookAdmin.org.SmarTech.GUI
             nameCustomer = Convert.ToString(Session["idCustomer"]);
             textIdCustomer.Text = nameCustomer;
 
+            ent_loan.StateL = "En Proceso";
+            txtStateL.Text = ent_loan.StateL;
+
             //stock = Convert.ToInt32((Session["stock"]));
             //textCodeLoan.Text = Convert.ToString(stock);
 
@@ -41,9 +51,7 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void updateBook()
         {
-            stock = Convert.ToInt32(Session["stock"]);
-            cnt_book.updateStockBook(textCodeBook.Text, Convert.ToInt32(stock));
-
+        stock = Convert.ToInt32(Session["stock"]);
         }
 
         protected void btnDoLoan_Click(object sender, EventArgs e)
@@ -54,15 +62,13 @@ namespace BookAdmin.org.SmarTech.GUI
             nameCustomer = Convert.ToString(Session["idCustomer"]);
             textIdCustomer.Text = nameCustomer;
 
-            cnt_loan.insertLoan(textDateLoan.Text, textDateLimit.Text, textIdCustomer.Text, textCodeBook.Text);
+            cnt_loan.insertLoan(textDateLoan.Text, textDateLimit.Text, textIdCustomer.Text, textCodeBook.Text, txtStateL.Text);
             updateBook();
 
             Session.Add("idCustomer", nameCustomer);
             Response.Redirect("frm_PrestamoCliente.aspx");
             
         }
-
-
 
     }
 }

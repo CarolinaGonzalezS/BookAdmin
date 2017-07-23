@@ -12,9 +12,17 @@ namespace BookAdmin.org.SmarTech.Bussines
 {
     public class BsnClsLoan
     {
-        public int insertLoan(int id, string dateLoan,string dateLimit,string identificationCard, string code) { 
+        public int insertLoan(string dateLoan,string dateLimit,string identificationCard, string code, string stateL) { 
         CntClsLoan cnt_loan= new CntClsLoan();
-        return cnt_loan.insertLoan(id,dateLoan,dateLimit,identificationCard,code);
+        return cnt_loan.insertLoan(dateLoan,dateLimit,identificationCard,code, stateL);
         }
+
+        public EntClsLoan searchLoan(int id)
+        {
+            CntClsLoan cnt_loan = new CntClsLoan();
+            return cnt_loan.searchLoan(id);
+        }
+
+
     }
 }

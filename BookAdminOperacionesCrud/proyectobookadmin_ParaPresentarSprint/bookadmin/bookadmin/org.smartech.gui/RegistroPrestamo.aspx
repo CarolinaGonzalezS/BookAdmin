@@ -228,7 +228,7 @@
                 &nbsp;</td>
             <td>
                 <asp:Button ID="btnNextBook" runat="server" Text="Seleccionar Cliente" 
-                    Enabled="False" />
+                    Enabled="False" onclick="btnNextBook_Click" />
             </td>
             <td>
                 &nbsp;</td>

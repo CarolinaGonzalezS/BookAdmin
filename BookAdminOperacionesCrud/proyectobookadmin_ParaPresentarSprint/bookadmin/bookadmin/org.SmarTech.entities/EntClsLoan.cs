@@ -18,10 +18,11 @@ namespace BookAdmin.org.SmarTech.entities
         private string dateLimit;
         private string identificationCard;
         private string code;
+        private string stateL;
 
         #endregion
 
-        #region setter and getter
+        #region Setters and Getters
 
         public int Id
         {
@@ -53,21 +54,33 @@ namespace BookAdmin.org.SmarTech.entities
             set { code = value; }
         }
 
+        public string StateL
+        {
+            get { return stateL; }
+            set { stateL = value; }
+        }
+
         #endregion
 
-        #region contructores
+        #region Builders
 
-        public EntClsLoan() { }
+        public EntClsLoan() 
+        { 
+        }
 
-        public EntClsLoan(int id, string dateLoan, string dateLimit, string identificationCard, string code) {
+        public EntClsLoan(int id, string dateLoan, string dateLimit, string identificationCard, string code, string stateL) {
             this.id = id;
             this.dateLoan = dateLoan;
             this.dateLimit = dateLimit;
             this.identificationCard = identificationCard;
             this.code = code;
+            this.stateL = stateL;
         }
 
+        public EntClsLoan(int id, string stateL) {
+            this.id = id;
+            this.stateL = stateL;
+        }
         #endregion 
-
     }
 }

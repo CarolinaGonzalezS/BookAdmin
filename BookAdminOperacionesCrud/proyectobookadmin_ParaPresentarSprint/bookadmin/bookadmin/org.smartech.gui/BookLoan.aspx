@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/org.SmarTech.GUI/RegistroPrestamo.master" AutoEventWireup="true" CodeBehind="BookLoan.aspx.cs" Inherits="BookAdmin.org.SmarTech.GUI.BookLoan" %>
+﻿<%@ Page Title="" Theme="Tema1" Language="C#" MasterPageFile="~/org.SmarTech.GUI/RegistroPrestamo.master" AutoEventWireup="true" CodeBehind="BookLoan.aspx.cs" Inherits="BookAdmin.org.SmarTech.GUI.BookLoan" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="contenidoPrincipal" runat="server">
     <table style="width: 100%">
         <tr>
@@ -24,8 +24,7 @@
                 <asp:Label ID="Label1" runat="server" Text="Ingrese el Nombre del Libro"></asp:Label>
             </td>
             <td>
-                <asp:Button ID="btnSearchBook" runat="server" Text="BUSCAR" />
-            </td>
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>
@@ -37,10 +36,12 @@
             <td>
                 &nbsp;</td>
             <td>
-                <asp:TextBox ID="txtCodeBook" runat="server" Width="218px"></asp:TextBox>
+                <asp:TextBox ID="txtSearchBook" runat="server" Width="218px"></asp:TextBox>
             </td>
             <td>
-                &nbsp;</td>
+                <asp:Button ID="btnSearchBook" runat="server" Text="Buscar" 
+                    onclick="btnSearchBook_Click" />
+            </td>
             <td>
                 &nbsp;</td>
             <td>
@@ -67,13 +68,13 @@
                 <asp:Label ID="Label2" runat="server" Text="Título:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textTitle" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtTitle" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 <asp:Label ID="Label5" runat="server" Text="Autor:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textAuthor" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtAuthor" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -99,13 +100,13 @@
                 <asp:Label ID="Label3" runat="server" Text="Stock:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textStock" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtStock" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 <asp:Label ID="Label6" runat="server" Text="Estado:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textState" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtStateB" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -131,7 +132,7 @@
                 <asp:Label ID="Label4" runat="server" Text="Código del Libro:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textCodeBook" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtCode" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -165,7 +166,7 @@
                 &nbsp;</td>
             <td>
                 <asp:Button ID="btnNextLoan" runat="server" onclick="btnNextLoan_Click" 
-                    Text="Seleccionar Libro" />
+                    Text="Seleccionar Libro" Enabled="False" />
             </td>
             <td>
                 &nbsp;</td>

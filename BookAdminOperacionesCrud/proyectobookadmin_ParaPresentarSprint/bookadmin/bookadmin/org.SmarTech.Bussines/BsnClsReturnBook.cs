@@ -16,12 +16,11 @@ namespace BookAdmin.org.SmarTech.Bussines
 
         }
 
-        public int UpdateStock(int stockPresent) 
+        public int UpdateStock(int stockPresent)
         {
             int newStock = stockPresent + 1;
             return newStock;
         }
-
 
         public int UpdateStockBook(string code, int stock){     
             CntClsReturnBook cnt_returnBook= new CntClsReturnBook();
@@ -32,6 +31,7 @@ namespace BookAdmin.org.SmarTech.Bussines
             CntClsReturnBook cnt_returnBook= new CntClsReturnBook();
             return cnt_returnBook.UpdateStateLoan(id);
         }
+
         public EntClsSearch searchBook(string name) 
         {
             CntClsReturnBook cnt_returnBook= new CntClsReturnBook();

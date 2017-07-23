@@ -145,7 +145,6 @@ namespace BookAdmin.org.SmarTech.controllers
             return objWrite;
         }
 
-
         public EntClsWrite SearchAuthorOfBook(string code)
         {
             EntClsWrite obj_book = new EntClsWrite();

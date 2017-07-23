@@ -22,6 +22,15 @@ namespace BookAdmin.org.SmarTech.GUI {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
+        /// Control txtSearchBook.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSearchBook;
+        
+        /// <summary>
         /// Control btnSearchBook.
         /// </summary>
         /// <remarks>
@@ -29,15 +38,6 @@ namespace BookAdmin.org.SmarTech.GUI {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearchBook;
-        
-        /// <summary>
-        /// Control txtCodeBook.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodeBook;
         
         /// <summary>
         /// Control Label2.
@@ -49,13 +49,13 @@ namespace BookAdmin.org.SmarTech.GUI {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Control textTitle.
+        /// Control txtTitle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textTitle;
+        protected global::System.Web.UI.WebControls.TextBox txtTitle;
         
         /// <summary>
         /// Control Label5.
@@ -67,13 +67,13 @@ namespace BookAdmin.org.SmarTech.GUI {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// Control textAuthor.
+        /// Control txtAuthor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textAuthor;
+        protected global::System.Web.UI.WebControls.TextBox txtAuthor;
         
         /// <summary>
         /// Control Label3.
@@ -85,13 +85,13 @@ namespace BookAdmin.org.SmarTech.GUI {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Control textStock.
+        /// Control txtStock.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textStock;
+        protected global::System.Web.UI.WebControls.TextBox txtStock;
         
         /// <summary>
         /// Control Label6.
@@ -103,13 +103,13 @@ namespace BookAdmin.org.SmarTech.GUI {
         protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// Control textState.
+        /// Control txtStateB.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textState;
+        protected global::System.Web.UI.WebControls.TextBox txtStateB;
         
         /// <summary>
         /// Control Label4.
@@ -121,13 +121,13 @@ namespace BookAdmin.org.SmarTech.GUI {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// Control textCodeBook.
+        /// Control txtCode.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textCodeBook;
+        protected global::System.Web.UI.WebControls.TextBox txtCode;
         
         /// <summary>
         /// Control btnNextLoan.
