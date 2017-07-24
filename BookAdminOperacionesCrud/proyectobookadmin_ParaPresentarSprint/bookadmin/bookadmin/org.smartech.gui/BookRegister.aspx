@@ -203,7 +203,8 @@
                 <td class="style2" colspan="3">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnRegister" runat="server" Text="REGISTRAR" 
-                        onclick="buttonRegister_Click" Width="239px" Enabled="False" />
+                        onclick="buttonRegister_Click" Width="239px" Enabled="False" 
+                        Visible="False" />
                 </td>
                 <td>
                     &nbsp;</td>
@@ -224,7 +225,7 @@
                 <td class="style2" colspan="2">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnUpdate" runat="server" onclick="btnUpdate_Click" 
-                        Text="FINALIZAR ACTUALIZACION" Enabled="False" />
+                        Text="FINALIZAR ACTUALIZACION" Enabled="False" Visible="False" />
                 </td>
                 <td>
                     &nbsp;</td>

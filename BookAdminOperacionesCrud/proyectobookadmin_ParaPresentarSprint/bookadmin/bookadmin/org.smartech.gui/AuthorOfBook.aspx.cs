@@ -37,8 +37,7 @@ namespace BookAdmin.org.SmarTech.GUI
                 textName.Text = ent_Auth.Name;
                 textLastName.Text = ent_Auth.LastName;
                 textNationality.Text = ent_Auth.Nationality;
-                btnUpdateCont.Visible = true;
-                btnNextEditorial.Visible = false;
+                btnUpdateCont.Visible = true;                
                 insert = 3;
                 code = Session["book"].ToString();
                 Session["book"] = null;
@@ -47,8 +46,7 @@ namespace BookAdmin.org.SmarTech.GUI
             {
                 if(Session["regis"]!=null)
                 {
-                    btnNextEditorial.Visible = true;
-                    btnUpdateCont.Visible = false;
+                    btnNextEditorial.Visible = true;                    
                 }                
             }
             if (!IsPostBack)

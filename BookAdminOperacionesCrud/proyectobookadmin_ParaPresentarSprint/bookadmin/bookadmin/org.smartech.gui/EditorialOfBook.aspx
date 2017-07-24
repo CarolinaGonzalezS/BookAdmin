@@ -320,10 +320,7 @@
                 &nbsp;</td>
             <td>
                 
-                <asp:Button ID="btnNextBook" runat="server" onclick="btnNextBook_Click" 
-                    Text="SIGUIENTE &gt;&gt;" />
-                
-            </td><asp:Button ID="btnNextEditorial" runat="server" Enabled="False" 
+                &nbsp;</td><asp:Button ID="btnNextEditorial" runat="server" Enabled="False" 
                     Text="Siguiente" />
             <td>
                 &nbsp;</td>
@@ -368,7 +365,11 @@
             <td>
                 &nbsp;</td>
             <td>
-                &nbsp;</td>
+                
+                <asp:Button ID="btnNextBook" runat="server" onclick="btnNextBook_Click" 
+                    Text="SIGUIENTE &gt;&gt;" Visible="False" />
+                
+            </td>
             <td>
                 <asp:Button ID="btnUpdateCont" runat="server" onclick="btnUpdateCont_Click" 
                     Text="SIGUIENTEA &gt;&gt;" Visible="False" />

@@ -12,7 +12,7 @@ namespace BookAdmin.org.SmarTech.Bussines
         public int insertEditorial(string name, string country, string city)
         {
             CntClsEditorial cnt_edit = new CntClsEditorial();
-            return cnt_edit.insertEditorial(name,country,city);
+            return cnt_edit.insertEditorial(name, country, city);
         }
         public EntClsEditorial checkEditorial(string name)
         {
@@ -30,12 +30,6 @@ namespace BookAdmin.org.SmarTech.Bussines
         {
             CntClsEditorial cnt_edit = new CntClsEditorial();
             return cnt_edit.listEditorialForid(id);
-        }
-
-        public List<EntClsEditorial> listEditorial()
-        {
-            CntClsEditorial cnt_editorial = new CntClsEditorial();
-            return cnt_editorial.listEditorial();
         }
     }
 }

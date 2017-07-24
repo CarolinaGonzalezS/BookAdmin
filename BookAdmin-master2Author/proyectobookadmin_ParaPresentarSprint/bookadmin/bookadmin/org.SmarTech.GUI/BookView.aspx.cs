@@ -14,73 +14,115 @@ namespace BookAdmin.org.SmarTech.GUI
     {
         private static BsnClsBook bsn_book = new BsnClsBook();
         private static EntClsBook ent_book = new EntClsBook();
-        private static CntClsBook cnt_book = new CntClsBook();
         private static List<EntClsBook> listBook = new List<EntClsBook>();
         public static BsnClsAuthor bsn_auth = new BsnClsAuthor();
         public static BsnClsEditorial bsn_edit=new BsnClsEditorial();
         public static BsnClsCategory bsn_cate = new BsnClsCategory();
         public static BsnClsWrite bsn_write = new BsnClsWrite();
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["customer"] == null)
+            if (Session["succe"] != null) 
             {
-                Response.Redirect("RegistroPrestamo.aspx");
+                SuccMessage();
+                Session["succe"] = null;
             }
-        }
-
-        protected void showBook(EntClsBook ent_book) 
-        {
-            textTitle.Text = ent_book.Name;
-            textCodeBook.Text = ent_book.Code;
-            textStock.Text = Convert.ToString(ent_book.Stock);
-            textState.Text = ent_book.StateB;
-            EntClsWrite ent_write = bsn_write.listWriteForCode(ent_book.Code);
-            EntClsAuthor ent_author = bsn_auth.checkAuthorForId(ent_write.IdAuthor);
-            textAuthor.Text = ent_author.Name + ' '+ ent_author.LastName;   
-        }
-
-        protected void btnDoLoan_Click(object sender, EventArgs e)
-        {
-            int stock = Convert.ToInt32(textStock.Text);
-            stock = stock - 1;
-            //textStock.Text = Convert.ToString(stock);
-
-
-            if (stock == 0)
+            if (Session["admin"] == null)
             {
-
-                updateMessage();
-
+                Response.Redirect("Login.aspx");
             }
-            else
+            if (!IsPostBack)
             {
-                string idCustomer=Convert.ToString(Session["customer"]);
-                Session.Add("stock", stock);
-                Session.Add("bookview", ent_book.Code=textCodeBook.Text);
-                Session.Add("IdCustomer", idCustomer);
-                Response.Redirect("FinalizarPrestamo.aspx");
-            }
-
+                listAdd();
+                ddlBook.AutoPostBack = true;
+            }  
             
         }
 
-        protected void btnSearchBook_Click(object sender, EventArgs e)
+        public void listAdd()
         {
-            string search = txtCodeBook.Text;
-            EntClsBook book = bsn_book.checkBook2(search);
-            showBook(book);
-            btnNextLoan.Enabled = true;
+            listBook = bsn_book.listBook();
+            if (listBook != null)
+            {
+
+                ddlBook.DataSource = listBook;
+                ddlBook.DataValueField = "code";
+                ddlBook.DataTextField = "name";
+                ddlBook.DataBind();
+            }
         }
 
-        protected void updateMessage()
+        protected void ddlBook_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string valor = ddlBook.SelectedValue;
+            textAuthor.Text = valor;            
+            foreach (EntClsBook book in listBook)
+            {
+                if (book.Code == valor)
+                {
+                    ent_book = book;
+                }
+            }
+            ShowBook(ent_book);             
+        }
+
+        protected void ShowBook(EntClsBook book) 
+        {
+            textTitle.Text = book.Name;
+            textIsbn.Text = book.Isbn;
+            textDatePublish.Text = book.DatePublish;
+            textStock.Text = Convert.ToString(book.Stock);
+            textState.Text = book.StateB;
+            EntClsCategory ent_categ=bsn_cate.listCategoryForid(book.IdCateg);
+            textCategory.Text=ent_categ.Name;
+            EntClsEditorial ent_edit = bsn_edit.checkEditorialForId(book.IdEdit);
+            textEdit.Text = ent_edit.Name;
+            EntClsWrite ent_write = bsn_write.listWriteForCode(book.Code);
+            EntClsAuthor ent_author = bsn_auth.checkAuthorForId(ent_write.IdAuthor);
+            textAuthor.Text = ent_author.Name + ' '+ ent_author.LastName;
+            
+        }
+
+        protected void clean() 
+        {
+            textAuthor.Text = "";
+            textCategory.Text = "";
+            textDatePublish.Text = "";
+            textEdit.Text = "";
+            textIsbn.Text = "";
+            textState.Text = "";
+            textStock.Text = "";
+            textTitle.Text = "";
+        }
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Session.Add("book",ent_book.Code);
+            Response.Redirect("AuthorOfBook.aspx");
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            bsn_book.deleteBook(ent_book.Code);
+            clean();
+        }
+
+        protected void btnNewBook_Click(object sender, EventArgs e)
+        {
+            Session.Add("regis",1);
+            Response.Redirect("AuthorOfBook.aspx");
+        }
+
+        protected void SuccMessage()
         {
             string script = @"<script type='text/javascript'>
-                    alert('No hay existencias');
+                    alert('Operacion Exitosa');
                     </script>";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
         }
 
+
+
+
+        
     }
 }

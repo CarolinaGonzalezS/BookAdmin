@@ -16,7 +16,7 @@
     <div id="cabecera">
         <div id="contenidoCabecera">
             <div id="barraHorizontal">
-            <li><a href="RegistroLibro.aspx">Libros</a></li>
+            <li><a href="BookView.aspx">Libros</a></li>
             <li><a href="RegistroCliente.aspx">Clientes</a></li>
             <li><a href="RegistroPrestamo.aspx">Prestamos</a></li>
             <li><a href="#">Multas</a></li>

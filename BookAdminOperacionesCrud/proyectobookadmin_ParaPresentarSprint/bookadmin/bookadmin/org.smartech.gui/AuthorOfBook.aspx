@@ -324,7 +324,8 @@
                 &nbsp;</td>
             <td>
                 <asp:Button ID="btnNextEditorial" runat="server" 
-                    Text="SIGUIENTE &gt;&gt;" onclick="btnNextEditorial_Click" />
+                    Text="SIGUIENTE &gt;&gt;" onclick="btnNextEditorial_Click" 
+                    Visible="False" />
             </td>
             <td>
                 &nbsp;</td>

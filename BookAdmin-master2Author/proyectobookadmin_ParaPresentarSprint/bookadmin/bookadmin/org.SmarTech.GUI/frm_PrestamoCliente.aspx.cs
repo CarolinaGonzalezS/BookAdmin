@@ -15,6 +15,12 @@ namespace BookAdmin.Reportes
         private static rptPrestamoCliente orden = new rptPrestamoCliente();
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("Login.aspx");
+
+            }
             nameCustomer = Convert.ToString(Session["idCustomer"]);       
             orden.SetParameterValue("@identificationCard", nameCustomer);
             CrystalReportViewer1.ReportSource = orden;

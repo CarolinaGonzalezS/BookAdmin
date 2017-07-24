@@ -16,7 +16,13 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
+            if (Session["admin"] == null)
+            {
+                Response.Redirect("Login.aspx");
+
+            }
+
         }
  
         protected void btnCustomerSearch_Click(object sender, EventArgs e)

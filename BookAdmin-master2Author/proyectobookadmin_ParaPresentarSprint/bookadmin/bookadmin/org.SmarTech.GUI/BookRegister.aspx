@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Theme="Tema1" Language="C#" MasterPageFile="~/org.SmarTech.GUI/RegistroLibro.master" AutoEventWireup="true" CodeBehind="Book.aspx.cs" Inherits="BookAdmin.org.SmarTech.GUI.Book" %>
+﻿<%@ Page Title="" Theme="Tema1" Language="C#" MasterPageFile="~/org.SmarTech.GUI/BusquedaLibro.master" AutoEventWireup="true" CodeBehind="BookRegister.aspx.cs" Inherits="BookAdmin.org.SmarTech.GUI.BookRegister" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="contenidoPrincipal" runat="server">
 <table>
 <tr>
                 <td>
                     &nbsp;</td>
-                <td>
+                <td style="width: 113px">
                     &nbsp;</td>
                 <td class="style4">
                     &nbsp;</td>
@@ -23,7 +23,7 @@
             <tr>
                 <td>
                     &nbsp;</td>
-                <td>
+                <td style="width: 113px">
                     &nbsp;</td>
                 <td class="style4">
                     &nbsp;</td>
@@ -45,7 +45,7 @@
             <tr>
                 <td>
                     &nbsp;</td>
-                <td>
+                <td style="width: 113px">
                     &nbsp;</td>
                 <td class="style4">
                     <asp:Label ID="Label10" runat="server" Text="Titulo"></asp:Label>
@@ -75,7 +75,7 @@
             <tr>
                 <td>
                     &nbsp;</td>
-                <td>
+                <td style="width: 113px">
                     &nbsp;</td>
                 <td class="style4">
                     <asp:Label ID="Label11" runat="server" Text="Codigo:"></asp:Label>
@@ -105,7 +105,7 @@
             <tr>
                 <td>
                     &nbsp;</td>
-                <td>
+                <td style="width: 113px">
                     &nbsp;</td>
                 <td class="style4">
                     <asp:Label ID="Label12" runat="server" Text="ISBN:"></asp:Label>
@@ -134,7 +134,7 @@
             <tr>
                 <td>
                     &nbsp;</td>
-                <td>
+                <td style="width: 113px">
                     &nbsp;</td>
                 <td class="style4">
                     &nbsp;</td>
@@ -156,14 +156,13 @@
             <tr>
                 <td>
                     &nbsp;</td>
-                <td>
+                <td style="width: 113px">
                     &nbsp;</td>
                 <td class="style4">
                     &nbsp;</td>
                 <td class="style2" colspan="3">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="btnRegister" runat="server" Text="REGISTRAR" 
-                        onclick="buttonRegister_Click" Width="239px" />
+                    <asp:DropDownList ID="ddlState" runat="server">
+                    </asp:DropDownList>
                 </td>
                 <td>
                     &nbsp;</td>
@@ -177,12 +176,56 @@
             <tr>
                 <td>
                     &nbsp;</td>
+                <td style="width: 113px">
+                    &nbsp;</td>
+                <td class="style4">
+                    &nbsp;</td>
+                <td class="style2">
+                    &nbsp;</td>
+                <td class="style3">
+                    &nbsp;</td>
                 <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td colspan="2">
+                    &nbsp;</td>
+                <td class="style2" colspan="3">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="btnRegister" runat="server" Text="REGISTRAR" 
+                        onclick="buttonRegister_Click" Width="239px" Enabled="False" 
+                        Visible="False" />
+                </td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td style="width: 113px">
                     &nbsp;</td>
                 <td class="style4">
                     &nbsp;</td>
                 <td class="style2" colspan="2">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="btnUpdate" runat="server" onclick="btnUpdate_Click" 
+                        Text="FINALIZAR ACTUALIZACION" Enabled="False" Visible="False" />
                 </td>
                 <td>
                     &nbsp;</td>
@@ -197,4 +240,5 @@
             </tr>
             </table>
 </table>
+
 </asp:Content>

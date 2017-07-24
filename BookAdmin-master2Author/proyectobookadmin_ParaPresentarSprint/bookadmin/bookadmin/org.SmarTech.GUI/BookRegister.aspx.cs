@@ -21,7 +21,7 @@ namespace BookAdmin.org.SmarTech.GUI
         static List<EntClsSearch> list_search = new List<EntClsSearch>();
         static EntClsCategory ent_category = new EntClsCategory();
         int idEditorial;
-        int idAuthor;                
+        int idAuthor;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["admin"] == null)
@@ -36,7 +36,7 @@ namespace BookAdmin.org.SmarTech.GUI
             }
             if (Session["book"] != null)
             {
-                btnUpdate.Visible = true;                
+                btnUpdate.Visible = true;
                 btnUpdate.Enabled = true;
                 ent_book = bsn_book.SearchBook(Session["book"].ToString());
                 textTitle.Text = ent_book.Name;
@@ -45,18 +45,18 @@ namespace BookAdmin.org.SmarTech.GUI
                 textDate.Text = ent_book.DatePublish;
                 textIsbn.Text = ent_book.Isbn;
                 textStock.Text = Convert.ToString(ent_book.Stock);
-                ent_category = bsn_category.listCategoryForid(ent_book.IdCateg);                
+                ent_category = bsn_category.listCategoryForid(ent_book.IdCateg);
                 Session["book"] = null;
             }
             else
             {
-                if(Session["regis"]!=null)
-                {             
-                btnRegister.Visible = true;                              
+                if (Session["regis"] != null)
+                {
+                    btnRegister.Visible = true;
                 }
             }
             idEditorial = Convert.ToInt32(Session["edit"].ToString());
-            idAuthor = Convert.ToInt32(Session["author".ToString()]);                
+            idAuthor = Convert.ToInt32(Session["author".ToString()]);
             if (!IsPostBack)
             {
                 loadDropDownList();
@@ -91,7 +91,7 @@ namespace BookAdmin.org.SmarTech.GUI
                 Session.Add("succe", 1);
                 Response.Redirect("BookView.aspx");
             }
-            catch 
+            catch
             {
                 string script = @"<script type='text/javascript'>
                     alert('Algun dato esta erroneo revisa');
@@ -106,11 +106,11 @@ namespace BookAdmin.org.SmarTech.GUI
         {
             try
             {
-                            int itemSelec = (ddlCategory.SelectedIndex) + 1;
-                            bsn_book.insertBook(textTitle.Text, textCode.Text, textIsbn.Text, textDate.Text, Convert.ToInt32(textStock.Text), itemSelec, idEditorial, "Disponible", 1);
-                            bsn_write.insertWrite(idAuthor, textCode.Text);
-                            Session.Add("succe", 1);
-                            Response.Redirect("BookView.aspx");
+                int itemSelec = (ddlCategory.SelectedIndex) + 1;
+                bsn_book.insertBook(textTitle.Text, textCode.Text, textIsbn.Text, textDate.Text, Convert.ToInt32(textStock.Text), itemSelec, idEditorial, "Disponible", 1);
+                bsn_write.insertWrite(idAuthor, textCode.Text);
+                Session.Add("succe", 1);
+                Response.Redirect("BookView.aspx");
             }
             catch
             {
@@ -121,17 +121,17 @@ namespace BookAdmin.org.SmarTech.GUI
             }
 
         }
-        
-        protected void clear() 
+
+        protected void clear()
         {
-            textCode.Text = "";            
+            textCode.Text = "";
             textTitle.Text = "";
             textStock.Text = "";
             textIsbn.Text = "";
             textDate.Text = "";
-            
+
         }
 
-        
+
     }
 }

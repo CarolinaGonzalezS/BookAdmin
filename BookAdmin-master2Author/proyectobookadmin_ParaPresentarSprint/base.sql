@@ -389,9 +389,9 @@ where identificationCard=@identificationCard
 create procedure deleteBook
 @code varchar(10)
 as
-update  dbo.Book 
-set stock=0,
-stateB='No disponible'
+delete dbo.Write
+where code=@code
+delete dbo.Book 
 where code=@code
 
 alter procedure deleteAuthor
@@ -539,4 +539,108 @@ select * from Loan
 
 
 exec reportLoan '1733427101'
+
+CREATE TRIGGER Nonavailable
+ON Book
+AFTER UPDATE
+      AS
+BEGIN
+SET NOCOUNT ON;
+ update dbo.Book
+ set stateB='No disponible'
+ where stock=0
+END	
+	
+alter procedure DeleteWrite
+@id int,
+@code varchar(10)
+as
+delete dbo.Write
+where id=@id and
+		code like @code
+
+alter procedure UpdateStockBook
+@code varchar(10),
+@stock int
+as
+update dbo.Book
+ set stock=@stock, stateB= 'Disponible'
+ where code=@code and @stock>0
+	
+create procedure updateStockBook
+@stock int,
+@code varchar(10)
+as
+update dbo.Book set stock=@stock
+where code=@code
+
+exec updateStockBook 3
+		
+alter procedure UpdateStateLoan
+@id int
+as
+update dbo.Loan
+ set stateL='Finalizado'
+ where id=@id
+		
+create procedure CustomerSearch
+@identificationCard varchar(10)
+as
+select *
+from dbo.Customer
+where identificationCard = @identificationCard
+
+create procedure SearchBook
+@code varchar(20)
+as
+select code,isbn,name,Convert(varchar(20),datePublish) as datePublish,idCateg,stateB,stock
+from dbo.Book
+where   Book.code like @code  
+
+exec SearchBook '1001'
+
+create procedure SearchEditOfBook
+@code varchar(20)
+as
+select idEdit
+from dbo.Book,dbo.Editorial
+where   Book.code like @code 
+
+create procedure SearchAuthorOfBook
+@code varchar(20)
+as
+select id
+from dbo.Write
+where Write.code like @code
+
+create procedure searchLoan
+@id int
+as
+select id, stateL
+from loan
+where id= @id 
+
+alter procedure updateStateB
+@code varchar(10),
+@stock int
+as
+update dbo.Book
+ set stock=@stock, stateB= 'No Disponible'
+ where code=@code and @stock= 0 
+update dbo.Book
+ set stock=@stock, stateB= 'Disponible'
+ where code=@code and @stock>0 
+
+exec updateStateB 10001,0
+
+select * from book
+select * from loan
+
+insert into loan
+values
+('2016-12-12', '2017-01-12', '1723434203', '1001', 'En Proceso'),
+('2017-07-22', '2017-08-22', '1723434211', '2001', 'Finalizado'),
+('2017-07-22', '2017-08-22', '1723434203', '3001', 'En Proceso'),
+('2017-07-22', '2017-08-22', '1723434211', '3001', 'En Proceso'),
+('2017-07-22', '2017-08-22', '1723434203', '8001', 'En Proceso')
 

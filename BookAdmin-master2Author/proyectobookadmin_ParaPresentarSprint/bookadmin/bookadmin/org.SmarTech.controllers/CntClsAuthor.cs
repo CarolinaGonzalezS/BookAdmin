@@ -5,13 +5,13 @@ using System.Web;
 using System.Configuration;
 using System.Data.Common;
 using System.Data;
-using BookAdmin.org.SmarTech.entities; 
+using BookAdmin.org.SmarTech.entities;
 
 namespace BookAdmin.org.SmarTech.controllers
 {
     public class CntClsAuthor
     {
-        
+
         public CntClsAuthor() { }
 
         public static string constr
@@ -148,7 +148,7 @@ namespace BookAdmin.org.SmarTech.controllers
                 {
                     cmd.Connection = con;
                     cmd.CommandText = storeProcedure;
-                    cmd.CommandType = CommandType.StoredProcedure;                    
+                    cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
                     using (DbDataReader dr = cmd.ExecuteReader())
                     {
@@ -215,7 +215,7 @@ namespace BookAdmin.org.SmarTech.controllers
                     {
                         if (dr.Read())
                         {
-                            obj_author = new EntClsAuthor((string)dr["name"], (string)dr["lastName"]);
+                            obj_author = new EntClsAuthor((string)dr["name"], (string)dr["lastName"], (string)dr["nationality"]);
 
                         }
 
@@ -238,6 +238,6 @@ namespace BookAdmin.org.SmarTech.controllers
             return ejecuteNonQuery("deleteAuthor", parameters);
         }
 
-        
+
     }
 }

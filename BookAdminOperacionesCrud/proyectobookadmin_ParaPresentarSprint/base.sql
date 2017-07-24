@@ -366,13 +366,6 @@ set name=@name, lastName=@lastName, phone=@phone, celphone=@celphone, addres=@ad
 where identificationCard=@identificationCard
 
 -- Eliminacion de Contenido de Tabla
-create procedure deleteBook
-@code varchar(10)
-as
-delete dbo.Write
-where code=@code
-delete dbo.Book 
-where code=@code
 
 exec deleteBook 'dfsg'
 

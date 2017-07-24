@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" Theme="Tema1" MasterPageFile="~/org.SmarTech.GUI/Principal.Master" AutoEventWireup="true" CodeBehind="ResultCategorySearch.aspx.cs" Inherits="BookAdmin.org.SmarTech.GUI.ResultCategorySearch" %>
+﻿<%@ Page Title="" Language="C#" Theme="Tema1" MasterPageFile="~/org.SmarTech.GUI/BusquedaLibro.master" AutoEventWireup="true" CodeBehind="ResultCategorySearch.aspx.cs" Inherits="BookAdmin.org.SmarTech.GUI.ResultCategorySearch" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="server">

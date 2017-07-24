@@ -38,12 +38,34 @@ namespace BookAdmin.org.SmarTech.Bussines
             CntClsBook cnt_book = new CntClsBook();
             return cnt_book.deleteBook(code);
         }
-
-        public List<EntClsBook> listBook() 
+        public List<EntClsBook> listBook()
         {
             CntClsBook cnt_book = new CntClsBook();
             return cnt_book.listBook();
         }
 
+        public EntClsBook SearchBook(string code)
+        {
+            CntClsBook cnt_book = new CntClsBook();
+            return cnt_book.SearchBook(code);
+        }
+
+        public EntClsBook SearchEditorialOfBook(string code)
+        {
+            CntClsBook cnt_book = new CntClsBook();
+            return cnt_book.SearchEditOfBook(code);
+        }
+
+        public int updateStateB(string code, int stock)
+        {
+            CntClsBook cnt_book = new CntClsBook();
+            return cnt_book.updateStateB(code, stock);
+        }
+
+        public int minStock(int stock)
+        {
+            int newStock = stock - 1;
+            return newStock;
+        }
     }
 }

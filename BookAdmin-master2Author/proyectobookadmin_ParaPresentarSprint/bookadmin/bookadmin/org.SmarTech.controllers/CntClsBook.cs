@@ -107,7 +107,7 @@ namespace BookAdmin.org.SmarTech.controllers
             return obj_book;
         }
 
-        public int insertBook(string name, string code, string isbn,string datePublish,int stock,int idCateg,int idEdit, string stateB, int idAdmin)
+        public int insertBook(string name, string code, string isbn, string datePublish, int stock, int idCateg, int idEdit, string stateB, int idAdmin)
         {
             List<DbParameter> parameters = new List<DbParameter>();
 
@@ -184,23 +184,23 @@ namespace BookAdmin.org.SmarTech.controllers
             parameters.Add(param4);
 
             DbParameter param5 = dpf.CreateParameter();
-            param4.Value = idEdit;
-            param4.ParameterName = "idEdit";
+            param5.Value = idEdit;
+            param5.ParameterName = "idEdit";
             parameters.Add(param5);
 
             DbParameter param6 = dpf.CreateParameter();
-            param4.Value = idCateg;
-            param4.ParameterName = "idCateg";
+            param6.Value = idCateg;
+            param6.ParameterName = "idCateg";
             parameters.Add(param6);
 
             DbParameter param7 = dpf.CreateParameter();
-            param4.Value = stateB;
-            param4.ParameterName = "stateB";
+            param7.Value = stateB;
+            param7.ParameterName = "stateB";
             parameters.Add(param7);
 
             DbParameter param8 = dpf.CreateParameter();
-            param4.Value = stock;
-            param4.ParameterName = "stock";
+            param8.Value = stock;
+            param8.ParameterName = "stock";
             parameters.Add(param8);
 
             return ejecuteNonQuery("updateBook", parameters);
@@ -218,7 +218,7 @@ namespace BookAdmin.org.SmarTech.controllers
             return ejecuteNonQuery("deleteBook", parameters);
         }
 
-        public List<EntClsBook> listBook() 
+        public List<EntClsBook> listBook()
         {
             List<EntClsBook> booklist = new List<EntClsBook>();
             string storeProcedure = "listBook";
@@ -229,14 +229,14 @@ namespace BookAdmin.org.SmarTech.controllers
                 {
                     cmd.Connection = con;
                     cmd.CommandText = storeProcedure;
-                    cmd.CommandType = CommandType.StoredProcedure;                    
+                    cmd.CommandType = CommandType.StoredProcedure;
 
                     con.Open();
                     using (DbDataReader dr = cmd.ExecuteReader())
                     {
                         while (dr.Read())
                         {
-                            booklist.Add(                                
+                            booklist.Add(
                                 new EntClsBook((string)dr["code"], (string)dr["isbn"], (string)dr["name"], (string)dr["datePublish"], (int)dr["idEdit"], (int)dr["idCateg"], (int)dr["idAdmin"], (string)dr["stateB"], (int)dr["stock"])
                             );
                         }
@@ -245,7 +245,76 @@ namespace BookAdmin.org.SmarTech.controllers
             }
             return booklist;
         }
-        
+
+
+        public EntClsBook SearchEditOfBook(string code)
+        {
+            EntClsBook obj_book = new EntClsBook();
+            string storeProcedure = "SearchEditOfBook";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbParameter param = cmd.CreateParameter();
+                    param.DbType = DbType.String;
+                    param.ParameterName = "code";
+                    param.Value = code;
+                    cmd.Parameters.Add(param);
+
+                    con.Open();
+
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            obj_book = new EntClsBook((int)dr["idEdit"]);
+
+                        }
+                    }
+                }
+
+            }
+            return obj_book;
+        }
+
+        public EntClsBook SearchBook(string code)
+        {
+            EntClsBook obj_book = new EntClsBook();
+            string storeProcedure = "SearchBook";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbParameter param = cmd.CreateParameter();
+                    param.DbType = DbType.String;
+                    param.ParameterName = "code";
+                    param.Value = code;
+                    cmd.Parameters.Add(param);
+
+                    con.Open();
+
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            obj_book = new EntClsBook((string)dr["code"], (string)dr["isbn"], (string)dr["name"], (string)dr["datePublish"], (int)dr["idCateg"], (string)dr["stateB"], (int)dr["stock"]);
+
+                        }
+                    }
+                }
+
+            }
+            return obj_book;
+        }
+
         public EntClsBook CheckBook2(string name)
         {
             EntClsBook obj_book = new EntClsBook();
@@ -272,7 +341,7 @@ namespace BookAdmin.org.SmarTech.controllers
                     {
                         if (dr.Read())
                         {
-                            obj_book = new EntClsBook((string)dr["name"], (string)dr["code"],(int)dr["stock"],(string)dr["stateB"]);
+                            obj_book = new EntClsBook((string)dr["name"], (string)dr["code"], (int)dr["stock"], (string)dr["stateB"]);
 
                         }
 
@@ -281,6 +350,23 @@ namespace BookAdmin.org.SmarTech.controllers
 
             }
             return obj_book;
+        }
+
+        public int updateStateB(string code, int stock)
+        {
+            List<DbParameter> parameters = new List<DbParameter>();
+
+            DbParameter param1 = dpf.CreateParameter();
+            param1.Value = code;
+            param1.ParameterName = "code";
+            parameters.Add(param1);
+
+            DbParameter param2 = dpf.CreateParameter();
+            param2.Value = stock;
+            param2.ParameterName = "stock";
+            parameters.Add(param2);
+
+            return ejecuteNonQuery("updateStateB", parameters);
         }
 
         public int updateStockBook(string code, int stock)

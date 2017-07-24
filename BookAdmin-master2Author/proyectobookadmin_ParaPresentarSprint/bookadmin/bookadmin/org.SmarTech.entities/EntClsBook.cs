@@ -18,11 +18,17 @@ namespace BookAdmin.org.SmarTech.entities
         private int idAdmin;
         private string stateB;
         private int stock;
-        
+        private int idUser;
+
         #endregion
 
         #region setter and getter
 
+        public int IdUser
+        {
+            get { return idUser; }
+            set { idUser = value; }
+        }
         public string Code
         {
             get { return code; }
@@ -71,11 +77,11 @@ namespace BookAdmin.org.SmarTech.entities
         }
         #endregion
 
-        public EntClsBook(string code, string isbn, string name, string datePublish, int idEdit, int idCateg, int idAdmin, string stateB, int stock) 
+        public EntClsBook(string code, string isbn, string name, string datePublish, int idEdit, int idCateg, int idAdmin, string stateB, int stock)
         {
             this.code = code;
-            this.isbn=isbn;
-            this.name=name;
+            this.isbn = isbn;
+            this.name = name;
             this.datePublish = datePublish;
             this.idEdit = idEdit;
             this.idCateg = idCateg;
@@ -83,7 +89,7 @@ namespace BookAdmin.org.SmarTech.entities
             this.stateB = stateB;
             this.stock = stock;
         }
-        public EntClsBook() 
+        public EntClsBook()
         {
 
         }
@@ -93,13 +99,49 @@ namespace BookAdmin.org.SmarTech.entities
             this.name = name;
         }
 
+        public EntClsBook(int idUser, string code, string isbn, string name, string datePublish, int idEdit, int idCateg, string stateB, int stock, int idAdmin)
+        {
+            this.idUser = idUser;
+            this.code = code;
+            this.isbn = isbn;
+            this.name = name;
+            this.datePublish = datePublish;
+            this.idEdit = idEdit;
+            this.idCateg = idCateg;
+            this.idAdmin = idAdmin;
+            this.stateB = stateB;
+            this.stock = stock;
+        }
+
         public EntClsBook(string name, string code, int stock, string stateB)
         {
             this.name = name;
             this.code = code;
             this.stock = stock;
             this.stateB = stateB;
-            
         }
+
+        public EntClsBook(string code, string isbn, string name, string datePublish, int idCateg, string stateB, int stock)
+        {
+            this.code = code;
+            this.isbn = isbn;
+            this.name = name;
+            this.datePublish = datePublish;
+            this.idCateg = idCateg;
+            this.stateB = stateB;
+            this.stock = stock;
+        }
+
+        public EntClsBook(int idEdit)
+        {
+            this.idEdit = idEdit;
+        }
+
+        public EntClsBook(string code, int stock)
+        {
+            this.code = code;
+            this.stock = stock;
+        }
+
     }
 }

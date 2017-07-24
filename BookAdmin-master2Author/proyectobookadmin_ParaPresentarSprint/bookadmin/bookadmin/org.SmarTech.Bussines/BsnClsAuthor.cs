@@ -13,16 +13,14 @@ namespace BookAdmin.org.SmarTech.Bussines
         public int insertAuthor(string name, string lastName, string nationality)
         {
             CntClsAuthor cnt_author = new CntClsAuthor();
-            return cnt_author.insertAuthor(name,lastName,nationality);
+            return cnt_author.insertAuthor(name, lastName, nationality);
         }
-
         public EntClsAuthor checkAuthor(string name, string lastName)
         {
             CntClsAuthor cnt_author = new CntClsAuthor();
             return cnt_author.CheckAuthor(name, lastName);
         }
-
-        public List<EntClsAuthor> AuthorList() 
+        public List<EntClsAuthor> AuthorList()
         {
             CntClsAuthor cnt_author = new CntClsAuthor();
             return cnt_author.AuthorList();
@@ -33,7 +31,6 @@ namespace BookAdmin.org.SmarTech.Bussines
             CntClsAuthor cnt_author = new CntClsAuthor();
             return cnt_author.CheckAuthorForId(id);
         }
-
         public int updateAuthor(int id, string name, string lastName, string nationality)
         {
             CntClsAuthor cnt_author = new CntClsAuthor();

@@ -209,7 +209,7 @@ namespace BookAdmin.org.SmarTech.controllers
                     {
                         if (dr.Read())
                         {
-                            objEditorial = new EntClsEditorial((string)dr["name"]);
+                            objEditorial = new EntClsEditorial((string)dr["name"], (string)dr["country"], (string)dr["city"]);
 
                         }
 
@@ -218,34 +218,6 @@ namespace BookAdmin.org.SmarTech.controllers
 
             }
             return objEditorial;
-        }
-
-        public List<EntClsEditorial> listEditorial()
-        {
-            List<EntClsEditorial> editlist = new List<EntClsEditorial>();
-            string storeProcedure = "listEditorial";
-            using (DbConnection con = dpf.CreateConnection())
-            {
-                con.ConnectionString = constr;
-                using (DbCommand cmd = dpf.CreateCommand())
-                {
-                    cmd.Connection = con;
-                    cmd.CommandText = storeProcedure;
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    con.Open();
-                    using (DbDataReader dr = cmd.ExecuteReader())
-                    {
-                        while (dr.Read())
-                        {
-                            editlist.Add(
-                                new EntClsEditorial((int)dr["id"], (string)dr["name"], (string)dr["country"], (string)dr["city"])
-                            );
-                        }
-                    }
-                }
-            }
-            return editlist;
         }
     }
 }

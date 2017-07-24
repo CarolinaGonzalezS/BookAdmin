@@ -19,7 +19,7 @@ namespace BookAdmin.org.SmarTech.GUI
         static EntClsBook ent_book = new EntClsBook();
         static BsnClsBook bsn_book = new BsnClsBook();
         static int insert = 0;
-        private static string code = "";  
+        private static string code = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,7 +38,7 @@ namespace BookAdmin.org.SmarTech.GUI
                 obj_edit = bsn_edit.checkEditorialForId(ent_book.IdEdit);
                 textName.Text = obj_edit.Name;
                 textCity.Text = obj_edit.City;
-                textCountry.Text = obj_edit.Country;                                
+                textCountry.Text = obj_edit.Country;
                 btnUpdateCont.Visible = true;
                 btnUpdateCont.Enabled = true;
                 code = Session["book"].ToString();
@@ -49,10 +49,10 @@ namespace BookAdmin.org.SmarTech.GUI
             {
                 if (Session["regis"] != null)
                 {
-                    btnNextBook.Visible = true;                                        
+                    btnNextBook.Visible = true;
                 }
             }
-            
+
             if (!IsPostBack)
             {
                 rblEditorial.AutoPostBack = true;
@@ -69,7 +69,7 @@ namespace BookAdmin.org.SmarTech.GUI
                 textCity.Enabled = true;
                 btnNextBook.Enabled = true;
                 clean();
-                insert = 1;                
+                insert = 1;
             }
             else
             {
@@ -119,7 +119,7 @@ namespace BookAdmin.org.SmarTech.GUI
             textName.Text = "";
             textCity.Text = "";
             textCountry.Text = "";
-        }        
+        }
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
@@ -139,7 +139,7 @@ namespace BookAdmin.org.SmarTech.GUI
 
             if (insert == 0)
             {
-                Session["book"] = code;                
+                Session["book"] = code;
                 Session.Add("edit", ent_edit.Id);
                 Response.Redirect("BookRegister.aspx");
             }
