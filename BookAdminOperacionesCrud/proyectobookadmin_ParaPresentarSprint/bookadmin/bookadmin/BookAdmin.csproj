@@ -70,6 +70,7 @@
     <Content Include="org.SmarTech.GUI\css\animate.css" />
     <Content Include="org.SmarTech.GUI\css\style.css" />
     <Content Include="org.SmarTech.GUI\EditorialOfBook.aspx" />
+    <Content Include="org.SmarTech.GUI\Fine.aspx" />
     <Content Include="org.SmarTech.GUI\FinishLoan.aspx" />
     <Content Include="org.SmarTech.GUI\frm_PrestamoCliente.aspx" />
     <Content Include="org.SmarTech.GUI\images\biblioteca.jpg" />
@@ -103,6 +104,7 @@
     <Compile Include="org.SmarTech.Bussines\BsnClsCategory.cs" />
     <Compile Include="org.SmarTech.Bussines\BsnClsCustomer.cs" />
     <Compile Include="org.SmarTech.Bussines\BsnClsEditorial.cs" />
+    <Compile Include="org.SmarTech.Bussines\BsnClsFine.cs" />
     <Compile Include="org.SmarTech.Bussines\BsnClsLoan.cs" />
     <Compile Include="org.SmarTech.Bussines\BsnClsReturnBook.cs" />
     <Compile Include="org.SmarTech.Bussines\BsnClsSearch.cs" />
@@ -113,6 +115,7 @@
     <Compile Include="org.SmarTech.controllers\CntClsCategory.cs" />
     <Compile Include="org.SmarTech.controllers\CntClsCustomer.cs" />
     <Compile Include="org.SmarTech.controllers\CntClsEditorial.cs" />
+    <Compile Include="org.SmarTech.controllers\CntClsFine.cs" />
     <Compile Include="org.SmarTech.controllers\CntClsLoan.cs" />
     <Compile Include="org.SmarTech.controllers\CntClsReturnBook.cs" />
     <Compile Include="org.SmarTech.controllers\CntClsSearch.cs" />
@@ -169,6 +172,20 @@
     </Compile>
     <Compile Include="org.SmarTech.GUI\EditorialOfBook.aspx.designer.cs">
       <DependentUpon>EditorialOfBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Fine.aspx.cs">
+      <DependentUpon>Fine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Fine.aspx.designer.cs">
+      <DependentUpon>Fine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Fine.master.cs">
+      <DependentUpon>Fine.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Fine.master.designer.cs">
+      <DependentUpon>Fine.master</DependentUpon>
     </Compile>
     <Compile Include="org.SmarTech.GUI\FinishLoan.aspx.cs">
       <DependentUpon>FinishLoan.aspx</DependentUpon>
@@ -292,6 +309,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="org.SmarTech.GUI\Fine.master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -81,6 +81,14 @@ namespace BookAdmin.org.SmarTech.entities
             this.id = id;
             this.stateL = stateL;
         }
+
+        public EntClsLoan(int id, string identificationCard, string dateLoan)
+        {
+            this.id = id;
+            this.identificationCard = identificationCard;
+            this.dateLoan = dateLoan;
+        }
+
         #endregion 
     }
 }

@@ -13,6 +13,7 @@ namespace BookAdmin.org.SmarTech.controllers
     {
 
         public CntClsEditorial() { }
+        
         public static string constr
         {
             get

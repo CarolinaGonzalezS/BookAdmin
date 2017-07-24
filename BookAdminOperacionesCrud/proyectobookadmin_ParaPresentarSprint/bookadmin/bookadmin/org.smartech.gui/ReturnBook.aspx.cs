@@ -95,6 +95,8 @@ namespace BookAdmin.org.SmarTech.GUI
 
             returnBookMessage();
             btnReturnBook.Enabled = false;
+
+            Response.Redirect("Fine.aspx");  
         }
     }
 }

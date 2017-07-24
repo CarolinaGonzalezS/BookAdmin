@@ -136,5 +136,38 @@ namespace BookAdmin.org.SmarTech.controllers
             return ent_loan;
         }
 
+        public EntClsLoan fineLoan(int id)
+        {
+            EntClsLoan fineloan = new EntClsLoan();
+            string storeProcedure = "fineLoan";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbParameter param = cmd.CreateParameter();
+                    param.DbType = DbType.String;
+                    param.ParameterName = "id";
+                    param.Value = id;
+                    cmd.Parameters.Add(param);
+
+                    con.Open();
+
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+                            fineloan = new EntClsLoan((int)dr["id"], (string)dr["identificationCard"], (string)dr["dateLoan"]);
+
+                        }
+                    }
+                }
+
+            }
+            return fineloan;
+        }
     }
 }

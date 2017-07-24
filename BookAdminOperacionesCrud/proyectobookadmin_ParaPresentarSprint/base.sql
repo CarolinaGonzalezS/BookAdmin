@@ -1,38 +1,40 @@
 create database BDDLibrary
 use BDDLibrary
 
-create table Administrator
-(
+-- Creacion de Tablas
+
+-- Administrador
+create table Administrator(
 id int primary key not null,
 name varchar(30) not null,
 passwordA varchar(256) not null
 )
 
-create table Category
-(
+-- Categoria
+create table Category(
 id int identity(1,1) primary key not null,
 name varchar(30) unique not null,
 descriptionC varchar(100) not null
 )
 
-create table Editorial
-(
+-- Editorial
+create table Editorial(
 id int identity(1,1) primary key not null,
 name varchar(30) unique not null,
 country varchar(30) null,
 city varchar(30) null
 )
 
-create table Author
-(
+-- Autor
+create table Author(
 id int identity(1,1) primary key not null,
 name varchar(30) not null,
 lastName varchar(30)null,
 nationality varchar(30) null 
 )
 
-create table Book
-(
+-- Libro
+create table Book(
 code varchar(10) primary key not null,
 isbn varchar(15) unique not null,
 name varchar(30) unique null,
@@ -44,14 +46,14 @@ stock int not null,
 idAdmin int foreign key references Administrator(id)
 )
 
-create table Write
-(
+-- Escribe (Rompe relacion n-n de Libro y Autor)
+create table Write(
 id int foreign key references Author(id)not null,
 code varchar(10) foreign key references Book(code)not null
 )
 
-create table Customer
-(
+-- Cliente
+create table Customer(
 identificationCard varchar(10)primary key not null,
 name varchar(30)not null,
 lastName varchar(30)not null,
@@ -61,8 +63,8 @@ addres varchar(30) not null,
 mail varchar(30)not null
 )
 
-create table Loan
-(
+-- Prestamo
+create table Loan(
 id int identity(1,1) primary key not null,
 dateLoan date not null,
 dateLimit date null,
@@ -71,184 +73,275 @@ code varchar(10) foreign key references book(code) not null,
 stateL varchar(20) not null
 )
 
-create table Fine
-(
+-- Multa
+create table Fine(
 id int identity(1,1) primary key not null,
 value money not null,
 descriptionF varchar(50) not null
 )
 
-create table FineCustomer
-(
+-- Multa-Cliente (Rompe relacion n-n de Multa y Cliente)
+create table FineCustomer(
 identificationCard varchar(10) foreign key references Customer(identificationCard)not null,
 id int foreign key references Fine(ID)not null,
 dateF date not null
 )
 
---procedimientos 
+-- Creacion de Procedimientos Almacenados
 
-alter procedure loginAdministrator
+-- Procedimientos de Administrador
+-- Insercion de Administrador
+insert into dbo.Administrator
+values
+(1,'Admin','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3')
+
+-- Seleccion de Verificacion  
+select * from dbo.Administrator
+
+-- Verifica el Login
+create procedure loginAdministrator
 	@name varchar(30),
 	@passwordA varchar(256)
-	
 	as	
 		select name,passwordA from Administrator 
-		where  name= @name and 
-				passwordA=@passwordA
-				
-				select * from book
-		 
- Insert dbo.Administrator
- values(1,'Admin','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3')
- 
-select * from administrator
- 
-create procedure existAuthor
-@name varchar(30),
-@lastName varchar(30)
-as
-select id,name,lastName,nationality
-from dbo.Author
-where name like @name and
-		lastName like @lastName
+		where  name= @name and passwordA=@passwordA
 		
+-- Ejecucion de Verificacion
+exec loginAdministrator 'Admin','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3'				 
 
+-- Procedimientos de Autor
+-- Inserta Autores
 create procedure insertAuthor		
-@name varchar(30),
-@lastName varchar(30),
-@nationality varchar(30)
-as
-insert dbo.Author
-values(@name,@lastName,@nationality)
+	@name varchar(30),
+	@lastName varchar(30),
+	@nationality varchar(30)
+	as
+		insert into dbo.Author
+		values
+		(@name,@lastName,@nationality)
 
---Insercion de categorias
-insert dbo.Category
-values('Suspenso','Los libros mas famosos de suspenso')
-insert dbo.Category
-values('Misterio','Los libros mas famosos de misterio')
-insert dbo.Category
-values('Biografias','Las biografias mas famosos')
-insert dbo.Category
-values('Terror','Los libros mas famosos de terror')
-insert dbo.Category
-values('Ciencia','Los libros mas famosos de ciencia')
+-- Ejecucion de Verificacion
+exec insertAuthor 'STEPHEN', 'KING', 'ESTADOUNIDENSE'
+exec insertAuthor 'ABRAHAM', 'MERRITT', 'ESTADOUNIDENSE'
+exec insertAuthor 'EDGAR ALLAN', 'POE', 'ESTADOUNIDENSE'
+exec insertAuthor 'DAN', 'BROWN', 'ESTADOUNIDENSE'
+exec insertAuthor 'ADOLFO', 'BIOY', 'ARGENTINO'
+exec insertAuthor 'FRANZ', 'KAFKA', 'JUDIO'
+exec insertAuthor 'MICHIO', 'KAKU', 'ESTADOUNIDENSE'
+exec insertAuthor 'STEPHEN', 'HAWKING', 'BRITANICO'
 
---
-create procedure existEditorial
-@name varchar(30)
-as
-select id,name,country,city
-from dbo.Editorial
-where name like @name 
+-- Verifica la existencia del Autor 
+create procedure existAuthor
+	@name varchar(30),
+	@lastName varchar(30)
+	as
+		select id,name,lastName,nationality
+		from dbo.Author
+		where name like @name and lastName like @lastName
 
+-- Ejecucion de Verificacion 
+exec existAuthor 'STEPHEN', 'KING'
+
+-- Insercion de categorias
+insert into dbo.Category
+values
+('Suspenso','Los libros mas famosos de suspenso'),
+('Misterio','Los libros mas famosos de misterio'),
+('Biografias','Las biografias mas famosos'),
+('Terror','Los libros mas famosos de terror'),
+('Ciencia','Los libros mas famosos de ciencia')
+
+-- Seleccion de Verificacion 
+select * from dbo.Category
+
+-- Procedimientos de Editorial
+-- Inserta Editoriales
 create procedure insertEditorial		
-@name varchar(30),
-@country varchar(30),
-@city varchar(30)
-as
-insert dbo.Editorial
-values(@name,@country,@city)
+	@name varchar(30),
+	@country varchar(30),
+	@city varchar(30)
+	as
+		insert dbo.Editorial
+		values(@name,@country,@city)
 
-create procedure existBook
-@name varchar(30)
-as
-select *
-from book
-where name like @name 
+-- Ejecucion de Verificacion
+exec insertEditorial 'DOUBLEDAY', 'ESTADOS UNIDOS', 'NEW YORK'
+exec insertEditorial 'ANAYA', 'ESPAÑA', 'SALAMANCA'
+exec insertEditorial 'DEBOLSILLO', 'ESTADOS UNIDOS', 'NEW YORK'
+exec insertEditorial 'CASA DEL LIBRO', 'ESPAÑA', 'BARCELONA'
+exec insertEditorial 'UMBRIEL EDITORES', 'ESPAÑA', 'BARCELONA'
 
+-- Verifica la existencia de la Editorial
+create procedure existEditorial
+	@name varchar(30)
+	as
+		select id,name,country,city
+		from dbo.Editorial
+		where name like @name 
+
+-- Ejecucion de Verificacion
+exec existEditorial 'DOUBLEDAY' 
+
+-- Procedimientos de Libro
+-- Inserta Libros
 create procedure insertBook		
-@code varchar(10),
-@isbn varchar(15),
-@name varchar(30),
-@datePublish varchar(30),
-@idedit int,
-@idcateg int,
-@stateB varchar(30),
-@stock int,
-@idAdmin int
-as
-insert book
-values(@code,@isbn,@name,Convert(date,@datePublish),@idedit,@idcateg,@stateB,@stock,@idAdmin)
+	@code varchar(10),
+	@isbn varchar(15),
+	@name varchar(30),
+	@datePublish varchar(30),
+	@idedit int,
+	@idcateg int,
+	@stateB varchar(30),
+	@stock int,
+	@idAdmin int
+	as
+		insert into book
+		values(@code,@isbn,@name,Convert(date,@datePublish),@idedit,@idcateg,@stateB,@stock,@idAdmin)
 
---procedimiento de despliege de categoria
+-- Ejecucion de Verificacion 
+exec insertBook 1001, 9788497931021, 'EL MISTERIO DE SALEMS LOT', '1975-10-17', 1, 1, 'Disponible', 2, 1
+exec insertBook 2001, 9788420757643, 'ARDE BRUJA ARDE', '1994-06-23', 2, 1, 'Disponible', 2, 1
+exec insertBook 3001, 9780816156856, 'EL RESPLANDOR', '1977-05-20', 3, 2, 'Disponible', 3, 1
+exec insertBook 4001, 9788435010375, 'CUENTOS COMPLETOS', '1831-09-17', 2, 2, 'Disponible', 1, 1
+exec insertBook 5001, 9788495618771, 'ANGELES Y DEMONIOS', '2000-03-23', 3, 4, 'Disponible', 1, 1
+exec insertBook 6001, 9781417580538, 'CARRIE', '1974-04-05', 1, 4, 'Disponible', 1, 1
+exec insertBook 7001, 9788423338733, 'BORGES', '2006-05-11', 5, 3,	'Disponible', 1, 1
+exec insertBook 8001, 9781847490254, 'CARTA AL PADRE', '1919-11-01', 2, 3,	'Disponible', 2, 1
+exec insertBook 9001, 9788499923925, 'EL FUTURO DE NUESTRA MENTE', '2014-06-13', 4, 5,	'Disponible', 2, 1
+exec insertBook 10001, 9788498926606, 'BREVE HISTORIA DE MI VIDA', '1999-02-04', 5, 5,	'Disponible', 1, 1
+
+-- Verifica la existencia del Libro
+create procedure existBook
+	@name varchar(30)
+	as
+		select *
+		from book
+		where name like @name 
+
+-- Ejecucion de Verificacion 
+exec existBook 'ARDE BRUJA ARDE'
+
+-- Procedimientos de Categoria
+-- Despliega las categorias existentes
 create procedure ListCategory
-as
-select id,name,descriptionC
-from category
+	as
+		select id,name,descriptionC
+		from dbo.Category
 
+-- Ejecucion de Verificacion
+exec ListCategory
 
-CREATE procedure ListCategoryforid
-@id int
-as
-	select id,name,descriptionC
-	from  dbo.Category where id = @id
-	
+-- Despliega las categorias por id
+create procedure ListCategoryforid
+	@id int
+	as
+		select id,name,descriptionC
+		from  dbo.Category where id = @id
+
+-- Ejecucion de Verificacion 
+exec ListCategoryforid 1
+
+-- Procedimientos de Escribe
+-- Inserta la relacion entre Libro y Autor	
 create procedure InsertWrite
-@id int,
-@code varchar(10)	
-as
-insert dbo.write(id,code) values(@id,@code)
+	@id int,
+	@code varchar(10)	
+	as
+		insert dbo.write(id,code) values(@id,@code)
 
+-- Ejecucion de Verificacion
+exec InsertWrite 1,1001
+exec InsertWrite 2,2001
+exec InsertWrite 1,3001
+exec InsertWrite 3,4001
+exec InsertWrite 4,5001
+exec InsertWrite 1,6001
+exec InsertWrite 5,7001
+exec InsertWrite 6,8001
+exec InsertWrite 7,9001
+exec InsertWrite 8,10001
+
+-- Procedimientos de Busqueda
+-- Busca al Autor por su Nombre
 create procedure ForNameAuthor
-@name varchar(30)
-as
-select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
-where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
-		Author.name like @name 
---prueba		
-exec ForNameAuthor '%Gabriel%'
+	@name varchar(30)
+	as
+		select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+		where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
+				Author.name like @name 
 
+-- Ejecucion de Verificacion		
+exec ForNameAuthor '%STEPHEN%'
+
+-- Busca al Autor por su Apellido
 create procedure ForLastNameAuthor
-@lastName varchar(30)
-as
-select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
-where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
-		Author.lastName like @lastName 
-		
-exec ForLastNameAuthor '%Garcia%'		
+	@lastName varchar(30)
+	as
+		select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+		where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
+				Author.lastName like @lastName 
 
+-- Ejecucion de Verificacion		
+exec ForLastNameAuthor '%POE%'		
+
+-- Busca al Autor por su Nobmre Completo
 create procedure ForAuthorCompleteName
-@name varchar(30),
-@lastName varchar(30)
-as
-select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
-where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
-		Author.lastName like @lastName and
-		Author.name like @name 
+	@name varchar(30),
+	@lastName varchar(30)
+	as
+		select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+		where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
+				Author.lastName like @lastName and
+				Author.name like @name 
 		
+-- Ejecucion de Verificacion
+exec ForAuthorCompleteName '%STEPHEN%','%HAWKING%'
 
-exec ForAuthorCompleteName '%Gabriel%','%Garcia%'
-
-
+-- Busca a la Editorial por su Nombre
 create procedure ForNameEditorial
-@name varchar(30)
-as
-select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
-where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
-		editorial.name like @name  
-	
-alter procedure ForNameBook
-@name varchar(30)
-as
-select book.code,book.name as NameBook,stateB,stock,lastName,dbo.Editorial.name as nameEdit,dbo.Author.name as nameAuth from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
-where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
-		Book.name like @name  
-	
-	
-create procedure ForIsbnBook
-@isbn varchar(20)
-as
-select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
-where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
-		Book.isbn like @isbn  
-	
-create procedure ForCodeBook
-@code varchar(20)
-as
-select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
-where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
-		Book.code like @code  
+	@name varchar(30)
+	as
+		select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+		where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
+				editorial.name like @name  
 
+-- Ejecucion de Verificacion
+exec ForNameEditorial 'DEBOLSILLO' 
+
+-- Busca al Libro por su Nombre
+create procedure ForNameBook
+	@name varchar(30)
+	as
+		select book.code,book.name as NameBook,stateB,stock,lastName,dbo.Editorial.name as nameEdit,dbo.Author.name as nameAuth from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+		where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
+				Book.name like @name  
+
+-- Ejecucion de Verificacion	
+exec ForNameBook 'ARDE BRUJA ARDE'
+
+-- Busca al Libro por su ISBN
+create procedure ForIsbnBook
+	@isbn varchar(20)
+	as
+		select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+		where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
+				Book.isbn like @isbn  
+
+-- Ejecucion de Verificacion
+exec ForIsbnBook '9788497931021'
+
+-- Busca al Libro por su Codigo
+create procedure ForCodeBook
+	@code varchar(20)
+	as
+		select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+		where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
+				Book.code like @code  
+
+-- Ejecucion de Verificacion 
+exec ForCodeBook '2001'
+
+-- Busca al Libro por su Categoria
 create procedure ForCategoryBook
 @name varchar(30)
 as
@@ -257,7 +350,9 @@ where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write
 		Category.Id=Book.idCateg and
 		Category.name like @name  
 
-exec ForCategoryBook 'Suspenso'
+-- Ejecucion de Verificacion
+exec ForCategoryBook 'Biografias'
+
 --estasdfsd	
 
 create procedure RegisterCustomer
@@ -591,3 +686,21 @@ values
 ('2017-07-22', '2017-08-22', '1723434203', '3001', 'En Proceso'),
 ('2017-07-22', '2017-08-22', '1723434211', '3001', 'En Proceso'),
 ('2017-07-22', '2017-08-22', '1723434203', '8001', 'En Proceso')
+
+alter procedure fineLoan
+@id int
+as
+select Loan.id, Loan.identificationCard, Convert(varchar(20),Loan.dateLoan) as dateLoan
+from Customer, Loan
+where id=@id and Customer.identificationCard = Loan.identificationCard
+
+exec fineLoan 15
+
+alter procedure insertFine
+	@value money,
+	@descriptionF varchar(50)
+	as
+		insert into dbo.Fine
+		values(@value, @descriptionF)
+
+select * from fine

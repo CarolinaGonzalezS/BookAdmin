@@ -30,7 +30,7 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void btnBiografia_Click(object sender, EventArgs e)
         {
-            string search = "Biografia";
+            string search = "Biografias";
             Session.Add("search", search);
             Response.Redirect("ResultCategorySearch.aspx");
         }

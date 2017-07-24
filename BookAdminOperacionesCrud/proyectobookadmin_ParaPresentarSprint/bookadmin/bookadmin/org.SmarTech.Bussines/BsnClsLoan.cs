@@ -23,6 +23,11 @@ namespace BookAdmin.org.SmarTech.Bussines
             return cnt_loan.searchLoan(id);
         }
 
+        public EntClsLoan fineLoan(int id)
+        {
+            CntClsLoan cnt_loan = new CntClsLoan();
+            return cnt_loan.fineLoan(id);
+        }
 
     }
 }
