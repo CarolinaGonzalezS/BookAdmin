@@ -54,8 +54,8 @@ namespace BookAdmin.org.SmarTech.GUI
             }
             else
             {
-                int newStock = bsn_book.minStock(ent_book.Stock);
-                bsn_book.updateStateB(ent_book.Code, newStock);
+                /*int newStock = bsn_book.minStock(ent_book.Stock);
+                bsn_book.updateStateB(ent_book.Code, newStock);*/
 
                 string idCustomer = Convert.ToString(Session["customer"]);
                 Session.Add("stock", stock);
