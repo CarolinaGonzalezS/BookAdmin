@@ -12,6 +12,7 @@ namespace BookAdmin.org.SmarTech.GUI
 {
     public partial class Fine1 : System.Web.UI.Page
     {
+        private static int loanId;
         private static EntClsLoan ent_loan = new EntClsLoan();
         private static CntClsLoan cnt_loan = new CntClsLoan();
         private static BsnClsLoan bsn_loan = new BsnClsLoan();
@@ -26,13 +27,18 @@ namespace BookAdmin.org.SmarTech.GUI
                 Response.Redirect("Login.aspx");
             }
 
+            if (Session["loanId"] == null)
+            {
+                Response.Redirect("ReturnBook.aspx");   
+            }
+
+            loadInformation();
         }
 
-        protected void showFine(EntClsLoan fineloan)
+        protected void loadInformation()
         {
-            txtIdLoan.Text = Convert.ToString(fineloan.Id);
-            txtIdentificationCard.Text = fineloan.IdentificationCard;
-            txtDateLoan.Text = fineloan.DateLoan; 
+            loanId = Convert.ToInt32(Session["loanId"]);
+            txtSearchFine.Text = Convert.ToString(loanId);
         }
 
         protected void btnSearchLoan_Click(object sender, EventArgs e)
@@ -43,7 +49,7 @@ namespace BookAdmin.org.SmarTech.GUI
 
             txtDateFine.Enabled = true;
             txtCostoLibro.Enabled = true;
-            btnFillFine.Enabled = true;
+            btnDays.Enabled = true;
         }
 
         protected void btnDays_Click(object sender, EventArgs e)
@@ -53,6 +59,8 @@ namespace BookAdmin.org.SmarTech.GUI
             DateTime newTime = Convert.ToDateTime(txtDateFine.Text);
             TimeSpan dias = newTime - oldTime;
             txtDays.Text = dias.Days.ToString();
+
+            btnFillFine.Enabled = true;
         }
 
         protected void btnFillFine_Click(object sender, EventArgs e)
@@ -62,7 +70,7 @@ namespace BookAdmin.org.SmarTech.GUI
 
             txtValueFine.Text = Convert.ToString(0.00);
             double fine = Convert.ToDouble(txtValueFine.Text);
-            
+
             if (days == 30 || days == 31)
             {
                 fine = 0;
@@ -91,11 +99,16 @@ namespace BookAdmin.org.SmarTech.GUI
             btnFinishFine.Enabled = true;
         }
 
+        protected void showFine(EntClsLoan fineloan)
+        {
+            txtIdentificationCard.Text = fineloan.IdentificationCard;
+            txtDateLoan.Text = fineloan.DateLoan; 
+        }
+
         protected void clear()
         {
             txtSearchFine.Text = null;
             txtIdentificationCard.Text = null;
-            txtIdLoan.Text = null;
             txtCostoLibro.Text = null;
             txtDescFine.Text = null;
             txtDateLoan.Text = null;
@@ -106,9 +119,21 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void btnFinishFine_Click(object sender, EventArgs e)
         {
-            bsn_fine.insertFine(Convert.ToDouble(txtValueFine.Text), txtDescFine.Text);
+            txtDateFine.Enabled = false;
+            txtCostoLibro.Enabled = false;
 
+            bsn_fine.insertFine(Convert.ToDouble(txtValueFine.Text), txtDescFine.Text);
+            string script = @"<script type='text/javascript'>
+                    alert('Se ha concluido la multa');
+                    </script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
             clear();
         }
+
+        protected void btnGoReturnBook_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ReturnBook.aspx");
+        }
+
     }
 }

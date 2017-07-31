@@ -51,7 +51,7 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void updateBook()
         {
-        stock = Convert.ToInt32(Session["stock"]);
+            stock = Convert.ToInt32(Session["stock"]);
         }
 
         protected void btnDoLoan_Click(object sender, EventArgs e)

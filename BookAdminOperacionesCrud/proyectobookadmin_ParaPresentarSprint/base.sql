@@ -676,7 +676,6 @@ update dbo.Book
 
 exec updateStateB 10001,0
 
-select * from book
 select * from loan
 
 insert into loan
@@ -704,3 +703,25 @@ alter procedure insertFine
 		values(@value, @descriptionF)
 
 select * from fine
+
+-- Procedimientos Para Reporte
+
+-- Por Libro
+alter procedure BookReport
+as
+select Book.code as Codigo, Book.isbn as ISBN, Book.name as Titulo, Convert(varchar(20),Book.datePublish) as FechaPublicacion, 
+Editorial.name as Editorial, Author.name as Nombre, Author.lastName as Apellido, Category.name as Categoria, 
+Book.stateB as Estado, Book.stock as Stock
+from dbo.Book, dbo.Editorial, dbo.Author, dbo.Write, dbo.Category
+where Book.idEdit = Editorial.id and Author.id = Write.id and Book.code = Write.code and Book.idCateg = Category.id
+
+exec BookReport
+
+-- Por Cliente
+create procedure CustomerReport
+as
+select identificationCard as Cedula, name as Nombre, lastName as Apellido, 
+phone as Telefono, celphone as Celular, addres as Direccion, mail as Email
+from dbo.Customer	
+
+exec CustomerReport

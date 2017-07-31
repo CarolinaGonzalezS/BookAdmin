@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Configuration;
-using System.Data.Common;
-using System.Data;
-using BookAdmin.org.SmarTech.entities;
 
 namespace BookAdmin.org.SmarTech.entities
 {

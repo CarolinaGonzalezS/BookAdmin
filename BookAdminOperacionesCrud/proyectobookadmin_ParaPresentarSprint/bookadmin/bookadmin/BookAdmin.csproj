@@ -81,7 +81,12 @@
     <Content Include="org.SmarTech.GUI\Principal.aspx" />
     <Content Include="org.SmarTech.GUI\RegistroCliente.aspx" />
     <Content Include="org.SmarTech.GUI\RegistroPrestamo.aspx" />
+    <Content Include="org.SmarTech.GUI\ReportCustomer.aspx" />
+    <Content Include="org.SmarTech.GUI\ReportFine.aspx" />
+    <Content Include="org.SmarTech.GUI\ReportLoan.aspx" />
+    <Content Include="org.SmarTech.GUI\Reports.aspx" />
     <Content Include="org.SmarTech.GUI\ResultCategorySearch.aspx" />
+    <Content Include="org.SmarTech.GUI\ReportBook.aspx" />
     <Content Include="org.SmarTech.GUI\ResultSearch.aspx" />
     <Content Include="org.SmarTech.GUI\ReturnBook.aspx" />
     <Content Include="Web.config">
@@ -106,6 +111,7 @@
     <Compile Include="org.SmarTech.Bussines\BsnClsEditorial.cs" />
     <Compile Include="org.SmarTech.Bussines\BsnClsFine.cs" />
     <Compile Include="org.SmarTech.Bussines\BsnClsLoan.cs" />
+    <Compile Include="org.SmarTech.Bussines\BsnClsReports.cs" />
     <Compile Include="org.SmarTech.Bussines\BsnClsReturnBook.cs" />
     <Compile Include="org.SmarTech.Bussines\BsnClsSearch.cs" />
     <Compile Include="org.SmarTech.Bussines\BsnClsWrite.cs" />
@@ -117,6 +123,7 @@
     <Compile Include="org.SmarTech.controllers\CntClsEditorial.cs" />
     <Compile Include="org.SmarTech.controllers\CntClsFine.cs" />
     <Compile Include="org.SmarTech.controllers\CntClsLoan.cs" />
+    <Compile Include="org.SmarTech.controllers\CntClsReports.cs" />
     <Compile Include="org.SmarTech.controllers\CntClsReturnBook.cs" />
     <Compile Include="org.SmarTech.controllers\CntClsSearch.cs" />
     <Compile Include="org.SmarTech.controllers\CntClsWrite.cs" />
@@ -128,6 +135,7 @@
     <Compile Include="org.SmarTech.entities\EntClsEditorial.cs" />
     <Compile Include="org.SmarTech.entities\EntClsFine.cs" />
     <Compile Include="org.SmarTech.entities\EntClsLoan.cs" />
+    <Compile Include="org.SmarTech.entities\EntClsReports.cs" />
     <Compile Include="org.SmarTech.entities\EntClsReturnBook.cs" />
     <Compile Include="org.SmarTech.entities\EntClsSearch.cs" />
     <Compile Include="org.SmarTech.entities\EntClsWrite.cs" />
@@ -250,12 +258,54 @@
     <Compile Include="org.SmarTech.GUI\RegistroPrestamo.master.designer.cs">
       <DependentUpon>RegistroPrestamo.master</DependentUpon>
     </Compile>
+    <Compile Include="org.SmarTech.GUI\ReportCustomer.aspx.cs">
+      <DependentUpon>ReportCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\ReportCustomer.aspx.designer.cs">
+      <DependentUpon>ReportCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\ReportFine.aspx.cs">
+      <DependentUpon>ReportFine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\ReportFine.aspx.designer.cs">
+      <DependentUpon>ReportFine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\ReportLoan.aspx.cs">
+      <DependentUpon>ReportLoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\ReportLoan.aspx.designer.cs">
+      <DependentUpon>ReportLoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Reports.master.cs">
+      <DependentUpon>Reports.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\Reports.master.designer.cs">
+      <DependentUpon>Reports.master</DependentUpon>
+    </Compile>
     <Compile Include="org.SmarTech.GUI\ResultCategorySearch.aspx.cs">
       <DependentUpon>ResultCategorySearch.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="org.SmarTech.GUI\ResultCategorySearch.aspx.designer.cs">
       <DependentUpon>ResultCategorySearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\ReportBook.aspx.cs">
+      <DependentUpon>ReportBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\ReportBook.aspx.designer.cs">
+      <DependentUpon>ReportBook.aspx</DependentUpon>
     </Compile>
     <Compile Include="org.SmarTech.GUI\ResultSearch.aspx.cs">
       <DependentUpon>ResultSearch.aspx</DependentUpon>
@@ -312,6 +362,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="org.SmarTech.GUI\Fine.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="org.SmarTech.GUI\Reports.master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

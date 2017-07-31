@@ -28,7 +28,6 @@ namespace BookAdmin.org.SmarTech.GUI
             {
                 Response.Redirect("Login.aspx");
             }
-
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -94,9 +93,13 @@ namespace BookAdmin.org.SmarTech.GUI
             bsn_returnBook.UpdateStockBook(ent_returnbook.Code, Newstock);
 
             returnBookMessage();
-            btnReturnBook.Enabled = false;
+            btnReturnBook.Enabled = false;  
+        }
 
-            Response.Redirect("Fine.aspx");  
+        protected void btnLoan_Click(object sender, EventArgs e)
+        {
+            Session.Add("loanId", textticket.Text);
+            Response.Redirect("Fine.aspx"); 
         }
     }
 }

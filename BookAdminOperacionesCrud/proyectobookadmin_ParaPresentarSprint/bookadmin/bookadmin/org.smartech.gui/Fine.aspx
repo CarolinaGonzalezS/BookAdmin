@@ -15,9 +15,9 @@
             <td style="width: 69px">
                 &nbsp;</td>
             <td style="width: 69px">
-                &nbsp;</td>
+                ID Prestamo:</td>
             <td style="width: 344px">
-                <asp:TextBox ID="txtSearchFine" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtSearchFine" runat="server" Width="55px" Enabled="False"></asp:TextBox>
             &nbsp;<asp:Button ID="btnSearchLoan" runat="server" Text="Buscar Prestamo" 
                     onclick="btnSearchLoan_Click" />
             </td>
@@ -49,52 +49,15 @@
             <td style="width: 69px">
                 &nbsp;</td>
             <td style="width: 69px">
-                ID Prestamo: </td>
-            <td style="width: 344px">
-                <asp:TextBox ID="txtIdLoan" runat="server" Enabled="False"></asp:TextBox>
-            </td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td style="width: 69px">
-                &nbsp;</td>
-            <td style="width: 69px">
-                ICosto Libro:</td>
-            <td style="width: 344px">
-                <asp:TextBox ID="txtCostoLibro" runat="server" Enabled="False"></asp:TextBox>
-            </td>
-            <td>
-                <asp:Button ID="btnDays" runat="server" onclick="btnDays_Click" 
-                    Text="Ver Dias" />
-            </td>
-        </tr>
-        <tr>
-            <td style="width: 69px">
-                &nbsp;</td>
-            <td style="width: 69px">
-                Descripcion:
-            </td>
-            <td style="width: 344px">
-                <asp:TextBox ID="txtDescFine" runat="server" Height="23px" Width="253px" 
-                    Enabled="False"></asp:TextBox>
-            </td>
-            <td>
-                <asp:Button ID="btnFillFine" runat="server" Text="Ver Multa" Enabled="False" 
-                    onclick="btnFillFine_Click" />
-            </td>
-        </tr>
-        <tr>
-            <td style="width: 69px">
-                &nbsp;</td>
-            <td style="width: 69px">
-                Fecha de Inicio: 
+                IFecha de Inicio: 
             </td>
             <td style="width: 344px">
                 <asp:TextBox ID="txtDateLoan" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
-                &nbsp;</td>
+                <asp:Button ID="btnDays" runat="server" onclick="btnDays_Click" 
+                    Text="Ver Dias" Enabled="False" />
+            </td>
         </tr>
         <tr>
             <td style="width: 69px">
@@ -105,15 +68,17 @@
                 <asp:TextBox ID="txtDateFine" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
-                &nbsp;</td>
+                <asp:Button ID="btnFillFine" runat="server" Text="Ver Multa" Enabled="False" 
+                    onclick="btnFillFine_Click" />
+            </td>
         </tr>
         <tr>
             <td style="width: 69px">
                 &nbsp;</td>
             <td style="width: 69px">
-                Dias Transcurridos:</td>
+                Costo Libro:</td>
             <td style="width: 344px">
-                <asp:TextBox ID="txtDays" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtCostoLibro" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -122,7 +87,18 @@
             <td style="width: 69px">
                 &nbsp;</td>
             <td style="width: 69px">
-                Valor a Pagar: 
+                Dias Transcurridos:</td>
+            <td style="width: 344px">
+                <asp:TextBox ID="txtDays" runat="server" Enabled="False"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 69px">
+                &nbsp;</td>
+            <td style="width: 69px">
+                :Valor a Pagar: 
             </td>
             <td style="width: 344px">
                 <asp:TextBox ID="txtValueFine" runat="server" Enabled="False"></asp:TextBox>
@@ -134,9 +110,11 @@
             <td style="width: 69px">
                 &nbsp;</td>
             <td style="width: 69px">
-                &nbsp;</td>
+                Descripcion:</td>
             <td style="width: 344px">
-                &nbsp;</td>
+                <asp:TextBox ID="txtDescFine" runat="server" Height="23px" Width="287px" 
+                    Enabled="False"></asp:TextBox>
+            </td>
             <td>
                 <asp:Button ID="btnFinishFine" runat="server" style="text-align: right" 
                     Text="Finalizar Multa" Enabled="False" onclick="btnFinishFine_Click" />
@@ -151,6 +129,18 @@
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 69px">
+                &nbsp;</td>
+            <td style="width: 69px">
+                &nbsp;</td>
+            <td style="width: 344px">
+                &nbsp;</td>
+            <td>
+                <asp:Button ID="btnGoReturnBook" runat="server" onclick="btnGoReturnBook_Click" 
+                    Text="Ir a Devolver Libro" />
+            </td>
         </tr>
     </table>
 </asp:Content>

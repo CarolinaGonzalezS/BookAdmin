@@ -40,22 +40,13 @@ namespace BookAdmin.org.SmarTech.GUI {
         protected global::System.Web.UI.WebControls.TextBox txtIdentificationCard;
         
         /// <summary>
-        /// Control txtIdLoan.
+        /// Control txtDateLoan.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdLoan;
-        
-        /// <summary>
-        /// Control txtCostoLibro.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCostoLibro;
+        protected global::System.Web.UI.WebControls.TextBox txtDateLoan;
         
         /// <summary>
         /// Control btnDays.
@@ -67,13 +58,13 @@ namespace BookAdmin.org.SmarTech.GUI {
         protected global::System.Web.UI.WebControls.Button btnDays;
         
         /// <summary>
-        /// Control txtDescFine.
+        /// Control txtDateFine.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescFine;
+        protected global::System.Web.UI.WebControls.TextBox txtDateFine;
         
         /// <summary>
         /// Control btnFillFine.
@@ -85,22 +76,13 @@ namespace BookAdmin.org.SmarTech.GUI {
         protected global::System.Web.UI.WebControls.Button btnFillFine;
         
         /// <summary>
-        /// Control txtDateLoan.
+        /// Control txtCostoLibro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDateLoan;
-        
-        /// <summary>
-        /// Control txtDateFine.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDateFine;
+        protected global::System.Web.UI.WebControls.TextBox txtCostoLibro;
         
         /// <summary>
         /// Control txtDays.
@@ -121,6 +103,15 @@ namespace BookAdmin.org.SmarTech.GUI {
         protected global::System.Web.UI.WebControls.TextBox txtValueFine;
         
         /// <summary>
+        /// Control txtDescFine.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDescFine;
+        
+        /// <summary>
         /// Control btnFinishFine.
         /// </summary>
         /// <remarks>
@@ -128,5 +119,14 @@ namespace BookAdmin.org.SmarTech.GUI {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnFinishFine;
+        
+        /// <summary>
+        /// Control btnGoReturnBook.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGoReturnBook;
     }
 }
