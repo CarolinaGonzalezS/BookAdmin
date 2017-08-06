@@ -80,7 +80,7 @@ namespace BookAdmin.org.SmarTech.GUI
 
         public void listAdd()
         {
-            lstAuthor = bsn_author.AuthorList();
+            lstAuthor = bsn_author.createListOfAuthor();
             if (lstAuthor != null)
             {
 
@@ -108,7 +108,8 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void ShowAuthor(EntClsAuthor author)
         {
-            textName.Text = author.Name;
+
+            textName.Text = bsn_author.returnName(author.Name);
             textLastName.Text = author.LastName;
             textNationality.Text = author.Nationality;
         }

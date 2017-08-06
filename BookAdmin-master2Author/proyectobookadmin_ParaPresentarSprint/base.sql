@@ -283,6 +283,8 @@ as
 select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 		Book.name like @name  
+			
+
 	
 	
 create procedure ForIsbnBook

@@ -203,7 +203,7 @@
                 <td class="style2" colspan="3">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnRegister" runat="server" Text="REGISTRAR" 
-                        onclick="buttonRegister_Click" Width="239px" Enabled="False" 
+                        onclick="buttonRegister_Click" Width="239px" 
                         Visible="False" />
                 </td>
                 <td>

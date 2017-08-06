@@ -53,6 +53,7 @@ namespace BookAdmin.org.SmarTech.GUI
                 if (Session["regis"] != null)
                 {
                     btnRegister.Visible = true;
+                    ddlState.Visible = false;
                 }
             }
             idEditorial = Convert.ToInt32(Session["edit"].ToString());
@@ -82,6 +83,7 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
+
             try
             {
                 int idcateg = Convert.ToInt32(ddlCategory.SelectedValue);
@@ -89,7 +91,7 @@ namespace BookAdmin.org.SmarTech.GUI
                 bsn_book.updateBook(textCode.Text, textIsbn.Text, textTitle.Text, textDate.Text, idEditorial, idcateg, state, Convert.ToInt32(textStock.Text));
                 bsn_write.insertWrite(idAuthor, textCode.Text);
                 Session.Add("succe", 1);
-                Response.Redirect("BookView.aspx");
+                Response.Redirect("BookList.aspx");
             }
             catch
             {
@@ -104,24 +106,83 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void buttonRegister_Click(object sender, EventArgs e)
         {
-            try
+            if (validTitle(textTitle.Text))
             {
-                int itemSelec = (ddlCategory.SelectedIndex) + 1;
-                bsn_book.insertBook(textTitle.Text, textCode.Text, textIsbn.Text, textDate.Text, Convert.ToInt32(textStock.Text), itemSelec, idEditorial, "Disponible", 1);
-                bsn_write.insertWrite(idAuthor, textCode.Text);
-                Session.Add("succe", 1);
-                Response.Redirect("BookView.aspx");
+                errorTitle();
             }
-            catch
+            else 
             {
-                string script = @"<script type='text/javascript'>
-                    alert('No se ha registrado el libro revise los datos ingresados');
-                    </script>";
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
-            }
-
+                if(validIsbn(textIsbn.Text))
+                {
+                    errorIsbn();
+                }
+                else
+                {
+                    if(validCode(textCode.Text))
+                    {
+                        errorCode();
+                    }
+                    else
+                    {
+                        int itemSelec = (ddlCategory.SelectedIndex) + 1;
+                        bsn_book.insertBook(textTitle.Text, textCode.Text, textIsbn.Text, textDate.Text, Convert.ToInt32(textStock.Text), itemSelec, idEditorial, "Disponible", 1);
+                        bsn_write.insertWrite(idAuthor, textCode.Text);
+                        Session.Add("succe", 1);
+                        Response.Redirect("BookList.aspx");                            
+                    }
+                }
+            }                
         }
 
+        protected bool validTitle(string title) 
+        {
+            List<EntClsSearch> list_entSearch = bsn_search.ForNameInPartBook(title);
+            if (list_entSearch.Count() >= 1) 
+            {
+                return true;
+            }
+            return false;
+        }
+        protected bool validCode(string code)
+        {
+            List<EntClsSearch> list_entSearch = bsn_search.ForCodeBook(code);
+            if (list_entSearch.Count() >= 1)
+            {
+                return true;
+            }
+            return false;
+        }
+        protected bool validIsbn(string isbn)
+        {
+            List<EntClsSearch> list_entSearch = bsn_search.ForIsbnBook(isbn);
+            if (list_entSearch.Count() >= 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        protected void errorTitle() 
+        {
+            string script = @"<script type='text/javascript'>
+                    alert('Ya existe un libro con ese nombre');
+                    </script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+        }
+        protected void errorCode()
+        {
+            string script = @"<script type='text/javascript'>
+                    alert('Ya existe un libro con ese codigo');
+                    </script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+        }
+        protected void errorIsbn()
+        {
+            string script = @"<script type='text/javascript'>
+                    alert('Ya existe un libro con ese ISBN');
+                    </script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+        }
         protected void clear()
         {
             textCode.Text = "";
@@ -131,6 +192,8 @@ namespace BookAdmin.org.SmarTech.GUI
             textDate.Text = "";
 
         }
+
+       
 
 
     }

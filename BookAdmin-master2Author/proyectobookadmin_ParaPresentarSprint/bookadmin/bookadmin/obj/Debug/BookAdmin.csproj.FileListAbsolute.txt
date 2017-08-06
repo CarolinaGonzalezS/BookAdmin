@@ -102,3 +102,10 @@ D:\usuario\Documentos\universidad\4semestre\Tecnicas\BookAdmin\BookAdmin\BookAdm
 D:\usuario\Documentos\universidad\4semestre\Tecnicas\BookAdmin\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.csproj.GenerateResource.Cache
 D:\usuario\Documentos\universidad\4semestre\Tecnicas\BookAdmin\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.dll
 D:\usuario\Documentos\universidad\4semestre\Tecnicas\BookAdmin\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.pdb
+C:\Users\Rodrigo\Desktop\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.dll
+C:\Users\Rodrigo\Desktop\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.pdb
+C:\Users\Rodrigo\Desktop\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache
+C:\Users\Rodrigo\Desktop\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.org.SmarTech.GUI.rptPrestamoCliente.resources
+C:\Users\Rodrigo\Desktop\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.csproj.GenerateResource.Cache
+C:\Users\Rodrigo\Desktop\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.dll
+C:\Users\Rodrigo\Desktop\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.pdb

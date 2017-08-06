@@ -33,7 +33,7 @@ namespace BookAdmin.org.SmarTech.GUI
         protected void showBook(EntClsBook ent_book) 
         {
             textTitle.Text = ent_book.Name;
-            textCodeBook.Text = ent_book.Code;
+            textCode.Text = ent_book.Code;
             textStock.Text = Convert.ToString(ent_book.Stock);
             textState.Text = ent_book.StateB;
             EntClsWrite ent_write = bsn_write.listWriteForCode(ent_book.Code);
@@ -58,7 +58,7 @@ namespace BookAdmin.org.SmarTech.GUI
             {
                 string idCustomer=Convert.ToString(Session["customer"]);
                 Session.Add("stock", stock);
-                Session.Add("bookview", ent_book.Code=textCodeBook.Text);
+                Session.Add("bookview", ent_book.Code=textCode.Text);
                 Session.Add("IdCustomer", idCustomer);
                 Response.Redirect("FinalizarPrestamo.aspx");
             }
@@ -81,6 +81,7 @@ namespace BookAdmin.org.SmarTech.GUI
                     </script>";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
         }
+
 
     }
 }
