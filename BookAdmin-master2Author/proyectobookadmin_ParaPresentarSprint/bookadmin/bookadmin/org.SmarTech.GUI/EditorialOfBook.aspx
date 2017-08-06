@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Theme="Tema1" Language="C#" MasterPageFile="~/org.SmarTech.GUI/RegistroLibro.master" AutoEventWireup="true" CodeBehind="Autor.aspx.cs" Inherits="BookAdmin.org.SmarTech.GUI.Autor" %>
+﻿<%@ Page Title="" Theme="Tema1" Language="C#" MasterPageFile="~/org.SmarTech.GUI/BusquedaLibro.master" AutoEventWireup="true" CodeBehind="EditorialOfBook.aspx.cs" Inherits="BookAdmin.org.SmarTech.GUI.EditorialOfBook" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="contenidoPrincipal" runat="server">
-    <table style="width: 100%">
+<table style="width: 100%">
         <tr>
             <td>
                 &nbsp;</td>
@@ -63,8 +63,8 @@
             <td>
                 &nbsp;</td>
             <td>
-                <asp:RadioButtonList ID="rblAuthor" runat="server" Width="203px" 
-                    onselectedindexchanged="rblAuthor_SelectedIndexChanged">
+                <asp:RadioButtonList ID="rblEditorial" runat="server" 
+                     Width="203px" onselectedindexchanged="rblEditorial_SelectedIndexChanged">
                     <asp:ListItem Text="Nuevo" Value="1"></asp:ListItem>
                     <asp:ListItem Text="Ya existe" Value="2"></asp:ListItem>
                 </asp:RadioButtonList>
@@ -72,8 +72,7 @@
             <td>
                 &nbsp;</td>
             <td>
-                
-      
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>
@@ -135,8 +134,8 @@
             <td>
                 &nbsp;</td>
             <td colspan="3">
-                <asp:DropDownList ID="ddlAuthor" runat="server" 
-                    onselectedindexchanged="ddlAuthor_SelectedIndexChanged">
+                <asp:DropDownList ID="ddlEditorial" runat="server" onselectedindexchanged="ddlEditorial_SelectedIndexChanged" 
+                    >
                 </asp:DropDownList>
             </td>
             <td>
@@ -186,30 +185,6 @@
             <td>
                 &nbsp;</td>
             <td>
-                <asp:Button ID="btnUpdateAuthor" runat="server" onclick="btnUpdateAuthor_Click" 
-                    Text="Actualizar" />
-            </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
@@ -226,17 +201,13 @@
             <td>
                 &nbsp;</td>
             <td>
-                <asp:Label ID="Label2" runat="server" Text="Apellido:"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="textLastName" runat="server" Enabled="False"></asp:TextBox>
-            </td>
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>
-                <asp:Button ID="btnDeleteAuthor" runat="server" Text="Eliminar" 
-                    onclick="btnDeleteAuthor_Click" />
-            </td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>
@@ -247,37 +218,15 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td style="height: 23px">
-                </td>
-            <td style="height: 23px">
-                </td>
-            <td style="height: 23px">
-                </td>
-            <td style="height: 23px">
-                </td>
-            <td style="height: 23px">
-                </td>
-            <td style="height: 23px">
-                </td>
-            <td style="height: 23px">
-                </td>
-            <td style="height: 23px">
-                </td>
-            <td style="height: 23px">
-                </td>
-            <td style="height: 23px">
-                </td>
-        </tr>
-        <tr>
             <td>
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>
-                <asp:Label ID="Label3" runat="server" Text="Nacionalidad:"></asp:Label>
+                <asp:Label ID="Label2" runat="server" Text="Pais:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textNationality" runat="server" Enabled="False"></asp:TextBox>
+                <asp:TextBox ID="textCountry" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -320,13 +269,13 @@
             <td>
                 &nbsp;</td>
             <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                <asp:Button ID="btnNextEditorial" runat="server" Enabled="False" 
-                    Text="Siguiente" onclick="btnNextEditorial_Click" />
+                <asp:Label ID="Label3" runat="server" Text="Ciudad:"></asp:Label>
             </td>
+            <td>
+                <asp:TextBox ID="textCity" runat="server" Enabled="False"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>
@@ -349,6 +298,82 @@
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                
+                &nbsp;</td><asp:Button ID="btnNextEditorial" runat="server" Enabled="False" 
+                    Text="Siguiente" />
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                <asp:Button ID="btnBack" runat="server" onclick="btnBack_Click" 
+                    Text="&lt;&lt; ATRAS" />
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                
+                <asp:Button ID="btnNextBook" runat="server" onclick="btnNextBook_Click" 
+                    Text="SIGUIENTE &gt;&gt;" Visible="False" />
+                
+            </td>
+            <td>
+                <asp:Button ID="btnUpdateCont" runat="server" onclick="btnUpdateCont_Click" 
+                    Text="SIGUIENTEA &gt;&gt;" Visible="False" />
+            </td>
             <td>
                 &nbsp;</td>
             <td>
@@ -383,4 +408,5 @@
                 &nbsp;</td>
         </tr>
     </table>
+
 </asp:Content>

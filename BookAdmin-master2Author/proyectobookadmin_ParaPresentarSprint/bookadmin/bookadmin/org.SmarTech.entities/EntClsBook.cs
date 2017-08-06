@@ -71,11 +71,11 @@ namespace BookAdmin.org.SmarTech.entities
         }
         #endregion
 
-        public EntClsBook(string code, string isbn, string name, string datePublish, int idEdit, int idCateg, int idAdmin, string stateB, int stock) 
+        public EntClsBook(string code, string isbn, string name, string datePublish, int idEdit, int idCateg, int idAdmin, string stateB, int stock)
         {
             this.code = code;
-            this.isbn=isbn;
-            this.name=name;
+            this.isbn = isbn;
+            this.name = name;
             this.datePublish = datePublish;
             this.idEdit = idEdit;
             this.idCateg = idCateg;
@@ -83,7 +83,7 @@ namespace BookAdmin.org.SmarTech.entities
             this.stateB = stateB;
             this.stock = stock;
         }
-        public EntClsBook() 
+        public EntClsBook()
         {
 
         }
@@ -99,7 +99,29 @@ namespace BookAdmin.org.SmarTech.entities
             this.code = code;
             this.stock = stock;
             this.stateB = stateB;
-            
         }
+
+        public EntClsBook(string code, string isbn, string name, string datePublish, int idCateg, string stateB, int stock)
+        {
+            this.code = code;
+            this.isbn = isbn;
+            this.name = name;
+            this.datePublish = datePublish;
+            this.idCateg = idCateg;
+            this.stateB = stateB;
+            this.stock = stock;
+        }
+
+        public EntClsBook(int idEdit)
+        {
+            this.idEdit = idEdit;
+        }
+
+        public EntClsBook(string code, int stock)
+        {
+            this.code = code;
+            this.stock = stock;
+        }
+
     }
 }

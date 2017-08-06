@@ -27,6 +27,20 @@ namespace BookAdmin.org.SmarTech.Bussines
             return dtLibro.CheckBook2(name);
         }
 
+        public EntClsBook SearchEditorialOfBook(string code)
+        {
+            CntClsBook cnt_book = new CntClsBook();
+            return cnt_book.SearchEditOfBook(code);
+        }
+
+        public EntClsBook SearchBook(string code)
+        {
+            CntClsBook cnt_book = new CntClsBook();
+            return cnt_book.SearchBook(code);
+        }
+
+
+
         public int updateBook(string code, string isbn, string name, string datePublish, int idEdit, int idCateg, string stateB, int stock)
         {
             CntClsBook cnt_book = new CntClsBook();
