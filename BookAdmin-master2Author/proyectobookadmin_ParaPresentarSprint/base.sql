@@ -266,8 +266,8 @@ where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write
 		Author.lastName like @lastName and
 		Author.name like @name 
 		
-
-exec ForAuthorCompleteName '%Gabriel%','%Garcia%'
+select * from author
+exec ForAuthorCompleteName 'Gabriel','Garcia Marquez'
 
 
 create procedure ForNameEditorial
@@ -428,10 +428,10 @@ where code=@code
 
 --exec listAuthorWithBook '122jk'
 
-create procedure AuthorforId
+alter procedure AuthorforId
 @id int
 as
-select name,lastName
+select name,lastName,nationality
 from dbo.Author
 where id=@id
 exec listAuthorWithBook

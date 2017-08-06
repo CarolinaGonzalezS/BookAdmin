@@ -215,7 +215,7 @@ namespace BookAdmin.org.SmarTech.controllers
                     {
                         if (dr.Read())
                         {
-                            obj_author = new EntClsAuthor((string)dr["name"], (string)dr["lastName"]);
+                            obj_author = new EntClsAuthor((string)dr["name"], (string)dr["lastName"],(string)dr["nationality"]);
 
                         }
 
