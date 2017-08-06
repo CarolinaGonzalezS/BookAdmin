@@ -209,7 +209,7 @@ namespace BookAdmin.org.SmarTech.controllers
                     {
                         if (dr.Read())
                         {
-                            objEditorial = new EntClsEditorial((string)dr["name"]);
+                            objEditorial = new EntClsEditorial((string)dr["name"], (string)dr["country"], (string)dr["city"]);
 
                         }
 

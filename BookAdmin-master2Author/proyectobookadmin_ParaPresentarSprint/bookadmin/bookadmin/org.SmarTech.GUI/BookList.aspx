@@ -160,7 +160,9 @@
                 <asp:TextBox ID="textTitle" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
-                &nbsp;</td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ErrorMessage="*obligatorio" ControlToValidate="textTitle" ForeColor="Red"></asp:RequiredFieldValidator>
+            </td>
             <td>
                 <asp:Label ID="Label2" runat="server" Text="ISBN:"></asp:Label>
             </td>
@@ -168,7 +170,9 @@
                 <asp:TextBox ID="textIsbn" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
-                &nbsp;</td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                ErrorMessage="*obligatorio" ControlToValidate="textIsbn" ForeColor="Red"></asp:RequiredFieldValidator>
+            </td>
             <td>
                 &nbsp;</td>
             <td>
@@ -212,7 +216,9 @@
                 <asp:TextBox ID="textDatePublish" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
-                &nbsp;</td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ErrorMessage="*obligatorio" ControlToValidate="textDatePublish" ForeColor="Red"></asp:RequiredFieldValidator>
+            </td>
             <td>
                 <asp:Label ID="Label8" runat="server" Text="Editorial:"></asp:Label>
             </td>
@@ -220,7 +226,9 @@
                 <asp:TextBox ID="textEdit" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
-                &nbsp;</td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                    ErrorMessage="*obligatorio" ControlToValidate="textEdit" ForeColor="Red"></asp:RequiredFieldValidator>
+            </td>
             <td>
                 &nbsp;</td>
             <td>
@@ -264,7 +272,9 @@
                 <asp:TextBox ID="textCategory" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
-                &nbsp;</td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ErrorMessage="*obligatorio" ControlToValidate="textCategory" ForeColor="Red"></asp:RequiredFieldValidator>
+            </td>
             <td>
                 <asp:Label ID="Label7" runat="server" Text="Autor:"></asp:Label>
             </td>
@@ -272,7 +282,9 @@
                 <asp:TextBox ID="textAuthor" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
-                &nbsp;</td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                    ErrorMessage="*obligatorio" ControlToValidate="textAuthor" ForeColor="Red"></asp:RequiredFieldValidator>
+            </td>
             <td>
                 &nbsp;</td>
             <td>
@@ -316,7 +328,9 @@
                 <asp:TextBox ID="textStock" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
-                &nbsp;</td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                    ErrorMessage="*obligatorio" ControlToValidate="textStock" ForeColor="Red"></asp:RequiredFieldValidator>
+            </td>
             <td>
                 <asp:Label ID="Label6" runat="server" Text="Estado:"></asp:Label>
             </td>
@@ -324,7 +338,9 @@
                 <asp:TextBox ID="textState" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
-                &nbsp;</td>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                    ErrorMessage="*obligatorio" ControlToValidate="textState" ForeColor="Red"></asp:RequiredFieldValidator>
+            </td>
             <td>
                 &nbsp;</td>
             <td>

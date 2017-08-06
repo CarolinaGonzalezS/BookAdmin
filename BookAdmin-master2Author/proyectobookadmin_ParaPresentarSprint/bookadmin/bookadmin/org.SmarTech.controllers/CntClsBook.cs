@@ -255,23 +255,23 @@ namespace BookAdmin.org.SmarTech.controllers
             parameters.Add(param4);
 
             DbParameter param5 = dpf.CreateParameter();
-            param4.Value = idEdit;
-            param4.ParameterName = "idEdit";
+            param5.Value = idEdit;
+            param5.ParameterName = "idEdit";
             parameters.Add(param5);
 
             DbParameter param6 = dpf.CreateParameter();
-            param4.Value = idCateg;
-            param4.ParameterName = "idCateg";
+            param6.Value = idCateg;
+            param6.ParameterName = "idCateg";
             parameters.Add(param6);
 
             DbParameter param7 = dpf.CreateParameter();
-            param4.Value = stateB;
-            param4.ParameterName = "stateB";
+            param7.Value = stateB;
+            param7.ParameterName = "stateB";
             parameters.Add(param7);
 
             DbParameter param8 = dpf.CreateParameter();
-            param4.Value = stock;
-            param4.ParameterName = "stock";
+            param8.Value = stock;
+            param8.ParameterName = "stock";
             parameters.Add(param8);
 
             return ejecuteNonQuery("updateBook", parameters);

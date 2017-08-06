@@ -95,7 +95,7 @@ namespace BookAdmin.org.SmarTech.GUI
         protected void ddlAuthor_SelectedIndexChanged(object sender, EventArgs e)
         {
             ent_Auth = bsn_author.checkAuthor(textName.Text, textLastName.Text);
-            bsn_write.deleteWrite(ent_Auth.Id, code);
+            bsn_write.deleteWrite(ent_Auth.Id, code);            
             int valor = Convert.ToInt32(ddlAuthor.SelectedValue);
             foreach (EntClsAuthor auth in lstAuthor)
             {

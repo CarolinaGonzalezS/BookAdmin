@@ -207,7 +207,10 @@
                 <asp:TextBox ID="textphone" runat="server"></asp:TextBox>
             </td>
             <td>
-                &nbsp;</td>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+                    ControlToValidate="textphone" ErrorMessage="RegularExpressionValidator" 
+                    ValidationExpression="((\(\d{3 } \)?) | (\d{3 } -))? \d{3 } - \d{4 }"></asp:RegularExpressionValidator>
+            </td>
             <td>
                 &nbsp;</td>
             <td>
@@ -345,7 +348,10 @@
                 <asp:TextBox ID="textMail" runat="server"></asp:TextBox>
             </td>
             <td>
-                &nbsp;</td>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                    ControlToValidate="textMail" ErrorMessage="RegularExpressionValidator" ValidationExpression="\w + ([- +.] \w +) * @ \w + ([-.] \w +) * \. \w + ([-.] \w +)
+"></asp:RegularExpressionValidator>
+            </td>
             <td>
                 &nbsp;</td>
             <td>

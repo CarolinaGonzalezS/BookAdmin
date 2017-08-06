@@ -239,29 +239,29 @@ create procedure InsertWrite
 as
 insert dbo.write(id,code) values(@id,@code)
 
-create procedure ForNameAuthor
+alter procedure ForNameAuthor
 @name varchar(30)
 as
-select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 		Author.name like @name 
 --prueba		
 exec ForNameAuthor '%Gabriel%'
 
-create procedure ForLastNameAuthor
+alter procedure ForLastNameAuthor
 @lastName varchar(30)
 as
-select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 		Author.lastName like @lastName 
 		
 exec ForLastNameAuthor '%Garcia%'		
 
-create procedure ForAuthorCompleteName
+alter procedure ForAuthorCompleteName
 @name varchar(30),
 @lastName varchar(30)
 as
-select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 		Author.lastName like @lastName and
 		Author.name like @name 
@@ -270,41 +270,41 @@ select * from author
 exec ForAuthorCompleteName 'Gabriel','Garcia Marquez'
 
 
-create procedure ForNameEditorial
+alter procedure ForNameEditorial
 @name varchar(30)
 as
-select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 		editorial.name like @name  
 	
-create procedure ForNameBook
+alter procedure ForNameBook
 @name varchar(30)
 as
-select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 		Book.name like @name  
 			
 
 	
 	
-create procedure ForIsbnBook
+alter procedure ForIsbnBook
 @isbn varchar(20)
 as
-select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 		Book.isbn like @isbn  
 	
-create procedure ForCodeBook
+alter procedure ForCodeBook
 @code varchar(20)
 as
-select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 		Book.code like @code  
 
-create procedure ForCategoryBook
+alter procedure ForCategoryBook
 @name varchar(30)
 as
-select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial,dbo.Category
+select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial,dbo.Category
 where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 		Category.Id=Book.idCateg and
 		Category.name like @name  
@@ -340,7 +340,7 @@ exec EditorialList
 
 
 -- Actualizaciones de Tabla
-create procedure updateBook
+alter procedure updateBook
 @code varchar(10),
 @isbn varchar(15),
 @name varchar(30),
@@ -351,7 +351,7 @@ create procedure updateBook
 @stock int
 as
 update dbo.Book 
-set isbn=@isbn,name=@name,datePublish=@datePublish,idEdit=@idEdit,idCateg=@idCateg,stateB=@stateB,stock=@stock
+set isbn=@isbn,name=@name,datePublish=Convert(date,@datePublish),idEdit=@idEdit,idCateg=@idCateg,stateB=@stateB,stock=@stock
 where code=@code
 
 create procedure updateEditorial
@@ -439,7 +439,7 @@ exec listAuthorWithBook
 create procedure checkEditorialId
 @id int
 as 
-select name
+select name,country,city
 from dbo.Editorial
 where id=@id
 

@@ -57,7 +57,7 @@ namespace BookAdmin.org.SmarTech.GUI
                 }
             }
             idEditorial = Convert.ToInt32(Session["edit"].ToString());
-            idAuthor = Convert.ToInt32(Session["author".ToString()]);
+            idAuthor = Convert.ToInt32(Session["author".ToString()]);            
             if (!IsPostBack)
             {
                 loadDropDownList();
@@ -83,36 +83,37 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-
-            try
+            if (validTitle(textTitle.Text, 1))
             {
-                int idcateg = Convert.ToInt32(ddlCategory.SelectedValue);
-                string state = ddlState.SelectedItem.Text;
-                bsn_book.updateBook(textCode.Text, textIsbn.Text, textTitle.Text, textDate.Text, idEditorial, idcateg, state, Convert.ToInt32(textStock.Text));
-                bsn_write.insertWrite(idAuthor, textCode.Text);
-                Session.Add("succe", 1);
-                Response.Redirect("BookList.aspx");
+                errorTitle();
             }
-            catch
+            else
             {
-                string script = @"<script type='text/javascript'>
-                    alert('Algun dato esta erroneo revisa');
-                    </script>";
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+                if (validIsbn(textIsbn.Text, 1))
+                {
+                    errorIsbn();
+                }
+                else
+                {
+                    int idcateg = Convert.ToInt32(ddlCategory.SelectedValue);
+                    string state = ddlState.SelectedItem.Text;
+                    bsn_book.updateBook(textCode.Text, textIsbn.Text, textTitle.Text, textDate.Text, idEditorial, idcateg, state, Convert.ToInt32(textStock.Text));
+                    bsn_write.insertWrite(idAuthor, textCode.Text);
+                    Session.Add("succe", 1);
+                    Response.Redirect("BookList.aspx");
+                }
             }
-
-
         }
 
         protected void buttonRegister_Click(object sender, EventArgs e)
         {
-            if (validTitle(textTitle.Text))
+            if (validTitle(textTitle.Text,2))
             {
                 errorTitle();
             }
             else 
             {
-                if(validIsbn(textIsbn.Text))
+                if(validIsbn(textIsbn.Text,2))
                 {
                     errorIsbn();
                 }
@@ -134,12 +135,28 @@ namespace BookAdmin.org.SmarTech.GUI
             }                
         }
 
-        protected bool validTitle(string title) 
+        protected bool validTitle(string title, int type) 
         {
             List<EntClsSearch> list_entSearch = bsn_search.ForNameInPartBook(title);
-            if (list_entSearch.Count() >= 1) 
+            if (type == 1)
             {
-                return true;
+                if (list_entSearch.Count() >= 1)
+                {
+                    foreach (EntClsSearch search in list_entSearch)
+                    {
+                        if (textCode.Text != search.Code)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (list_entSearch.Count() >= 1)
+                {
+                    return true;
+                }
             }
             return false;
         }
@@ -152,13 +169,28 @@ namespace BookAdmin.org.SmarTech.GUI
             }
             return false;
         }
-        protected bool validIsbn(string isbn)
+        protected bool validIsbn(string isbn, int type)
         {
             List<EntClsSearch> list_entSearch = bsn_search.ForIsbnBook(isbn);
-            if (list_entSearch.Count() >= 1)
-            {
-                return true;
-            }
+                if (type == 1)
+                {
+                    if (list_entSearch.Count() >= 1)
+                    {
+                        foreach (EntClsSearch search in list_entSearch) 
+                        {
+                            if (textCode.Text != search.Code) 
+                            {
+                                return true;
+                            }
+                        }                        
+                    }
+                }else
+                {
+                    if (list_entSearch.Count() >= 1)
+                    {
+                        return true;
+                    }
+                }
             return false;
         }
 
