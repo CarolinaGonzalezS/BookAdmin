@@ -95,3 +95,10 @@ C:\Users\Pacha\Documents\BookAdmin\BookAdmin-master2Author\proyectobookadmin_Par
 C:\Users\Pacha\Documents\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache
 C:\Users\Pacha\Documents\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.csproj.GenerateResource.Cache
 C:\Users\Pacha\Documents\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.org.SmarTech.GUI.rptPrestamoCliente.resources
+D:\usuario\Documentos\universidad\4semestre\Tecnicas\BookAdmin\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.dll
+D:\usuario\Documentos\universidad\4semestre\Tecnicas\BookAdmin\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.pdb
+D:\usuario\Documentos\universidad\4semestre\Tecnicas\BookAdmin\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache
+D:\usuario\Documentos\universidad\4semestre\Tecnicas\BookAdmin\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.org.SmarTech.GUI.rptPrestamoCliente.resources
+D:\usuario\Documentos\universidad\4semestre\Tecnicas\BookAdmin\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.csproj.GenerateResource.Cache
+D:\usuario\Documentos\universidad\4semestre\Tecnicas\BookAdmin\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.dll
+D:\usuario\Documentos\universidad\4semestre\Tecnicas\BookAdmin\BookAdmin\BookAdmin-master2Author\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.pdb
