@@ -12,7 +12,7 @@ namespace BookAdmin.org.SmarTech.Bussines
         public List<EntClsSearch> ForAuthorCompleteName(string name, string lastName)
         {
             CntClsSearch cnt_search = new CntClsSearch();
-            return cnt_search.forNameAutorComplete(name,lastName);
+            return cnt_search.forNameAutorComplete(name, lastName);
         }
 
         public List<EntClsSearch> ForCodeBook(string code)
@@ -75,7 +75,7 @@ namespace BookAdmin.org.SmarTech.Bussines
             {
                 lastName = "no existe";
             }
-            else 
+            else
             {
                 char sign = '%';
                 lastName = sign + separation[1] + sign;
@@ -84,6 +84,7 @@ namespace BookAdmin.org.SmarTech.Bussines
 
             return lastName;
         }
+
 
     }
 }

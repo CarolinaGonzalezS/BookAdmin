@@ -14,7 +14,8 @@ namespace BookAdmin.org.SmarTech.entities
         private string editorial;
         private string state;
         private int stock;
-        private string book;        
+        private string book;
+
         #endregion
 
         #region setter and getter
@@ -23,7 +24,7 @@ namespace BookAdmin.org.SmarTech.entities
         {
             get { return code; }
             set { code = value; }
-        }        
+        }
         public string Book
         {
             get { return book; }
@@ -44,7 +45,7 @@ namespace BookAdmin.org.SmarTech.entities
         {
             get { return editorial; }
             set { editorial = value; }
-        }        
+        }
         public string Author
         {
             get { return author; }
@@ -55,23 +56,33 @@ namespace BookAdmin.org.SmarTech.entities
             get { return lastNameAuthor; }
             set { lastNameAuthor = value; }
         }
-        
+
         #endregion
 
-        public EntClsSearch() 
+        public EntClsSearch()
         {
 
         }
 
-        public EntClsSearch(string code,string book, string state, int stock, string editorial, string author, string lastNameAuthor)
-        {      
-            this.code=code;     
+        public EntClsSearch(string book, string state, int stock, string editorial, string author, string lastNameAuthor)
+        {
             this.book = book;
             this.state = state;
             this.stock = stock;
             this.editorial = editorial;
             this.author = author;
-            this.lastNameAuthor = lastNameAuthor;            
+            this.lastNameAuthor = lastNameAuthor;
+        }
+
+        public EntClsSearch(string code, string book, string state, int stock, string editorial, string author, string lastNameAuthor)
+        {
+            this.code = code;
+            this.book = book;
+            this.state = state;
+            this.stock = stock;
+            this.editorial = editorial;
+            this.author = author;
+            this.lastNameAuthor = lastNameAuthor;
         }
         
     }

@@ -144,8 +144,8 @@ namespace BookAdmin.org.SmarTech.controllers
                 }
             }
             return bookList;
-        }        
-   
+        }
+
         public List<EntClsSearch> forNameEditorial(string editorial)
         {
             List<EntClsSearch> bookList = new List<EntClsSearch>();
@@ -157,7 +157,7 @@ namespace BookAdmin.org.SmarTech.controllers
                 {
                     cmd.Connection = con;
                     cmd.CommandText = storeProcedure;
-                    cmd.CommandType = CommandType.StoredProcedure;                    
+                    cmd.CommandType = CommandType.StoredProcedure;
                     DbParameter param = cmd.CreateParameter();
                     param.DbType = DbType.String;
                     param.ParameterName = "name";
@@ -190,7 +190,7 @@ namespace BookAdmin.org.SmarTech.controllers
                 {
                     cmd.Connection = con;
                     cmd.CommandText = storeProcedure;
-                    cmd.CommandType = CommandType.StoredProcedure;                    
+                    cmd.CommandType = CommandType.StoredProcedure;
                     DbParameter param = cmd.CreateParameter();
                     param.DbType = DbType.String;
                     param.ParameterName = "lastName";
@@ -345,6 +345,5 @@ namespace BookAdmin.org.SmarTech.controllers
             }
             return bookList;
         }
-
     }
 }

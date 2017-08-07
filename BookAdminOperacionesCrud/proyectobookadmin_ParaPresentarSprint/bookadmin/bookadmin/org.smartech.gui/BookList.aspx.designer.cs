@@ -10,7 +10,7 @@
 namespace BookAdmin.org.SmarTech.GUI {
     
     
-    public partial class BookView {
+    public partial class BookList {
         
         /// <summary>
         /// Control btnNewBook.

@@ -263,10 +263,10 @@ exec InsertWrite 8,10001
 
 -- Procedimientos de Busqueda
 -- Busca al Autor por su Nombre
-create procedure ForNameAuthor
+alter procedure ForNameAuthor
 	@name varchar(30)
 	as
-		select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+		select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 		where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 				Author.name like @name 
 
@@ -274,10 +274,10 @@ create procedure ForNameAuthor
 exec ForNameAuthor '%STEPHEN%'
 
 -- Busca al Autor por su Apellido
-create procedure ForLastNameAuthor
+alter procedure ForLastNameAuthor
 	@lastName varchar(30)
 	as
-		select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+		select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 		where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 				Author.lastName like @lastName 
 
@@ -285,11 +285,11 @@ create procedure ForLastNameAuthor
 exec ForLastNameAuthor '%POE%'		
 
 -- Busca al Autor por su Nobmre Completo
-create procedure ForAuthorCompleteName
+alter procedure ForAuthorCompleteName
 	@name varchar(30),
 	@lastName varchar(30)
 	as
-		select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+		select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 		where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 				Author.lastName like @lastName and
 				Author.name like @name 
@@ -298,10 +298,10 @@ create procedure ForAuthorCompleteName
 exec ForAuthorCompleteName '%STEPHEN%','%HAWKING%'
 
 -- Busca a la Editorial por su Nombre
-create procedure ForNameEditorial
+alter procedure ForNameEditorial
 	@name varchar(30)
 	as
-		select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+		select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 		where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 				editorial.name like @name  
 
@@ -309,10 +309,10 @@ create procedure ForNameEditorial
 exec ForNameEditorial 'DEBOLSILLO' 
 
 -- Busca al Libro por su Nombre
-create procedure ForNameBook
+alter procedure ForNameBook
 	@name varchar(30)
 	as
-		select book.code,book.name as NameBook,stateB,stock,lastName,dbo.Editorial.name as nameEdit,dbo.Author.name as nameAuth from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+		select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 		where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 				Book.name like @name  
 
@@ -320,10 +320,10 @@ create procedure ForNameBook
 exec ForNameBook 'ARDE BRUJA ARDE'
 
 -- Busca al Libro por su ISBN
-create procedure ForIsbnBook
+alter procedure ForIsbnBook
 	@isbn varchar(20)
 	as
-		select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+		select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 		where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 				Book.isbn like @isbn  
 
@@ -331,10 +331,10 @@ create procedure ForIsbnBook
 exec ForIsbnBook '9788497931021'
 
 -- Busca al Libro por su Codigo
-create procedure ForCodeBook
+alter procedure ForCodeBook
 	@code varchar(20)
 	as
-		select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
+		select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 		where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 				Book.code like @code  
 
@@ -342,10 +342,10 @@ create procedure ForCodeBook
 exec ForCodeBook '2001'
 
 -- Busca al Libro por su Categoria
-create procedure ForCategoryBook
+alter procedure ForCategoryBook
 @name varchar(30)
 as
-select book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial,dbo.Category
+select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial,category
 where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 		Category.Id=Book.idCateg and
 		Category.name like @name  
@@ -727,5 +727,13 @@ from dbo.Customer
 exec CustomerReport
 
 select * from book
+alter procedure EditorialBook
+@id int
+as
+select Editorial.id,Editorial.name,Editorial.country, Editorial.city  from dbo.Book,dbo.Editorial
+where Book.idEdit=Editorial.id and
+		Editorial.id=@id
+		
+exec EditorialBook 7
 
-select idEdit,count(IdEdit) from book group by (IdEdit)
+select * from editorial

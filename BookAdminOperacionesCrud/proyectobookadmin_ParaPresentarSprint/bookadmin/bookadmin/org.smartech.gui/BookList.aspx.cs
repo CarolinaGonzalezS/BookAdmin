@@ -10,7 +10,7 @@ using BookAdmin.org.SmarTech.Bussines;
 
 namespace BookAdmin.org.SmarTech.GUI
 {
-    public partial class BookView : System.Web.UI.Page
+    public partial class BookList : System.Web.UI.Page
     {
         private static BsnClsBook bsn_book = new BsnClsBook();
         private static EntClsBook ent_book = new EntClsBook();
@@ -22,6 +22,7 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (Session["succe"] != null) 
             {
                 SuccMessage();
@@ -119,6 +120,9 @@ namespace BookAdmin.org.SmarTech.GUI
                     </script>";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
         }
+
+
+
 
         
     }

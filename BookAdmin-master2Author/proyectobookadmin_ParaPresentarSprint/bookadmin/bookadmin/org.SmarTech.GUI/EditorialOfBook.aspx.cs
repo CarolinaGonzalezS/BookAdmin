@@ -133,7 +133,7 @@ namespace BookAdmin.org.SmarTech.GUI
             {
                 if (valNameEditorial())
                 {
-                    errorAuthor();
+                    errorEditorial();
                 }
                 else
                 {
@@ -166,7 +166,7 @@ namespace BookAdmin.org.SmarTech.GUI
             {
                 if (valNameEditorial())
                 {
-                    errorAuthor();
+                    errorEditorial();
                 }
                 else
                 {
@@ -183,7 +183,7 @@ namespace BookAdmin.org.SmarTech.GUI
                 Response.Redirect("BookRegister.aspx");
             }
         }
-        protected void errorAuthor()
+        protected void errorEditorial()
         {
             string script = @"<script type='text/javascript'>
                     alert('Ya existe esta editorial');

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Theme="Tema1" Language="C#" MasterPageFile="~/org.SmarTech.GUI/Principal.Master" AutoEventWireup="true" CodeBehind="BookView.aspx.cs" Inherits="BookAdmin.org.SmarTech.GUI.BookView" %>
+﻿<%@ Page Title="" Theme="Tema1" Language="C#" MasterPageFile="~/org.SmarTech.GUI/Principal.Master" AutoEventWireup="true" CodeBehind="BookList.aspx.cs" Inherits="BookAdmin.org.SmarTech.GUI.BookList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         .style1
@@ -157,7 +157,7 @@
                 <asp:Label ID="Label1" runat="server" Text="Titulo:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textTitle" runat="server"></asp:TextBox>
+                <asp:TextBox ID="textTitle" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -165,7 +165,7 @@
                 <asp:Label ID="Label2" runat="server" Text="ISBN:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textIsbn" runat="server"></asp:TextBox>
+                <asp:TextBox ID="textIsbn" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -209,7 +209,7 @@
                 <asp:Label ID="Label3" runat="server" Text="Fecha de publicacion:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textDatePublish" runat="server"></asp:TextBox>
+                <asp:TextBox ID="textDatePublish" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -217,7 +217,7 @@
                 <asp:Label ID="Label8" runat="server" Text="Editorial:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textEdit" runat="server"></asp:TextBox>
+                <asp:TextBox ID="textEdit" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -261,7 +261,7 @@
                 <asp:Label ID="Label4" runat="server" Text="Categoria:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textCategory" runat="server"></asp:TextBox>
+                <asp:TextBox ID="textCategory" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -269,7 +269,7 @@
                 <asp:Label ID="Label7" runat="server" Text="Autor:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textAuthor" runat="server"></asp:TextBox>
+                <asp:TextBox ID="textAuthor" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -313,15 +313,15 @@
                 <asp:Label ID="Label5" runat="server" Text="Stock:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textStock" runat="server"></asp:TextBox>
+                <asp:TextBox ID="textStock" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
             <td>
-                <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label6" runat="server" Text="Estado:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textState" runat="server"></asp:TextBox>
+                <asp:TextBox ID="textState" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>

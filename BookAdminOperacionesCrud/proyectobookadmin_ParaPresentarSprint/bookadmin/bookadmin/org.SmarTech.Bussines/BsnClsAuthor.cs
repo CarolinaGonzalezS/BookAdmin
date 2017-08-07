@@ -42,6 +42,24 @@ namespace BookAdmin.org.SmarTech.Bussines
             CntClsAuthor cnt_author = new CntClsAuthor();
             return cnt_author.deleteAuthor(id);
         }
-
+        public List<EntClsAuthor> createListOfAuthor()
+        {
+            List<EntClsAuthor> authors = AuthorList();
+            List<EntClsAuthor> authorForSelec = new List<EntClsAuthor>();
+            foreach (EntClsAuthor author in authors)
+            {
+                author.Name = author.Name + ' ' + author.LastName;
+                authorForSelec.Add(author);
+            }
+            return authorForSelec;
+        }
+        public string returnName(string completeName)
+        {
+            string name;
+            char limit = ' ';
+            string[] separation = completeName.Split(limit);
+            name = separation[0];
+            return name;
+        }
     }
 }

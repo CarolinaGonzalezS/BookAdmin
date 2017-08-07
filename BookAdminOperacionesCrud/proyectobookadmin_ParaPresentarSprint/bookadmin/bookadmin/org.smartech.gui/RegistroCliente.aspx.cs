@@ -25,24 +25,39 @@ namespace BookAdmin.org.SmarTech.GUI
         {
             EntClsCustomer obj_customer = new EntClsCustomer();
             BsnClsCustomer bsn_customer = new BsnClsCustomer();
-            obj_customer=bsn_customer.checkCustomer(textIdentificationCard.Text);
+            obj_customer = bsn_customer.CustomerSearch(textIdentificationCard.Text);
             if (obj_customer.IdentificationCard == null)
             {
-                bsn_customer.RegisterCustomer(textIdentificationCard.Text, textName.Text, textLastName.Text, textphone.Text, textCelphone.Text, textAddres.Text, textMail.Text);
-                clear();
+                if (cedulavalidation(textIdentificationCard.Text))
+                {
+                    bsn_customer.RegisterCustomer(textIdentificationCard.Text, textName.Text, textLastName.Text, textphone.Text, textCelphone.Text, textAddres.Text, textMail.Text);
+                    clear();
+                }
+                else
+                {
+                    errorCiNonV();
+                }
             }
-            else 
+            else
             {
-                errorMessage();
+                errorExistCus();
             }
-           
-            
+
+
         }
 
-        protected void errorMessage()
+        protected void errorExistCus()
         {
             string script = @"<script type='text/javascript'>
                     alert('Ya existe un cliente con esta cedula ingrese otra');
+                    </script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+        }
+
+        protected void errorCiNonV()
+        {
+            string script = @"<script type='text/javascript'>
+                    alert('El numero de cedula no es valido');
                     </script>";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
         }
@@ -59,36 +74,33 @@ namespace BookAdmin.org.SmarTech.GUI
             textMail.Text = "";
         }
 
-        protected void cedulavalidation()
+        protected bool cedulavalidation(string ci)
         {
-            string IdentificationCard = textIdentificationCard.Text;
-            char[] vector = IdentificationCard.ToArray();
-            int sumaTotal = 0;
-            if (vector.Length == 10)
+            int isNumeric;
+            var total = 0;
+            const int lengthCi = 10;
+            int[] coefficient = { 2, 1, 2, 1, 2, 1, 2, 1, 2 };
+            const int provinceNumeric = 24;
+            const int thirdNumer = 6;
+
+            if (int.TryParse(ci, out isNumeric) && ci.Length == lengthCi)
             {
-                for (int i = 0; i < vector.Length-1; i++)
+                var province = Convert.ToInt32(string.Concat(ci[0], ci[1], string.Empty));
+                var digitThird = Convert.ToInt32(ci[2] + string.Empty);
+                if ((province > 0 && province <= provinceNumeric) && digitThird < thirdNumer)
                 {
-                    int number = Convert.ToInt32(vector[i].ToString());
-                    if((i+1)%2==1)
+                    var checkDigitReceived = Convert.ToInt32(ci[9] + string.Empty);
+                    for (var k = 0; k < coefficient.Length; k++)
                     {
-                        number = Convert.ToInt32(vector[i].ToString())*2;
-                        if (number<9)
-                        {
-                            number = number - 9;
-                        }
+                        var value = Convert.ToInt32(coefficient[k] + string.Empty) * Convert.ToInt32(ci[k] + string.Empty);
+                        total = value >= 10 ? total + (value - 9) : total + value;
                     }
-                    sumaTotal +=  number;
+                    var checkDigitObtained = total >= 10 ? (total % 10) != 0 ? 10 - (total % 10) : (total % 10) : total;
+                    return checkDigitObtained == checkDigitReceived;
                 }
-                sumaTotal=10-(sumaTotal % 10);
-   
+                return false;
             }
-            else
-            {
-                string script = @"<script type='text/javascript'>
-                    alert('Esta no es una cedula');
-                    </script>";
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);  
-            }
+            return false;
         }
     }
 }

@@ -64,12 +64,13 @@
     <Content Include="jquery\jquery-ui-1.10.4.custom.js" />
     <Content Include="jquery\jquery-ui-1.10.4.custom.min.js" />
     <Content Include="org.SmarTech.GUI\AuthorOfBook.aspx" />
+    <Content Include="org.SmarTech.GUI\BookList.aspx" />
     <Content Include="org.SmarTech.GUI\BookLoan.aspx" />
     <Content Include="org.SmarTech.GUI\BookRegister.aspx" />
-    <Content Include="org.SmarTech.GUI\BookView.aspx" />
     <Content Include="org.SmarTech.GUI\css\animate.css" />
     <Content Include="org.SmarTech.GUI\css\style.css" />
     <Content Include="org.SmarTech.GUI\EditorialOfBook.aspx" />
+    <Content Include="org.SmarTech.GUI\EditorialsView.aspx" />
     <Content Include="org.SmarTech.GUI\Fine.aspx" />
     <Content Include="org.SmarTech.GUI\FinishLoan.aspx" />
     <Content Include="org.SmarTech.GUI\frm_PrestamoCliente.aspx" />
@@ -146,6 +147,13 @@
     <Compile Include="org.SmarTech.GUI\AuthorOfBook.aspx.designer.cs">
       <DependentUpon>AuthorOfBook.aspx</DependentUpon>
     </Compile>
+    <Compile Include="org.SmarTech.GUI\BookList.aspx.cs">
+      <DependentUpon>BookList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\BookList.aspx.designer.cs">
+      <DependentUpon>BookList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="org.SmarTech.GUI\BookLoan.aspx.cs">
       <DependentUpon>BookLoan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -160,13 +168,6 @@
     <Compile Include="org.SmarTech.GUI\BookRegister.aspx.designer.cs">
       <DependentUpon>BookRegister.aspx</DependentUpon>
     </Compile>
-    <Compile Include="org.SmarTech.GUI\BookView.aspx.cs">
-      <DependentUpon>BookView.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="org.SmarTech.GUI\BookView.aspx.designer.cs">
-      <DependentUpon>BookView.aspx</DependentUpon>
-    </Compile>
     <Compile Include="org.SmarTech.GUI\BusquedaLibro.master.cs">
       <DependentUpon>BusquedaLibro.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -180,6 +181,13 @@
     </Compile>
     <Compile Include="org.SmarTech.GUI\EditorialOfBook.aspx.designer.cs">
       <DependentUpon>EditorialOfBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\EditorialsView.aspx.cs">
+      <DependentUpon>EditorialsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\EditorialsView.aspx.designer.cs">
+      <DependentUpon>EditorialsView.aspx</DependentUpon>
     </Compile>
     <Compile Include="org.SmarTech.GUI\Fine.aspx.cs">
       <DependentUpon>Fine.aspx</DependentUpon>

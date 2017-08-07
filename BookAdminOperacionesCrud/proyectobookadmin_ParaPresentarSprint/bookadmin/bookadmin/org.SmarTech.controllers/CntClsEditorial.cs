@@ -232,5 +232,38 @@ namespace BookAdmin.org.SmarTech.controllers
 
             return ejecuteNonQuery("deleteEditorial", parameters);
         }
+
+        public List<EntClsEditorial> valEdit(int id)
+        {
+            List<EntClsEditorial> editList = new List<EntClsEditorial>();
+            string storeProcedure = "EditorialBook";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbParameter param = cmd.CreateParameter();
+                    param.DbType = DbType.String;
+                    param.ParameterName = "id";
+                    param.Value = id;
+                    cmd.Parameters.Add(param);
+                    con.Open();
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            editList.Add(
+                                new EntClsEditorial((string)dr["name"], (string)dr["country"], (string)dr["city"])
+                            );
+                        }
+                    }
+                }
+            }
+            return editList;
+        }
+
     }
 }
