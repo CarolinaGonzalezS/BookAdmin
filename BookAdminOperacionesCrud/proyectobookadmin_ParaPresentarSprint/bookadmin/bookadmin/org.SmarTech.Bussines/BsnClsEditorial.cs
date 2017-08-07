@@ -31,5 +31,17 @@ namespace BookAdmin.org.SmarTech.Bussines
             CntClsEditorial cnt_edit = new CntClsEditorial();
             return cnt_edit.listEditorialForid(id);
         }
+
+        public int updateEditorial(int id,string name, string country, string city)
+        {
+            CntClsEditorial cnt_edit = new CntClsEditorial();
+            return cnt_edit.updateEditorial(id, name, country, city);
+        }
+
+        public int deleteEditorial(int id)
+        {
+            CntClsEditorial cnt_edit = new CntClsEditorial();
+            return cnt_edit.deleteEditorial(id);
+        }
     }
 }

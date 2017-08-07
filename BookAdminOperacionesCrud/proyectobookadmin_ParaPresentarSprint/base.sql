@@ -725,3 +725,7 @@ phone as Telefono, celphone as Celular, addres as Direccion, mail as Email
 from dbo.Customer	
 
 exec CustomerReport
+
+select * from book
+
+select idEdit,count(IdEdit) from book group by (IdEdit)

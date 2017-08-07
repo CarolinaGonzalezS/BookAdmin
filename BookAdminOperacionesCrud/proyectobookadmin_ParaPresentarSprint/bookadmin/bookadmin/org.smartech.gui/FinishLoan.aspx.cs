@@ -62,7 +62,7 @@ namespace BookAdmin.org.SmarTech.GUI
             nameCustomer = Convert.ToString(Session["idCustomer"]);
             textIdCustomer.Text = nameCustomer;
 
-            cnt_loan.insertLoan(textDateLoan.Text, textDateLimit.Text, textIdCustomer.Text, textCodeBook.Text, txtStateL.Text);
+            bsn_loan.insertLoan(textDateLoan.Text, textDateLimit.Text, textIdCustomer.Text, textCodeBook.Text, txtStateL.Text);
             updateBook();
 
             Session.Add("idCustomer", nameCustomer);

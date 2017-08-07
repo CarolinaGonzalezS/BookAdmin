@@ -171,5 +171,67 @@ namespace BookAdmin.org.SmarTech.GUI
             }
         }
 
+        /*
+        public void loadDrop()
+        {
+            lstEditorial = bsn_edit.listEditorial();
+            if (lstEditorial != null)
+            {
+                ddlEditorial.DataSource = lstEditorial;
+                ddlEditorial.DataValueField = "id";
+                ddlEditorial.DataTextField = "name";
+                ddlEditorial.DataBind();
+            }
+        }
+          */
+
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            textName.Enabled = true;
+            textCountry.Enabled = true;
+            textCity.Enabled = true;
+            
+                string valor = ddlEditorial.SelectedValue;
+                int valor2 = ddlEditorial.SelectedIndex + 1;
+                foreach (EntClsEditorial edit in lstEditorial)
+                {
+                    if (Convert.ToString(edit.Id) == valor)
+                    {
+                        ent_edit = edit;
+                    }
+                }
+                bsn_edit.updateEditorial(valor2, textName.Text, textCountry.Text, textCity.Text);
+                //loadDrop();
+                //clear();
+
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bsn_edit.deleteEditorial(Convert.ToInt16(ddlEditorial.SelectedValue));
+
+                listAdd();
+                clean();
+
+                string script = @"<script type='text/javascript'>
+                
+                alert('El Autor ha sido Eliminado');
+                </script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+            }
+            catch
+            {
+                string script = @"<script type='text/javascript'>
+                
+                alert('No se puede Eliminar La Editorial');
+                </script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+            }  
+        }
+
     }
 }
+
+

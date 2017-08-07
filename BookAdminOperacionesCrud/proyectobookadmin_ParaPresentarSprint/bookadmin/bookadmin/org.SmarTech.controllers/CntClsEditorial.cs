@@ -220,5 +220,17 @@ namespace BookAdmin.org.SmarTech.controllers
             }
             return objEditorial;
         }
+
+        public int deleteEditorial(int id)
+        {
+            List<DbParameter> parameters = new List<DbParameter>();
+
+            DbParameter param1 = dpf.CreateParameter();
+            param1.Value = id;
+            param1.ParameterName = "id";
+            parameters.Add(param1);
+
+            return ejecuteNonQuery("deleteEditorial", parameters);
+        }
     }
 }
