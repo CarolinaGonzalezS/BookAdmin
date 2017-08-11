@@ -146,7 +146,7 @@ namespace BookAdmin.org.SmarTech.GUI
                 {
                     foreach (EntClsSearch search in list_entSearch)
                     {
-                        if (textCode.Text != search.Code)
+                        if (textCode.Text != search.Codigo)
                         {
                             return true;
                         }
@@ -180,7 +180,7 @@ namespace BookAdmin.org.SmarTech.GUI
                 {
                     foreach (EntClsSearch search in list_entSearch)
                     {
-                        if (textCode.Text != search.Code)
+                        if (textCode.Text != search.Codigo)
                         {
                             return true;
                         }

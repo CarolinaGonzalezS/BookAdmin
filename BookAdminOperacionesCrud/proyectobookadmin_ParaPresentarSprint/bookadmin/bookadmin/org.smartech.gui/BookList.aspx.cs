@@ -97,20 +97,45 @@ namespace BookAdmin.org.SmarTech.GUI
         }
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            Session.Add("book",ent_book.Code);
-            Response.Redirect("AuthorOfBook.aspx");
+            if (ValidFull())
+            {                
+                Session.Add("book", ent_book.Code);
+                Response.Redirect("AuthorOfBook.aspx");
+            }
+            else 
+            {
+                ErrorMessage();
+            }
+            
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            bsn_book.deleteBook(ent_book.Code);
-            clean();
+            if (ValidFull())
+            {
+                bsn_book.deleteBook(ent_book.Code);
+                clean();
+            }
+            else
+            {
+                ErrorMessage();
+            }
         }
 
         protected void btnNewBook_Click(object sender, EventArgs e)
         {
             Session.Add("regis",1);
             Response.Redirect("AuthorOfBook.aspx");
+        }
+
+        protected bool ValidFull()
+        {
+            bool full = true;
+            if (String.IsNullOrEmpty(textAuthor.Text)) 
+            {
+                full = false;
+            }
+            return full;
         }
 
         protected void SuccMessage()
@@ -121,7 +146,13 @@ namespace BookAdmin.org.SmarTech.GUI
             ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
         }
 
-
+        protected void ErrorMessage()
+        {
+            string script = @"<script type='text/javascript'>
+                    alert('Los campos no estan llenos');
+                    </script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+        }
 
 
         

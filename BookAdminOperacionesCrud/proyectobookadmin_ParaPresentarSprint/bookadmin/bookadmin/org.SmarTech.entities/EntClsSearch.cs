@@ -20,17 +20,17 @@ namespace BookAdmin.org.SmarTech.entities
 
         #region setter and getter
 
-        public string Code
+        public string Codigo
         {
             get { return code; }
             set { code = value; }
         }
-        public string Book
+        public string Libro
         {
             get { return book; }
             set { book = value; }
         }
-        public string State
+        public string Estado
         {
             get { return state; }
             set { state = value; }
@@ -46,12 +46,12 @@ namespace BookAdmin.org.SmarTech.entities
             get { return editorial; }
             set { editorial = value; }
         }
-        public string Author
+        public string Autor
         {
             get { return author; }
             set { author = value; }
         }
-        public string LastNameAuthor
+        public string Apellido
         {
             get { return lastNameAuthor; }
             set { lastNameAuthor = value; }

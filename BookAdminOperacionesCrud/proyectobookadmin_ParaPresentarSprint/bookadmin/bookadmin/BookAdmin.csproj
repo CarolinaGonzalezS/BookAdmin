@@ -68,6 +68,7 @@
     <Content Include="org.SmarTech.GUI\BookLoan.aspx" />
     <Content Include="org.SmarTech.GUI\BookRegister.aspx" />
     <Content Include="org.SmarTech.GUI\css\animate.css" />
+    <Content Include="org.SmarTech.GUI\css\bootstrap.min.css" />
     <Content Include="org.SmarTech.GUI\css\style.css" />
     <Content Include="org.SmarTech.GUI\EditorialOfBook.aspx" />
     <Content Include="org.SmarTech.GUI\EditorialsView.aspx" />
@@ -75,6 +76,7 @@
     <Content Include="org.SmarTech.GUI\FinishLoan.aspx" />
     <Content Include="org.SmarTech.GUI\frm_PrestamoCliente.aspx" />
     <Content Include="org.SmarTech.GUI\images\biblioteca.jpg" />
+    <Content Include="org.SmarTech.GUI\images\busqueda.png" />
     <Content Include="org.SmarTech.GUI\images\calendario.png" />
     <Content Include="org.SmarTech.GUI\images\construccion.jpg" />
     <Content Include="org.SmarTech.GUI\images\logo.jpg" />

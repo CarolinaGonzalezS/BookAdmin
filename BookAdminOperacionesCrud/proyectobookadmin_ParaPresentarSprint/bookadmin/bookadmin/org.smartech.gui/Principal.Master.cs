@@ -56,5 +56,28 @@ namespace BookAdmin.org.SmarTech.GUI
             Response.Redirect("ResultCategorySearch.aspx");
         }
 
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            if (String.IsNullOrEmpty(textSearch.Text))
+            {
+                errorSearch();
+            }
+            else 
+            {
+                string search = textSearch.Text;
+                Session.Add("search", search);
+                Response.Redirect("ResultSearch.aspx");  
+            }
+            
+        }
+
+        protected void errorSearch()
+        {
+            string script = @"<script type='text/javascript'>
+                    alert('Ingrese alguna palabra para la busqueda');
+                    </script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+        }
+
     }
 }

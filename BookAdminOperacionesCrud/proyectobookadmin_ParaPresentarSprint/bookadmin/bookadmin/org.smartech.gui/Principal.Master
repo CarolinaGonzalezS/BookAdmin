@@ -4,8 +4,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    
-    <title></title>
+    <!-- CSS de Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="Estilo.css" rel="stylesheet" /> 
+
+    <title>BookAdmin</title>
     <asp:ContentPlaceHolder ID="head" runat="server" >
     </asp:ContentPlaceHolder>
 </head>
@@ -29,25 +32,30 @@
 
             </div>
             <div="titulo">
-                <h1>BookAdmin&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button 
-                        ID="btnCiencia" runat="server" onclick="btnCiencia_Click" Text="Ciencia" />
-&nbsp;<asp:Button ID="btnTerror" runat="server" onclick="btnTerror_Click" 
-                        Text="Terror" />
-&nbsp;<asp:Button ID="btnSuspenso" runat="server" onclick="btnSuspenso_Click" 
-                        Text="Suspenso" />
-&nbsp;<asp:Button ID="btnBiografia" runat="server" onclick="btnBiografia_Click" 
-                        Text="Biografias" />
-&nbsp;<asp:Button ID="btnMisterio" runat="server" onclick="btnMisterio_Click" 
-                        Text="Misterio" />
+                <h1>BookAdmin&nbsp;&nbsp;&nbsp;&nbsp;                
             </h1>
             
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            
-                    <asp:TextBox ID="textSearch" runat="server" placeholder="Ingrese palabra clave"></asp:TextBox>
-&nbsp;<asp:Button ID="btnBuscadorGen" runat="server" onclick="btnBuscadorGen_Click" 
-                        Text="Buscar" />
-                
-            </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox ID="textSearch" runat="server" placeholder="Ingrese palabra clave" Width="30%"></asp:TextBox>
+            <asp:ImageButton ID="ImageButton1" runat="server" 
+                ImageUrl="~/org.SmarTech.GUI/images/busqueda.png" onclick="ImageButton1_Click" 
+                Width="50px" Height="50px" />
+                <br />
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button 
+                        ID="btnCiencia" runat="server" onclick="btnCiencia_Click" Text="Ciencia" CssClass="btn btn-info" Width="70px" />
+&nbsp;<asp:Button ID="btnTerror" runat="server" onclick="btnTerror_Click" 
+                CssClass="btn btn-info" Width="70px"
+                        Text="Terror" Font-Underline="False" />
+&nbsp;<asp:Button ID="btnSuspenso" runat="server" onclick="btnSuspenso_Click" CssClass="btn btn-info" Width="75px"
+                        Text="Suspenso" />
+            &nbsp;<asp:Button ID="btnBiografia" runat="server" onclick="btnBiografia_Click" Width="75px"
+                        Text="Biografias" CssClass="btn btn-info"/>
+&nbsp;<asp:Button ID="btnMisterio" runat="server" onclick="btnMisterio_Click" CssClass="btn btn-info" Width="70px"
+                        Text="Misterio" />
+&nbsp;&nbsp;<br />
+            <br />
+        </div>
         
         </div>
     

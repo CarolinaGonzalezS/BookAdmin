@@ -183,9 +183,7 @@
                 <asp:TextBox ID="textName" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
-                <asp:Button ID="btnUpdate" runat="server" onclick="btnUpdate_Click" 
-                    Text="Actualizar" />
-            </td>
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>
@@ -231,9 +229,7 @@
                 <asp:TextBox ID="textCountry" runat="server" Enabled="False"></asp:TextBox>
             </td>
             <td>
-                <asp:Button ID="btnDelete" runat="server" onclick="btnDelete_Click" 
-                    Text="Eliminar" />
-            </td>
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>

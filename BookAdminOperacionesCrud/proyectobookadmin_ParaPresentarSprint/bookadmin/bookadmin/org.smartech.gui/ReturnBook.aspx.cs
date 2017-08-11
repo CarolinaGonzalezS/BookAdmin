@@ -90,7 +90,7 @@ namespace BookAdmin.org.SmarTech.GUI
             bsn_returnBook.UpdateStateLoan(Convert.ToInt32(textticket.Text));
             EntClsSearch ent_returnbook = bsn_returnBook.searchBook(textNameBook.Text);
             int Newstock = bsn_returnBook.UpdateStock(ent_returnbook.Stock);
-            bsn_returnBook.UpdateStockBook(ent_returnbook.Code, Newstock);
+            bsn_returnBook.UpdateStockBook(ent_returnbook.Codigo, Newstock);
 
             returnBookMessage();
             btnReturnBook.Enabled = false;  
