@@ -29,10 +29,12 @@
             <td>
                 &nbsp;</td>
             <td colspan="3">
+            <center>
                 <asp:DropDownList ID="ddlEditorial" runat="server" class="dropdown-header" 
                     BackColor="#0275d8" ForeColor="White" Font-Size="20px" Font-Names="Arial" onselectedindexchanged="ddlEditorial_SelectedIndexChanged" 
                     >
                 </asp:DropDownList>
+                </center>
             </td>
             <td>
                 &nbsp;</td>

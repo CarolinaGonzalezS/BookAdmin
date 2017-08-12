@@ -8,11 +8,7 @@
                 <asp:Button ID="btnNewBook" runat="server" onclick="btnNewBook_Click" 
                     Text="Insertar Libro" Font-Bold="True" CssClass="btn-primary" />
             </td>
-            <td>
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td>
+            <td colspan="3">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
