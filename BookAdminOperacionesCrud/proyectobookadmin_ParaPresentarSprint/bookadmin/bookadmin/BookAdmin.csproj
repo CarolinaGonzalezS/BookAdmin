@@ -67,6 +67,7 @@
     <Content Include="org.SmarTech.GUI\BookList.aspx" />
     <Content Include="org.SmarTech.GUI\BookLoan.aspx" />
     <Content Include="org.SmarTech.GUI\BookRegister.aspx" />
+    <Content Include="org.SmarTech.GUI\BookView.aspx" />
     <Content Include="org.SmarTech.GUI\css\animate.css" />
     <Content Include="org.SmarTech.GUI\css\bootstrap.min.css" />
     <Content Include="org.SmarTech.GUI\css\style.css" />
@@ -169,6 +170,13 @@
     </Compile>
     <Compile Include="org.SmarTech.GUI\BookRegister.aspx.designer.cs">
       <DependentUpon>BookRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\BookView.aspx.cs">
+      <DependentUpon>BookView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="org.SmarTech.GUI\BookView.aspx.designer.cs">
+      <DependentUpon>BookView.aspx</DependentUpon>
     </Compile>
     <Compile Include="org.SmarTech.GUI\BusquedaLibro.master.cs">
       <DependentUpon>BusquedaLibro.master</DependentUpon>
