@@ -90,6 +90,9 @@
             </td>
             <td>
                 <asp:TextBox ID="textCountry" runat="server"></asp:TextBox>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                    ControlToValidate="textCountry" Display="Dynamic" ErrorMessage="Pais no valido" 
+                    ValidationExpression="[A-Za-z]*"></asp:RegularExpressionValidator>
             </td>
             <td>
                 <asp:Button ID="btnDelete" runat="server" onclick="btnDelete_Click" 
@@ -121,6 +124,9 @@
             </td>
             <td>
                 <asp:TextBox ID="textCity" runat="server"></asp:TextBox>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+                    ControlToValidate="textCity" Display="Dynamic" ErrorMessage="Ciudad  no valida" 
+                    ValidationExpression="[A-Za-z]*"></asp:RegularExpressionValidator>
             </td>
             <td>
                 &nbsp;</td>

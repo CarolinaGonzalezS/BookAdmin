@@ -31,6 +31,11 @@ namespace BookAdmin.org.SmarTech.GUI
             }  
 
             loadInformation();
+
+            if (!IsPostBack)
+            {
+                textDateLoan.Text = DateTime.Now.ToString("yyy-MM-dd");
+            }
         }
 
         protected void loadInformation()
@@ -67,8 +72,12 @@ namespace BookAdmin.org.SmarTech.GUI
 
             Session.Add("idCustomer", nameCustomer);
             Response.Redirect("frm_PrestamoCliente.aspx");
-            
+
+
+
         }
+
+
 
     }
 }

@@ -72,7 +72,7 @@
                 <asp:Label ID="Label3" runat="server" Text="Fecha de Inicio:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textDateLoan" runat="server"></asp:TextBox>
+                <asp:TextBox ID="textDateLoan" runat="server" TextMode="Date"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -98,7 +98,7 @@
                 <asp:Label ID="Label4" runat="server" Text="Fecha Limite:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textDateLimit" runat="server"></asp:TextBox>
+                <asp:TextBox ID="textDateLimit" runat="server" TextMode="Date"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>

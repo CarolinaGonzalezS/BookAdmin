@@ -31,6 +31,8 @@ namespace BookAdmin.org.SmarTech.GUI
             {
                 Response.Redirect("RegistroPrestamo.aspx");
             }
+
+
         }
 
         protected void showBook(EntClsBook ent_book)
