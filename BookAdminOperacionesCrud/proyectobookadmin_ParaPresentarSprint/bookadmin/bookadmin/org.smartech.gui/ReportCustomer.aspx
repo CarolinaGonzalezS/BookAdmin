@@ -3,8 +3,11 @@
     <table style="width: 100%">
         <tr>
             <td>
-                <asp:GridView ID="grvCustomerReport" runat="server" Font-Overline="False" 
-                    Font-Size="15px">
+                <asp:GridView ID="grvCustomerReport" runat="server" HorizontalAlign="Center" 
+           BorderWidth="5px" BackColor="Black" Width="100%" Font-Names="Angsana New" 
+           ForeColor="White" Font-Bold="False" Font-Size="30pt">
+           <FooterStyle VerticalAlign="Middle" />
+           <HeaderStyle BackColor="White" ForeColor="Black" BorderColor="Black" />
                 </asp:GridView>
             </td>
             <td>

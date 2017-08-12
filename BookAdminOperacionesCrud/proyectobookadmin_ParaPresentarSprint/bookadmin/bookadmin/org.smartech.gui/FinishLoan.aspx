@@ -31,11 +31,35 @@
             <td>
                 &nbsp;</td>
             <td style="width: 159px">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td style="width: 159px">
                 <asp:Label ID="Label2" runat="server" Text="Codigo Libro:"></asp:Label>
             </td>
             <td>
                 <asp:TextBox ID="textCodeBook" runat="server" Enabled="False"></asp:TextBox>
             </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td style="width: 159px">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>
@@ -59,11 +83,35 @@
             <td>
                 &nbsp;</td>
             <td style="width: 159px">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td style="width: 159px">
                 <asp:Label ID="Label4" runat="server" Text="Fecha Limite:"></asp:Label>
             </td>
             <td>
                 <asp:TextBox ID="textDateLimit" runat="server"></asp:TextBox>
             </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td style="width: 159px">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>
@@ -90,7 +138,8 @@
             <td>
                 &nbsp;</td>
             <td>
-                <asp:Button ID="btnDoLoan" runat="server" onclick="btnDoLoan_Click" 
+                <asp:Button ID="btnDoLoan" CssClass="btn-success" Font-Names="Arial" 
+                    Font-Size="12pt" Font-Bold="True" runat="server" onclick="btnDoLoan_Click" 
                     Text="Prestar" />
             </td>
             <td>

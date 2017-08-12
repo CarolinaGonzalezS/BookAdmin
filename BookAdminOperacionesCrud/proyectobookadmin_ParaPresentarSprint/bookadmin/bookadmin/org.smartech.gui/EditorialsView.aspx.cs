@@ -8,6 +8,7 @@ using BookAdmin.org.SmarTech.entities;
 using BookAdmin.org.SmarTech.controllers;
 using BookAdmin.org.SmarTech.Bussines;
 
+
 namespace BookAdmin.org.SmarTech.GUI
 {
     public partial class EditorialsView : System.Web.UI.Page
@@ -58,13 +59,6 @@ namespace BookAdmin.org.SmarTech.GUI
             textCity.Text = objEdit.City;
         }
 
-        protected void clean()
-        {
-            textName.Text = "";
-            textCity.Text = "";
-            textCountry.Text = "";
-        }
-
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             try { 
@@ -77,21 +71,19 @@ namespace BookAdmin.org.SmarTech.GUI
                         ent_edit = edit;
                     }
                 }
-                    bsn_edit.updateEditorial(valor2, textName.Text, textCountry.Text, textCity.Text);
-                    //ddlEditorial.AutoPostBack = true;
+                    bsn_edit.updateEditorial(valor2, textName.Text, textCountry.Text, textCity.Text);                                        
                     SucceUpdateEdit();
                     Response.Redirect("EditorialsView.aspx");
                 }
             catch 
             {
-
+                errorUpdateEdit();
             }
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            ent_edit = bsn_edit.checkEditorial(textName.Text);
-            textName.Text =Convert.ToString(ent_edit.Id);
+            ent_edit = bsn_edit.checkEditorial(textName.Text);            
             lstEditVal = bsn_edit.valEdit(ent_edit.Id);
             if (lstEditVal.Count() > 0)
             {
@@ -99,14 +91,19 @@ namespace BookAdmin.org.SmarTech.GUI
             }
             else 
             {
-                bsn_edit.deleteEditorial(ent_edit.Id);
-                //ddlEditorial.AutoPostBack = true; 
+                bsn_edit.deleteEditorial(ent_edit.Id);                
                 SucceDeleteEdit();
                 Response.Redirect("EditorialsView.aspx");
-                               
             }
         }
 
+        protected void clean() 
+        {
+            textCity.Text = "";
+            textCountry.Text = "";
+            textName.Text = "";
+            ddlEditorial.AutoPostBack = true;
+        }
         protected void errorDeleteEdit()
         {
             string script = @"<script type='text/javascript'>
@@ -118,7 +115,7 @@ namespace BookAdmin.org.SmarTech.GUI
         protected void errorUpdateEdit()
         {
             string script = @"<script type='text/javascript'>
-                    alert('No se puede actuaizar esta editorial');
+                    alert('No se puede actualizar esta editorial');
                     </script>";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
         }

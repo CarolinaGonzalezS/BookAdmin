@@ -227,8 +227,9 @@
             <td>
                 &nbsp;</td>
             <td>
-                <asp:Button ID="btnNextBook" runat="server" Text="Seleccionar Cliente" 
-                    Enabled="False" onclick="btnNextBook_Click" />
+                <asp:Button ID="btnNextBook" CssClass="btn-success" Font-Names="Arial" 
+                    Font-Size="12pt" runat="server" Text="Seleccionar Cliente" 
+                    Enabled="False" onclick="btnNextBook_Click" Font-Bold="True" />
             </td>
             <td>
                 &nbsp;</td>

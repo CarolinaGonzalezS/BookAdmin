@@ -304,6 +304,7 @@ alter procedure ForNameEditorial
 		select book.code,book.name as NameBook,stateB,stock,dbo.Author.name as nameAuth,lastName,dbo.Editorial.name as nameEdit from dbo.Author,dbo.Book,dbo.Write,dbo.Editorial
 		where   book.idedit= dbo.Editorial.id and Author.id=Write.id and Book.code=Write.code and
 				editorial.name like @name  
+				
 
 -- Ejecucion de Verificacion
 exec ForNameEditorial 'DEBOLSILLO' 
@@ -461,7 +462,7 @@ set name=@name, lastName=@lastName, phone=@phone, celphone=@celphone, addres=@ad
 where identificationCard=@identificationCard
 
 -- Eliminacion de Contenido de Tabla
-create procedure deleteBook
+alter procedure deleteBook
 @code varchar(10)
 as
 delete dbo.Write
@@ -469,9 +470,9 @@ where code=@code
 delete dbo.Book 
 where code=@code
 
-exec deleteBook 'dfsg'
 
-create procedure deleteAuthor
+
+alter procedure deleteAuthor
 @id int
 as
 delete dbo.Author
@@ -707,7 +708,7 @@ select * from fine
 -- Procedimientos Para Reporte
 
 -- Por Libro
-alter procedure BookReport
+create procedure BookReport
 as
 select Book.code as Codigo, Book.isbn as ISBN, Book.name as Titulo, Convert(varchar(20),Book.datePublish) as FechaPublicacion, 
 Editorial.name as Editorial, Author.name as Nombre, Author.lastName as Apellido, Category.name as Categoria, 
@@ -727,7 +728,7 @@ from dbo.Customer
 exec CustomerReport
 
 select * from book
-alter procedure EditorialBook
+create procedure EditorialBook
 @id int
 as
 select Editorial.id,Editorial.name,Editorial.country, Editorial.city  from dbo.Book,dbo.Editorial

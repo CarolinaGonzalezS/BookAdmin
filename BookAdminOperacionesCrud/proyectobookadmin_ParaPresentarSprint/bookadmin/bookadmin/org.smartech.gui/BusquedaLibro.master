@@ -3,12 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="server">
  <ul id="menuContextual">
-        <li><a href="Autor.aspx">Agregar Libros</a></li>        
-        <li><a href="RegistroLibro.aspx">Agregar Libros</a></li>
-        <li><a href="Autor.aspx">Autor</a></li>
-        <li><a href="Category.aspx">Categorias</a></li>
-        <li><a href="Book.aspx">Libros</a></li>
-        <li><a href="ResultSearch.aspx">Buscar Libros</a></li>
+        <li><a href="">Editar Autores</a></li>
+        <li><a href="EditorialsView.aspx">Editar Editoriales</a></li>
+        <li><a href="BookList.aspx">Libros de la biblioteca</a></li>        
     </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" runat="server">

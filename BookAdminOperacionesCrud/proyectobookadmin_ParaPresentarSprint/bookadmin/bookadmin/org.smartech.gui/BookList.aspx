@@ -11,12 +11,30 @@
         }
         .style3
         {
-            width: 155px;
+            width: 103px;
         }
         .style4
         {
             height: 23px;
-            width: 155px;
+            width: 103px;
+        }
+        .style5
+        {
+            width: 44px;
+        }
+        .style6
+        {
+            height: 23px;
+            width: 44px;
+        }
+        .style7
+        {
+            height: 21px;
+        }
+        .style8
+        {
+            height: 21px;
+            width: 103px;
         }
     </style>
 </asp:Content>
@@ -29,58 +47,12 @@
             <td>
                 &nbsp;</td>
             <td class="style3">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td class="style3">
-                &nbsp;</td>
-            <td>
                 <asp:Button ID="btnNewBook" runat="server" onclick="btnNewBook_Click" 
-                    Text="Insertar Libro" />
+                    Text="Insertar Libro" Font-Bold="True" CssClass="btn-primary" />
             </td>
             <td>
                 &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td class="style3">
-                &nbsp;</td>
-            <td>
+            <td class="style5">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
@@ -100,31 +72,30 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td>
-                &nbsp;</td>
-            <td class="style3">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                <asp:DropDownList ID="ddlBook" runat="server" 
+            <td class="style7">
+                </td>
+            <td class="style8">
+                </td>
+            <td colspan="3" class="style7">
+                <asp:DropDownList ID="ddlBook" runat="server" class="dropdown-header" 
+                    BackColor="#0275d8" ForeColor="White" Font-Size="20px" Font-Names="Arial"
                     onselectedindexchanged="ddlBook_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
+            <td class="style7">
+                </td>
+            <td class="style7">
+                </td>
+            <td class="style7">
+                </td>
+            <td class="style7">
+                </td>
+            <td class="style7">
+                </td>
+            <td class="style7">
+                </td>
+            <td class="style7">
+                </td>
         </tr>
         <tr>
             <td class="style2">
@@ -133,12 +104,10 @@
             </td>
             <td class="style2">
             </td>
-            <td class="style2">
+            <td class="style6">
                 &nbsp;</td>
             <td class="style2">
-            </td>
-            <td class="style2">
-            </td>
+                &nbsp;</td>
             <td class="style2">
             </td>
             <td class="style2">
@@ -149,75 +118,31 @@
             </td>
             <td class="style2">
             </td>
+            <td class="style2">
+            </td>
+            <td class="style2">
+            </td>
         </tr>
         <tr>
             <td>
                 &nbsp;</td>
             <td class="style3">
-                <asp:Label ID="Label1" runat="server" Text="Titulo:"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="Titulo:"  CssClass="btn focus" 
+                    Font-Bold="True" Font-Names="Arial" Font-Size="20px" ForeColor="Black" Horizontal-aling="rigth" ></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textTitle" runat="server" Enabled="False"></asp:TextBox>
+                <asp:TextBox ID="textTitle" runat="server" CssClass="form-control" Width="150px" Enabled="False"></asp:TextBox>
+            </td>
+            <td class="style5">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                <asp:Label ID="Label2" runat="server" Text="ISBN:"  CssClass="btn focus" 
+                    Font-Bold="True" Font-Names="Arial" Font-Size="20px" ForeColor="Black" Horizontal-aling="rigth" ></asp:Label>
             </td>
             <td>
-                &nbsp;</td>
-            <td>
-                <asp:Label ID="Label2" runat="server" Text="ISBN:"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="textIsbn" runat="server" Enabled="False"></asp:TextBox>
-            </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td class="style3">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td class="style3">
-                <asp:Label ID="Label3" runat="server" Text="Fecha de publicacion:"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="textDatePublish" runat="server" Enabled="False"></asp:TextBox>
-            </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                <asp:Label ID="Label8" runat="server" Text="Editorial:"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="textEdit" runat="server" Enabled="False"></asp:TextBox>
+                <asp:TextBox ID="textIsbn" runat="server" CssClass="form-control" Width="150px" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -236,6 +161,8 @@
             <td class="style3">
                 &nbsp;</td>
             <td>
+                &nbsp;</td>
+            <td class="style5">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
@@ -258,70 +185,22 @@
             <td>
                 &nbsp;</td>
             <td class="style3">
-                <asp:Label ID="Label4" runat="server" Text="Categoria:"></asp:Label>
+                <asp:Label ID="Label3" runat="server" Text="Publicado:"  CssClass="btn focus" 
+                    Font-Bold="True" Font-Names="Arial" Font-Size="20px" ForeColor="Black" Horizontal-aling="rigth" ></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="textCategory" runat="server" Enabled="False"></asp:TextBox>
+                <asp:TextBox ID="textDatePublish" runat="server" CssClass="form-control" Width="150px" Enabled="False"></asp:TextBox>
+            </td>
+            <td class="style5">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                <asp:Label ID="Label8" runat="server" Text="Editorial:"  CssClass="btn focus" 
+                    Font-Bold="True" Font-Names="Arial" Font-Size="20px" ForeColor="Black" Horizontal-aling="rigth" ></asp:Label>
             </td>
             <td>
-                &nbsp;</td>
-            <td>
-                <asp:Label ID="Label7" runat="server" Text="Autor:"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="textAuthor" runat="server" Enabled="False"></asp:TextBox>
-            </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td class="style3">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                &nbsp;</td>
-            <td class="style3">
-                <asp:Label ID="Label5" runat="server" Text="Stock:"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="textStock" runat="server" Enabled="False"></asp:TextBox>
-            </td>
-            <td>
-                &nbsp;</td>
-            <td>
-                <asp:Label ID="Label6" runat="server" Text="Estado:"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="textState" runat="server" Enabled="False"></asp:TextBox>
+                <asp:TextBox ID="textEdit" runat="server" CssClass="form-control" Width="150px" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -340,6 +219,8 @@
             <td class="style3">
                 &nbsp;</td>
             <td>
+                &nbsp;</td>
+            <td class="style5">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
@@ -362,21 +243,140 @@
             <td>
                 &nbsp;</td>
             <td class="style3">
+                <asp:Label ID="Label4" runat="server" Text="Categoria:"  CssClass="btn focus" 
+                    Font-Bold="True" Font-Names="Arial" Font-Size="20px" ForeColor="Black" Horizontal-aling="rigth" ></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="textCategory" runat="server" CssClass="form-control" Width="150px" Enabled="False"></asp:TextBox>
+            </td>
+            <td class="style5">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>
+                <asp:Label ID="Label7" runat="server" Text="Autor:"  CssClass="btn focus" 
+                    Font-Bold="True" Font-Names="Arial" Font-Size="20px" ForeColor="Black" Horizontal-aling="rigth" ></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="textAuthor" runat="server" CssClass="form-control" Width="150px" Enabled="False"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td class="style3">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td class="style5">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td class="style3">
+                <asp:Label ID="Label5" runat="server" Text="Stock:"  CssClass="btn focus" 
+                    Font-Bold="True" Font-Names="Arial" Font-Size="20px" ForeColor="Black" Horizontal-aling="rigth" ></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="textStock" runat="server" CssClass="form-control" Width="150px" Enabled="False"></asp:TextBox>
+            </td>
+            <td class="style5">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                <asp:Label ID="Label6" runat="server" Text="Estado:"  CssClass="btn focus" 
+                    Font-Bold="True" Font-Names="Arial" Font-Size="20px" ForeColor="Black" Horizontal-aling="rigth"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="textState" runat="server" CssClass="form-control" Width="150px" Enabled="False"></asp:TextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td class="style3">
                 &nbsp;</td>
             <td>
                 <asp:Button ID="btnDelete" runat="server" Text="Eliminar" 
-                    onclick="btnDelete_Click" />
+                    onclick="btnDelete_Click" Font-Bold="True" CssClass="btn-danger" />
             </td>
+            <td class="style5">
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>
                 <asp:Button ID="btnUpdate" runat="server" onclick="btnUpdate_Click" 
-                    Text="Actualizar" />
+                    Text="Actualizar" CssClass="btn-success" Font-Bold="True" Font-Names="Arial" 
+                    Font-Size="12pt" />
             </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td class="style3">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td class="style5">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
             <td>
                 &nbsp;</td>
             <td>

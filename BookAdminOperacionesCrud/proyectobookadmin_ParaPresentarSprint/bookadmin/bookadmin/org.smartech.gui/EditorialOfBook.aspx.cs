@@ -72,7 +72,8 @@ namespace BookAdmin.org.SmarTech.GUI
                 textCity.Enabled = true;
                 btnNextBook.Enabled = true;
                 clean();
-                insert = 1;                
+                insert = 1;
+                rblEditorial.Enabled = false;
             }
             else
             {
@@ -80,6 +81,7 @@ namespace BookAdmin.org.SmarTech.GUI
                 btnNextBook.Enabled = true;
                 ddlEditorial.AutoPostBack = true;
                 insert = 0;
+                rblEditorial.Enabled = false;
             }
         }
 
@@ -131,58 +133,79 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void btnUpdateCont_Click(object sender, EventArgs e)
         {
-            if (insert == 1)
+            if (String.IsNullOrEmpty(textName.Text) || String.IsNullOrEmpty(textCountry.Text) || String.IsNullOrEmpty(textCity.Text))
             {
-                if (valNameEditorial())
+                errorFull();
+            }
+            else
+            {
+                if (insert == 1)
                 {
-                    errorEditorial();
+                    if (valNameEditorial())
+                    {
+                        errorEditorial();
+                    }
+                    else
+                    {
+                        Session["book"] = code;
+                        bsn_edit.insertEditorial(textName.Text, textCountry.Text, textCity.Text);
+                        ent_edit = bsn_edit.checkEditorial(textName.Text);
+                        Session.Add("edit", ent_edit.Id);
+                        Response.Redirect("BookRegister.aspx");
+                    }
+                }
+
+                if (insert == 0)
+                {
+                    Session["book"] = code;
+                    Session.Add("edit", ent_edit.Id);
+                    Response.Redirect("BookRegister.aspx");
                 }
                 else
                 {
                     Session["book"] = code;
-                    bsn_edit.insertEditorial(textName.Text, textCountry.Text, textCity.Text);
                     ent_edit = bsn_edit.checkEditorial(textName.Text);
                     Session.Add("edit", ent_edit.Id);
                     Response.Redirect("BookRegister.aspx");
                 }
-            }
-
-            if (insert == 0)
-            {
-                Session["book"] = code;
-                Session.Add("edit", ent_edit.Id);
-                Response.Redirect("BookRegister.aspx");
-            }
-            else
-            {
-                Session["book"] = code;
-                ent_edit = bsn_edit.checkEditorial(textName.Text);
-                Session.Add("edit", ent_edit.Id);
-                Response.Redirect("BookRegister.aspx");
             }
         }
 
+        protected void errorFull()
+        {
+            string script = @"<script type='text/javascript'>
+                    alert('Todos los campos deben estar llenos');
+                    </script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+        }
         protected void btnNextBook_Click(object sender, EventArgs e)
         {
-            if (insert == 1)
+            if (String.IsNullOrEmpty(textName.Text) || String.IsNullOrEmpty(textCountry.Text) || String.IsNullOrEmpty(textCity.Text))
             {
-                if (valNameEditorial())
+                errorFull();
+            }
+            else
+            {
+                if (insert == 1)
                 {
-                    errorEditorial();
+                    if (valNameEditorial())
+                    {                        
+                        errorEditorial();
+                    }
+                    else
+                    {
+                        bsn_edit.insertEditorial(textName.Text, textCountry.Text, textCity.Text);
+                        ent_edit = bsn_edit.checkEditorial(textName.Text);
+                        Session.Add("edit", ent_edit.Id);
+                        Response.Redirect("BookRegister.aspx");
+                    }
                 }
-                else
+
+                if (insert == 0)
                 {
-                    bsn_edit.insertEditorial(textName.Text, textCountry.Text, textCity.Text);
-                    ent_edit = bsn_edit.checkEditorial(textName.Text);
                     Session.Add("edit", ent_edit.Id);
                     Response.Redirect("BookRegister.aspx");
                 }
-            }
-
-            if (insert == 0)
-            {
-                Session.Add("edit", ent_edit.Id);
-                Response.Redirect("BookRegister.aspx");
             }
         }
         protected void errorEditorial()
@@ -195,29 +218,15 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected bool valNameEditorial()
         {
-            List<EntClsSearch> list_entsearch = bsn_search.ForNameEditorial(textName.Text);
-            if (list_entsearch.Count() >= 1)
+            EntClsEditorial edit=bsn_edit.checkEditorial(textName.Text);            
+            if (edit.Name==null)
             {
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
 
-
-        /*
-        public void loadDrop()
-        {
-            lstEditorial = bsn_edit.listEditorial();
-            if (lstEditorial != null)
-            {
-                ddlEditorial.DataSource = lstEditorial;
-                ddlEditorial.DataValueField = "id";
-                ddlEditorial.DataTextField = "name";
-                ddlEditorial.DataBind();
-            }
-        }
-          */
-
+        
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             textName.Enabled = true;

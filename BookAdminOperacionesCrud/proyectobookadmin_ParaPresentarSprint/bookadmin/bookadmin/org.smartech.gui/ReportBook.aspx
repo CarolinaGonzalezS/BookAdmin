@@ -3,19 +3,24 @@
     <table style="width: 100%">
         <tr>
             <td colspan="2">
-                <asp:GridView ID="grvBookReport" runat="server" style="text-align: center" 
-                    Font-Size="15px">
+                <asp:GridView ID="grvBookReport" HorizontalAlign="Center" 
+           BorderWidth="5px" BackColor="Black" runat="server" Width="100%" Font-Names="Angsana New" 
+           ForeColor="White" Font-Bold="False" Font-Size="30pt">
+           <FooterStyle VerticalAlign="Middle" />
+           <HeaderStyle BackColor="White" ForeColor="Black" BorderColor="Black" />
                 </asp:GridView>
             &nbsp;</td>
         </tr>
         <tr>
             <td>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="btnReturnReport" runat="server" onclick="btnReturnReport_Click" 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnReturnReport" runat="server" CssClass="btn-success" Font-Names="Arial" 
+                    Font-Size="12pt" onclick="btnReturnReport_Click" 
                     style="text-align: center" Text="Regresar a Reportes" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </td>
             <td>
-                <asp:Button ID="btnReport" runat="server" style="text-align: center" 
+                <asp:Button ID="btnReport" CssClass="btn-success" Font-Names="Arial" 
+                    Font-Size="12pt" runat="server" style="text-align: center" 
                     Text="Imprimir Reporte" />
             </td>
         </tr>

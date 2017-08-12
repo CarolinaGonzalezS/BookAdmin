@@ -84,54 +84,82 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (validTitle(textTitle.Text, 1))
+            if (String.IsNullOrEmpty(textCode.Text) || String.IsNullOrEmpty(textDate.Text) || String.IsNullOrEmpty(textIsbn.Text) || String.IsNullOrEmpty(textIsbn.Text) || String.IsNullOrEmpty(textStock.Text) || String.IsNullOrEmpty(textTitle.Text))
             {
-                errorTitle();
+                errorFull();
             }
             else
             {
-                if (validIsbn(textIsbn.Text, 1))
+                if (validTitle(textTitle.Text, 1))
                 {
-                    errorIsbn();
+                    errorTitle();
                 }
                 else
                 {
-                    int idcateg = Convert.ToInt32(ddlCategory.SelectedValue);
-                    string state = ddlState.SelectedItem.Text;
-                    bsn_book.updateBook(textCode.Text, textIsbn.Text, textTitle.Text, textDate.Text, idEditorial, idcateg, state, Convert.ToInt32(textStock.Text));
-                    bsn_write.insertWrite(idAuthor, textCode.Text);
-                    Session.Add("succe", 1);
-                    Response.Redirect("BookList.aspx");
+                    if (validIsbn(textIsbn.Text, 1))
+                    {
+                        errorIsbn();
+                    }
+                    else
+                    {
+                        int idcateg = Convert.ToInt32(ddlCategory.SelectedValue);
+                        string state = ddlState.SelectedItem.Text;
+                        bsn_book.updateBook(textCode.Text, textIsbn.Text, textTitle.Text, textDate.Text, idEditorial, idcateg, state, Convert.ToInt32(textStock.Text));
+                        bsn_write.insertWrite(idAuthor, textCode.Text);
+                        Session.Add("succe", 1);
+                        Response.Redirect("BookList.aspx");
+                    }
                 }
-
             }
+        }
+
+        protected void errorFull()
+        {
+            string script = @"<script type='text/javascript'>
+                    alert('Todos los campos deben estar llenos');
+                    </script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
         }
 
         protected void buttonRegister_Click(object sender, EventArgs e)
         {
-            if (validTitle(textTitle.Text, 2))
+            if (String.IsNullOrEmpty(textCode.Text) || String.IsNullOrEmpty(textDate.Text) || String.IsNullOrEmpty(textIsbn.Text) || String.IsNullOrEmpty(textIsbn.Text) || String.IsNullOrEmpty(textStock.Text) || String.IsNullOrEmpty(textTitle.Text))
             {
-                errorTitle();
+                errorFull();
             }
             else
             {
-                if (validIsbn(textIsbn.Text, 2))
+                if (validTitle(textTitle.Text, 2))
                 {
-                    errorIsbn();
+                    errorTitle();
                 }
                 else
                 {
-                    if (validCode(textCode.Text))
+                    if (validIsbn(textIsbn.Text, 2))
                     {
-                        errorCode();
+                        errorIsbn();
                     }
                     else
                     {
-                        int itemSelec = (ddlCategory.SelectedIndex) + 1;
-                        bsn_book.insertBook(textTitle.Text, textCode.Text, textIsbn.Text, textDate.Text, Convert.ToInt32(textStock.Text), itemSelec, idEditorial, "Disponible", 1);
-                        bsn_write.insertWrite(idAuthor, textCode.Text);
-                        Session.Add("succe", 1);
-                        Response.Redirect("BookList.aspx");
+                        if (validCode(textCode.Text))
+                        {
+                            errorCode();
+                        }
+                        else
+                        {
+                            if (validStock())
+                            {
+                                errorStock();
+                            }
+                            else 
+                            {                            
+                                int itemSelec = (ddlCategory.SelectedIndex) + 1;
+                                bsn_book.insertBook(textTitle.Text, textCode.Text, textIsbn.Text, textDate.Text, Convert.ToInt32(textStock.Text), itemSelec, idEditorial, "Disponible", 1);
+                                bsn_write.insertWrite(idAuthor, textCode.Text);
+                                Session.Add("succe", 1);
+                                Response.Redirect("BookList.aspx");
+                            }
+                        }
                     }
                 }
             }
@@ -197,6 +225,15 @@ namespace BookAdmin.org.SmarTech.GUI
             return false;
         }
 
+        protected bool validStock() 
+        {            
+            if (Convert.ToInt32(textStock.Text) <= 0) 
+            {
+                return true;
+            }
+            return false;
+        }
+
         protected void errorTitle()
         {
             string script = @"<script type='text/javascript'>
@@ -208,6 +245,14 @@ namespace BookAdmin.org.SmarTech.GUI
         {
             string script = @"<script type='text/javascript'>
                     alert('Ya existe un libro con ese codigo');
+                    </script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+        }
+
+        protected void errorStock()
+        {
+            string script = @"<script type='text/javascript'>
+                    alert('No puede registrar un libro con stock 0 ');
                     </script>";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
         }
@@ -227,6 +272,16 @@ namespace BookAdmin.org.SmarTech.GUI
             textIsbn.Text = "";
             textDate.Text = "";
             
+        }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            textDate.Text = Calendar1.SelectedDate.ToString("yyyy-MM-dd");
+        }
+
+        protected void btnView_Click(object sender, EventArgs e)
+        {
+            Calendar1.Visible = true;
         }
 
         

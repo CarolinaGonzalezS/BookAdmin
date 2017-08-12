@@ -199,7 +199,7 @@ namespace BookAdmin.org.SmarTech.GUI
         protected void errorMessage()
         {
             string script = @"<script type='text/javascript'>
-                    alert('No existe ningun Libro');
+                    alert('Busqueda no encontrada');
                     </script>";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
         }

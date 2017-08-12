@@ -11,6 +11,16 @@
     <title>BookAdmin</title>
     <asp:ContentPlaceHolder ID="head" runat="server" >
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            height: 27px;
+        }
+        .style2
+        {
+            height: 8px;
+        }
+    </style>
 </head>
 <body id="tema1" style="background-image:url(images/biblioteca.jpg)">
     <form id="form1" runat="server">
@@ -25,34 +35,52 @@
             <li><a href="ReturnBook.aspx">Devolver Libro</a></li>
             <li><a href="Reports.aspx">Reportes</a></li>
             <li><a href="Principal.aspx">Atras</a></li>
-
-            </div>
-            <div id="logotipo">
-            <img src="images/logo.jpg" />
-
-            </div>
-            <div="titulo">
-                <h1>BookAdmin&nbsp;&nbsp;&nbsp;&nbsp;                
-            </h1>
-            
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox ID="textSearch" runat="server" placeholder="Ingrese palabra clave" Width="30%"></asp:TextBox>
-            <asp:ImageButton ID="ImageButton1" runat="server" 
+                &nbsp;<table style="text-align:right; margin-bottom: 0px;">
+                <thead>
+                <tr>
+                <td rowspan="3">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/logo.jpg" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                <td rowspan="2">
+                <asp:Label ID="Label1" runat="server" Text="BookAdmin" CssClass="btn focus" 
+                    Font-Bold="True" Font-Names="Arial" Font-Size="30px" ForeColor="Black" Horizontal-aling="rigth"></asp:Label>
+                
+                </td>
+                <td>
+                </td>
+                <td></td>
+                </tr>             
+                <tr >
+                <td class="style1">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:TextBox ID="textSearch" runat="server" placeholder="Ingrese palabra clave" Width="200px" 
+                Height="30px" ></asp:TextBox>
+               
+                </td>
+                <td class="style1" >
+                <asp:ImageButton ID="ImageButton1" runat="server" 
                 ImageUrl="~/org.SmarTech.GUI/images/busqueda.png" onclick="ImageButton1_Click" 
-                Width="50px" Height="50px" />
-                <br />
-            <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button 
-                        ID="btnCiencia" runat="server" onclick="btnCiencia_Click" Text="Ciencia" CssClass="btn btn-info" Width="70px" />
-&nbsp;<asp:Button ID="btnTerror" runat="server" onclick="btnTerror_Click" 
-                CssClass="btn btn-info" Width="70px"
-                        Text="Terror" Font-Underline="False" />
-&nbsp;<asp:Button ID="btnSuspenso" runat="server" onclick="btnSuspenso_Click" CssClass="btn btn-info" Width="75px"
-                        Text="Suspenso" />
-            &nbsp;<asp:Button ID="btnBiografia" runat="server" onclick="btnBiografia_Click" Width="75px"
-                        Text="Biografias" CssClass="btn btn-info"/>
-&nbsp;<asp:Button ID="btnMisterio" runat="server" onclick="btnMisterio_Click" CssClass="btn btn-info" Width="70px"
-                        Text="Misterio" />
+                Width="45px" Height="45px" />
+                </td>
+                </tr> 
+                <tr valign="top">
+                <td colspan="3" class="style2">
+                    <asp:Button ID="btnCiencia" runat="server" CssClass="btn btn-info" style="TEXT-ALIGN: center" 
+                        onclick="btnCiencia_Click" Text="Ciencia" Width="80px" />
+                    &nbsp;<asp:Button ID="btnTerror" runat="server" CssClass="btn btn-info" 
+                        Font-Underline="False" onclick="btnTerror_Click" Text="Terror" Width="80px" />
+                    &nbsp;<asp:Button ID="btnSuspenso" runat="server" CssClass="btn btn-info" 
+                        onclick="btnSuspenso_Click" Text="Suspenso" Width="90px" />
+                    &nbsp;<asp:Button ID="btnBiografia" runat="server" CssClass="btn btn-info"
+                        onclick="btnBiografia_Click" Text="Biografias" Width="90px" />
+                    &nbsp;<asp:Button ID="btnMisterio" runat="server" CssClass="btn btn-info" 
+                        onclick="btnMisterio_Click" Text="Misterio" Width="80px" />
+                </td>
+                </tr>               
+                </thead>
+                </table>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                
 &nbsp;&nbsp;<br />
             <br />
         </div>

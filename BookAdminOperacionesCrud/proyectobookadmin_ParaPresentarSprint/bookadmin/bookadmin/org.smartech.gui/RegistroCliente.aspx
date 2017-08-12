@@ -389,8 +389,9 @@
             <td>
                 &nbsp;</td>
             <td>
-                <asp:Button ID="btnRegister" runat="server" onclick="btnRegister_Click" 
-                    Text="Registrar" />
+                <asp:Button ID="btnRegister" CssClass="btn-success" Font-Names="Arial" 
+                    Font-Size="12pt" runat="server" onclick="btnRegister_Click" 
+                    Text="Registrar" Font-Bold="True" />
             </td>
             <td>
                 &nbsp;</td>

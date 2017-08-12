@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Theme="Tema1" Language="C#" MasterPageFile="~/org.SmarTech.GUI/ReturnBook.master" AutoEventWireup="true" CodeBehind="ReturnBook.aspx.cs" Inherits="BookAdmin.org.SmarTech.GUI.ReturnBook1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="contenidoPrincipal" runat="server">
-<table>
+    <table>
 
     <tr>
         <td style="width: 693px">
@@ -50,9 +50,11 @@
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnReturnBook" runat="server" onclick="btnReturnBook_Click" 
-                Text="Devolver Libro" Enabled="False" />
+                Text="Devolver Libro" CssClass="btn-success" Font-Names="Arial" Font-Bold="True" 
+                    Font-Size="12pt" Enabled="False" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnLoan" runat="server" onclick="btnLoan_Click" 
+            <asp:Button ID="btnLoan" CssClass="btn-danger" Font-Names="Arial" 
+                    Font-Size="12pt" runat="server" Font-Bold="True" onclick="btnLoan_Click" 
                 Text="Ir a Multa" />
         </td>
     </tr>
