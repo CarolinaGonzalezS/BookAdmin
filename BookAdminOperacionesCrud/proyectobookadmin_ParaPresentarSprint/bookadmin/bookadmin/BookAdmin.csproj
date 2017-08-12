@@ -64,7 +64,6 @@
     <Content Include="jquery\jquery-ui-1.10.4.custom.js" />
     <Content Include="jquery\jquery-ui-1.10.4.custom.min.js" />
     <Content Include="org.SmarTech.GUI\AuthorOfBook.aspx" />
-    <Content Include="org.SmarTech.GUI\BookList.aspx" />
     <Content Include="org.SmarTech.GUI\BookLoan.aspx" />
     <Content Include="org.SmarTech.GUI\BookRegister.aspx" />
     <Content Include="org.SmarTech.GUI\BookView.aspx" />
@@ -149,13 +148,6 @@
     </Compile>
     <Compile Include="org.SmarTech.GUI\AuthorOfBook.aspx.designer.cs">
       <DependentUpon>AuthorOfBook.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="org.SmarTech.GUI\BookList.aspx.cs">
-      <DependentUpon>BookList.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="org.SmarTech.GUI\BookList.aspx.designer.cs">
-      <DependentUpon>BookList.aspx</DependentUpon>
     </Compile>
     <Compile Include="org.SmarTech.GUI\BookLoan.aspx.cs">
       <DependentUpon>BookLoan.aspx</DependentUpon>
