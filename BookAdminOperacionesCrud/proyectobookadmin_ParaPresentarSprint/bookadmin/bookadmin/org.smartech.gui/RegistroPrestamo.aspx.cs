@@ -13,11 +13,8 @@ namespace BookAdmin.org.SmarTech.GUI
     public partial class RegistroPrestamo1 : System.Web.UI.Page
     {
 
-        static BsnClsCustomer bsn_customer = new BsnClsCustomer();
-        static EntClsCustomer ent_customer = new EntClsCustomer();
-        //private static EntClsCustomer obj_customer = new EntClsCustomer();
         private static BsnClsCustomer bsn_customer = new BsnClsCustomer();
-
+        private static EntClsCustomer ent_customer = new EntClsCustomer();     
         
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,12 +26,20 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void btnCustomerSearch_Click(object sender, EventArgs e)
         {
-            string search = txtIdCustomer.Text;
-            ent_customer = bsn_customer.CustomerSearch(search);
+            ent_customer = bsn_customer.CustomerSearch(txtIdCustomer.Text);
 
             if (ent_customer.IdentificationCard == null)
             {
-                Response.Redirect("RegistroCliente.aspx");
+
+                if (cedulavalidation(txtIdCustomer.Text))
+                {
+                    Response.Redirect("RegistroCliente.aspx");
+
+                }
+                else
+                {
+                    errorCiNonV();
+                }
             }
             else
             {
@@ -49,20 +54,9 @@ namespace BookAdmin.org.SmarTech.GUI
                 showCustomer(ent_customer);
 
                 btnNextBook.Enabled = true;
+                
             }
 
-            //ent_customer = bsn_customer.CustomerSearch(txtIdCustomer.Text);
-            if (ent_customer.IdentificationCard == null)
-            {
-                if (cedulavalidation(txtIdCustomer.Text))
-                {
-                    errorCiNonV();
-                }
-            }
-            else
-            {
-                errorExistCus();
-            }
         }
 
         protected void showCustomer(EntClsCustomer ent_customer)
@@ -112,14 +106,6 @@ namespace BookAdmin.org.SmarTech.GUI
         }
 
 
-
-        protected void errorExistCus()
-        {
-            string script = @"<script type='text/javascript'>
-                    alert('Ya existe un cliente con esta cedula ingrese otra');
-                    </script>";
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
-        }
 
         protected void errorCiNonV()
         {
