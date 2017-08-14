@@ -106,9 +106,9 @@ namespace BookAdmin.org.SmarTech.controllers
             return bookreport;
         }
 
-        public List<EntClsReports> CustomerReport()
+        public List<EntClsCustomer> CustomerReport()
         {
-            List<EntClsReports> customerreport = new List<EntClsReports>();
+            List<EntClsCustomer> customerreport = new List<EntClsCustomer>();
             string storeProcedure = "CustomerReport";
             using (DbConnection con = dpf.CreateConnection())
             {
@@ -124,7 +124,7 @@ namespace BookAdmin.org.SmarTech.controllers
                         while (dr.Read())
                         {
                             customerreport.Add(
-                                new EntClsReports(
+                                new EntClsCustomer(
                                     (string)dr["Cedula"], (string)dr["Nombre"],
                                     (string)dr["Apellido"], (string)dr["Telefono"],
                                     (string)dr["Cedula"], (string)dr["Direccion"],

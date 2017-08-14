@@ -28,7 +28,7 @@ namespace BookAdmin.org.SmarTech.GUI
         {
             ent_customer = bsn_customer.CustomerSearch(txtIdCustomer.Text);
 
-            if (ent_customer.IdentificationCard == null)
+            if (ent_customer.Cedula == null)
             {
 
                 if (cedulavalidation(txtIdCustomer.Text))
@@ -61,18 +61,18 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void showCustomer(EntClsCustomer ent_customer)
         {
-            txtIdentificationCard.Text = ent_customer.IdentificationCard;
-            txtName.Text = ent_customer.Name;
-            txtLastName.Text = ent_customer.Lastname;
-            txtPhone.Text = ent_customer.Phone;
-            txtCellPhone.Text = ent_customer.Celphone;
-            txtAddress.Text = ent_customer.Addres;
-            txtEmail.Text = ent_customer.Mail;
+            txtIdentificationCard.Text = ent_customer.Cedula;
+            txtName.Text = ent_customer.Nombre;
+            txtLastName.Text = ent_customer.Apellido;
+            txtPhone.Text = ent_customer.Telefono;
+            txtCellPhone.Text = ent_customer.Celular;
+            txtAddress.Text = ent_customer.Direccion;
+            txtEmail.Text = ent_customer.Email;
         }
 
         protected void btnNextBook_Click(object sender, EventArgs e)
         {
-            Session.Add("customer", ent_customer.IdentificationCard);
+            Session.Add("customer", ent_customer.Cedula);
             Response.Redirect("BookLoan.aspx");
         }
 

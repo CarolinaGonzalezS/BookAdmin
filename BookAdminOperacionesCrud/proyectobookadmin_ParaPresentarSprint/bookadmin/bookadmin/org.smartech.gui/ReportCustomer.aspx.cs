@@ -22,17 +22,17 @@ namespace BookAdmin.org.SmarTech.GUI
             customer = Session["customer"].ToString();
             Response.Write(customer);
 
-            List<EntClsReports> ent_rcustomer = new List<EntClsReports>();
+            List<EntClsCustomer> ent_rcustomer = new List<EntClsCustomer>();
             BsnClsReports bsn_rcustomer = new BsnClsReports();
 
             if (customer == "Customer")
-            {
-                ent_rcustomer = bsn_rcustomer.CustomerReport();
+            {                
+                ent_rcustomer = bsn_rcustomer.CustomerReport();                
                 loadGrid(ent_rcustomer);
             }
         }
 
-        private void loadGrid(List<EntClsReports> extract)
+        private void loadGrid(List<EntClsCustomer> extract)
         {
             grvCustomerReport.DataSource = extract;
             grvCustomerReport.DataBind();
@@ -42,5 +42,6 @@ namespace BookAdmin.org.SmarTech.GUI
         {
             Response.Redirect("Reports.aspx");
         }
+
     }
 }

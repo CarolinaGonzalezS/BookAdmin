@@ -108,3 +108,8 @@ C:\Users\Rodrigo\Desktop\BookAdmin\BookAdminOperacionesCrud\proyectobookadmin_Pa
 C:\Users\Rodrigo\Desktop\BookAdmin\BookAdminOperacionesCrud\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache
 C:\Users\Rodrigo\Desktop\BookAdmin\BookAdminOperacionesCrud\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.dll
 C:\Users\Rodrigo\Desktop\BookAdmin\BookAdminOperacionesCrud\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.pdb
+D:\usuario\Imagenes\BookAdmin\BookAdminOperacionesCrud\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.dll
+D:\usuario\Imagenes\BookAdmin\BookAdminOperacionesCrud\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\bin\BookAdmin.pdb
+D:\usuario\Imagenes\BookAdmin\BookAdminOperacionesCrud\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.csprojResolveAssemblyReference.cache
+D:\usuario\Imagenes\BookAdmin\BookAdminOperacionesCrud\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.dll
+D:\usuario\Imagenes\BookAdmin\BookAdminOperacionesCrud\proyectobookadmin_ParaPresentarSprint\bookadmin\BookAdmin\obj\Debug\BookAdmin.pdb

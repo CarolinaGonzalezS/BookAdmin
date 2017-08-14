@@ -26,7 +26,7 @@ namespace BookAdmin.org.SmarTech.GUI
             EntClsCustomer obj_customer = new EntClsCustomer();
             BsnClsCustomer bsn_customer = new BsnClsCustomer();
             obj_customer = bsn_customer.CustomerSearch(textIdentificationCard.Text);
-            if (obj_customer.IdentificationCard == null)
+            if (obj_customer.Cedula == null)
             {
                 if (cedulavalidation(textIdentificationCard.Text))
                 {

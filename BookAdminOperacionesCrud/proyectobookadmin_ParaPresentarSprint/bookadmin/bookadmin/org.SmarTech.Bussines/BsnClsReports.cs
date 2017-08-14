@@ -15,7 +15,7 @@ namespace BookAdmin.org.SmarTech.Bussines
             return cnt_bookreport.BookReport();
         }
 
-        public List<EntClsReports> CustomerReport()
+        public List<EntClsCustomer> CustomerReport()
         {
             CntClsReports cnt_customerreport = new CntClsReports();
             return cnt_customerreport.CustomerReport();

@@ -20,37 +20,37 @@ namespace BookAdmin.org.SmarTech.entities
 
         #region setter and getter
 
-        public string IdentificationCard
+        public string Cedula
         {
             get { return identificationCard; }
             set { identificationCard = value; }
         }
-        public string Name
+        public string Nombre
         {
             get { return name; }
             set { name = value; }
         }
-        public string Lastname
+        public string Apellido
         {
             get { return lastname; }
             set { lastname = value; }
         }
-        public string Phone
+        public string Telefono
         {
             get { return phone; }
             set { phone = value; }
         }
-        public string Celphone
+        public string Celular
         {
             get { return celphone; }
             set { celphone = value; }
         }
-        public string Addres
+        public string Direccion
         {
             get { return addres; }
             set { addres = value; }
         }
-        public string Mail
+        public string Email
         {
             get { return mail; }
             set { mail = value; }
