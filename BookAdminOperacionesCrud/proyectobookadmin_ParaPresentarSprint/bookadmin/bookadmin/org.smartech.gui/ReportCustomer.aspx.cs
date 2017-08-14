@@ -43,5 +43,11 @@ namespace BookAdmin.org.SmarTech.GUI
             Response.Redirect("Reports.aspx");
         }
 
+        protected void btnReturnReport_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("Reports.aspx");
+        }
+
+
     }
 }

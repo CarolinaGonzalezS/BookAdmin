@@ -169,5 +169,51 @@ namespace BookAdmin.org.SmarTech.controllers
             }
             return fineloan;
         }
+        public List<EntClsLoan> checkForCodeLoan(string code)
+        {
+            List<EntClsLoan> loanList = new List<EntClsLoan>();
+            string storeProcedure = "checkForCodeLoan";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DbParameter param = cmd.CreateParameter();
+                    param.DbType = DbType.String;
+                    param.ParameterName = "code";
+                    param.Value = code;
+                    cmd.Parameters.Add(param);
+
+                    con.Open();
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            loanList.Add(
+                                new EntClsLoan((int)dr["id"], (string)dr["stateL"])
+                            );
+                        }
+                    }
+                }
+            }
+            return loanList;
+        }
+
+        public int deleteLoan(int id)
+        {
+            List<DbParameter> parameters = new List<DbParameter>();
+
+            DbParameter param1 = dpf.CreateParameter();
+            param1.Value = id;
+            param1.ParameterName = "id";
+            parameters.Add(param1);
+
+            return ejecuteNonQuery("deleteLoan", parameters);
+        }
+
+        
     }
 }

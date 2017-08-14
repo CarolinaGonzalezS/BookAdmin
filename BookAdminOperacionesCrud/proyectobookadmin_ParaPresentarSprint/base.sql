@@ -719,7 +719,7 @@ where Book.idEdit = Editorial.id and Author.id = Write.id and Book.code = Write.
 exec BookReport
 
 -- Por Cliente
-create procedure CustomerReport
+alter procedure CustomerReport
 as
 select identificationCard as Cedula, name as Nombre, lastName as Apellido, 
 phone as Telefono, celphone as Celular, addres as Direccion, mail as Email
@@ -738,3 +738,24 @@ where Book.idEdit=Editorial.id and
 exec EditorialBook 7
 
 select * from editorial
+
+create procedure reportAllLoan
+as 
+select Customer.name,Customer.lastName,Customer.identificationCard,id,Convert(varchar(20),dateLoan) as dateLoan,Convert(varchar(20),dateLimit) as dateLimit,Book.code,Book.name as nameBook from dbo.Loan,dbo.Customer,book
+where Customer.identificationCard=Loan.identificationCard and Book.code=Loan.code
+
+alter procedure reportAllFine
+as 
+select Fine.id,descriptionF,Customer.identificationCard,Customer.name, Customer.lastName,Convert(decimal,value) as value from dbo.FineCustomer,dbo.Fine,dbo.Customer
+where Customer.identificationCard=dbo.FineCustomer.identificationCard and
+		Fine.id= FineCustomer.id
+
+exec reportAllFine
+select * from book
+create procedure checkForCodeLoan
+@code varchar(10)
+as
+select id from loan
+where code = @code
+select * from dbo.FineCustomer
+where id=1

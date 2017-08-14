@@ -284,6 +284,111 @@
                 &nbsp;</td>
         </tr>
         <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+            &nbsp;</td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        </tr>
+        <tr>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        </tr>
+        <tr>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            <asp:Label ID="lblPrestado" runat="server" Text="Prestado:" CssClass="btn focus" 
+                    Font-Bold="True" Font-Names="Arial" Font-Size="20px" ForeColor="Black" 
+                Horizontal-aling="rigth" Visible="False"></asp:Label>
+        </td>
+        <td colspan="3">
+                <asp:RadioButtonList ID="rblPrestado" RepeatDirection="Horizontal" 
+                    runat="server" Width="263px" Visible="False" 
+                    onselectedindexchanged="rblPrestado_SelectedIndexChanged">
+                    <asp:ListItem Class="btn-primary" Text="Si" Value="1"></asp:ListItem>
+                    <asp:ListItem Class="btn-primary" Text="No" Value="2"></asp:ListItem>
+                </asp:RadioButtonList>
+        </td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        </tr>       
+        <tr>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td colspan="3">
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+        </tr>       
+        <tr>
             <td>
                 &nbsp;</td>
             <td class="style3">

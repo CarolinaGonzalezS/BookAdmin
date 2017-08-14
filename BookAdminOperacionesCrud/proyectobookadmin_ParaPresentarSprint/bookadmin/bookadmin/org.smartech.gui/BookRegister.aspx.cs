@@ -107,7 +107,7 @@ namespace BookAdmin.org.SmarTech.GUI
                         bsn_book.updateBook(textCode.Text, textIsbn.Text, textTitle.Text, textDate.Text, idEditorial, idcateg, state, Convert.ToInt32(textStock.Text));
                         bsn_write.insertWrite(idAuthor, textCode.Text);
                         Session.Add("succe", 1);
-                        Response.Redirect("BookList.aspx");
+                        Response.Redirect("BookView.aspx");
                     }
                 }
             }
@@ -157,7 +157,7 @@ namespace BookAdmin.org.SmarTech.GUI
                                 bsn_book.insertBook(textTitle.Text, textCode.Text, textIsbn.Text, textDate.Text, Convert.ToInt32(textStock.Text), itemSelec, idEditorial, "Disponible", 1);
                                 bsn_write.insertWrite(idAuthor, textCode.Text);
                                 Session.Add("succe", 1);
-                                Response.Redirect("BookList.aspx");
+                                Response.Redirect("BookView.aspx");
                             }
                         }
                     }

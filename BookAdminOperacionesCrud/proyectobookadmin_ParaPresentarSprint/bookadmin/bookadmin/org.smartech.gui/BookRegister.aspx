@@ -167,7 +167,10 @@
                     Width="180px" Font-Names="Arial"></asp:TextBox>
                 </td>
                 <td class="style2" style="width: 27px">
-                    &nbsp;</td>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                    ControlToValidate="textIsbn" Display="Dynamic" ErrorMessage="ISBN no valido" 
+                    ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+                </td>
                 <td class="style3">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Label ID="Label14" runat="server" Text="Stock:" CssClass="btn focus" 
@@ -178,7 +181,10 @@
                     Width="180px" Font-Names="Arial"></asp:TextBox>
                 </td>
                 <td style="width: 6px">
-                    &nbsp;</td>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+                    ControlToValidate="textStock" Display="Dynamic" ErrorMessage="stock no valido" 
+                    ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
+                </td>
                 <td style="width: 6px">
                     &nbsp;</td>
                 <td>

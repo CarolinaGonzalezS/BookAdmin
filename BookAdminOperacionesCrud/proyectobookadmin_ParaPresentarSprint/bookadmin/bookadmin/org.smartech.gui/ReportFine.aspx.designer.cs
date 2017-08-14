@@ -11,5 +11,23 @@ namespace BookAdmin.org.SmarTech.GUI {
     
     
     public partial class ReportFine {
+        
+        /// <summary>
+        /// Control grvFineReport.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grvFineReport;
+        
+        /// <summary>
+        /// Control btnReturnReport.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnReturnReport;
     }
 }

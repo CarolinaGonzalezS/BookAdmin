@@ -136,5 +136,75 @@ namespace BookAdmin.org.SmarTech.controllers
             }
             return customerreport;
         }
+
+        public List<EntClsReportLoan> LoanReport()
+        {
+            List<EntClsReportLoan> LoanReport = new List<EntClsReportLoan>();
+            string storeProcedure = "reportAllLoan";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            LoanReport.Add(
+                                new EntClsReportLoan(
+                                    (string)dr["name"], 
+                                    (string)dr["lastName"], 
+                                    (string)dr["identificationCard"],
+                                    (int)dr["id"], 
+                                    (string)dr["dateLoan"], 
+                                    (string)dr["dateLimit"],
+                                    (string)dr["code"], 
+                                    (string)dr["nameBook"] 
+                            ));                            
+                        }
+                    }
+                }
+            }
+            return LoanReport;
+        }
+
+
+        public List<EntClsReportFine> FineReport()
+        {
+            List<EntClsReportFine> FineReport = new List<EntClsReportFine>();
+            string storeProcedure = "reportAllFine";
+            using (DbConnection con = dpf.CreateConnection())
+            {
+                con.ConnectionString = constr;
+                using (DbCommand cmd = dpf.CreateCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = storeProcedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            FineReport.Add(
+                                new EntClsReportFine(
+                                    (int)dr["id"],
+                                    (string)dr["descriptionF"],
+                                    (string)dr["identificationCard"],
+                                    (string)dr["name"],
+                                    (string)dr["lastName"],
+                                    (decimal)dr["value"]
+                            ));
+                        }
+                    }
+                }
+            }
+            return FineReport;
+        }
+
     }
 }

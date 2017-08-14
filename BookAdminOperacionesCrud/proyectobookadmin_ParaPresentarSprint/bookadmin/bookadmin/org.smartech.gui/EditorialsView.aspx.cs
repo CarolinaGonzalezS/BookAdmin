@@ -73,7 +73,7 @@ namespace BookAdmin.org.SmarTech.GUI
                 }
                     bsn_edit.updateEditorial(valor2, textName.Text, textCountry.Text, textCity.Text);                                        
                     SucceUpdateEdit();
-                    Response.Redirect("EditorialsView.aspx");
+                    listAdd();
                 }
             catch 
             {
@@ -93,7 +93,7 @@ namespace BookAdmin.org.SmarTech.GUI
             {
                 bsn_edit.deleteEditorial(ent_edit.Id);                
                 SucceDeleteEdit();
-                Response.Redirect("EditorialsView.aspx");
+                listAdd();
             }
         }
 

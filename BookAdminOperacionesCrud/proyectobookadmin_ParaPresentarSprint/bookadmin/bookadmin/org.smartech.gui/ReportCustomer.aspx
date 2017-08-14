@@ -19,5 +19,21 @@
             <td>
                 &nbsp;</td>
         </tr>
+        <tr>
+        <td>
+            
+            <asp:Button ID="btnReturnReport" runat="server" Text="Regresar a Reportes" 
+                Font-Size="12pt" style="text-align: center" CssClass="btn-success" 
+                Font-Names="Arial" onclick="btnReturnReport_Click1"  />
+            
+        </td>
+        <td></td>
+        <td>
+            &nbsp;</td>
+        <td></td>
+        <td>
+        </td>
+        
+        </tr>
     </table>
 </asp:Content>

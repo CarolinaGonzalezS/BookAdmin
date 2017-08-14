@@ -92,7 +92,7 @@
                 <asp:TextBox ID="textCountry" runat="server"></asp:TextBox>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                     ControlToValidate="textCountry" Display="Dynamic" ErrorMessage="Pais no valido" 
-                    ValidationExpression="[A-Za-z]*"></asp:RegularExpressionValidator>
+                    ValidationExpression="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+"></asp:RegularExpressionValidator>
             </td>
             <td>
                 <asp:Button ID="btnDelete" runat="server" onclick="btnDelete_Click" 

@@ -19,10 +19,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </td>
             <td>
-                <asp:Button ID="btnReport" CssClass="btn-success" Font-Names="Arial" 
-                    Font-Size="12pt" runat="server" style="text-align: center" 
-                    Text="Imprimir Reporte" />
-            </td>
+                &nbsp;</td>
         </tr>
     </table>
 </asp:Content>

@@ -17,6 +17,7 @@ namespace BookAdmin.org.SmarTech.GUI
         private static List<EntClsBook> listBook = new List<EntClsBook>();
         public static BsnClsAuthor bsn_auth = new BsnClsAuthor();
         public static BsnClsEditorial bsn_edit = new BsnClsEditorial();
+        public static BsnClsLoan bsn_loan = new BsnClsLoan();
         public static BsnClsCategory bsn_cate = new BsnClsCategory();
         public static BsnClsWrite bsn_write = new BsnClsWrite();
 
@@ -33,9 +34,10 @@ namespace BookAdmin.org.SmarTech.GUI
                 Response.Redirect("Login.aspx");
             }
             if (!IsPostBack)
-            {
+            {                
                 listAdd();
                 ddlBook.AutoPostBack = true;
+                rblPrestado.AutoPostBack = true;
             }
 
         }
@@ -58,8 +60,8 @@ namespace BookAdmin.org.SmarTech.GUI
 
             if (ValidFull())
             {
-                Session.Add("book", ent_book.Code);
-                Response.Redirect("AuthorOfBook.aspx");
+                SuccMessage();
+                listAdd();
             }
             else
             {
@@ -70,14 +72,42 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-            if (ValidFull())
+            if (rblPrestado.Visible)
             {
-                bsn_book.deleteBook(ent_book.Code);
-                clean();
+                if (rblPrestado.SelectedItem.Text == "Si")
+                {
+                    List<EntClsLoan> list_loan = bsn_loan.checkForCodeLoan(ent_book.Code);
+                    foreach (EntClsLoan loan in list_loan)
+                    {
+                        bsn_loan.deleteLoan(loan.Id);
+                    }
+                    bsn_book.deleteBook(ent_book.Code);
+                    clean();
+                    listAdd();
+                }
             }
             else
             {
-                ErrorMessage();
+                try
+                {
+                    if (ValidFull())
+                    {
+                        bsn_book.deleteBook(ent_book.Code);
+                        clean();
+                        listAdd();
+                    }
+                    else
+                    {
+                        ErrorMessage();
+                    }
+                }
+                catch
+                {
+                    rblPrestado.Visible = true;
+                    lblPrestado.Visible = true;
+                    btnDelete.Enabled = false;
+                    ErrorMessageLoan();
+                }
             }
         }
 
@@ -154,6 +184,22 @@ namespace BookAdmin.org.SmarTech.GUI
                     alert('Los campos no estan llenos');
                     </script>";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+        }
+
+        protected void ErrorMessageLoan()
+        {
+            string script = @"<script type='text/javascript'>
+                    alert('El libro esta prestado si desea eliminarlo seleccione si lo esta y continue con eliminar');
+                    </script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "BookAdmin", script, false);
+        }
+
+        protected void rblPrestado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (rblPrestado.SelectedItem.Text == "Si")
+            {
+                btnDelete.Enabled = true;
+            }     
         }
     }
 }

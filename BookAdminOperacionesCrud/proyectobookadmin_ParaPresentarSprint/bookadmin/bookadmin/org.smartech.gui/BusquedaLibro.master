@@ -5,7 +5,7 @@
  <ul id="menuContextual">
         <li><a href="">Editar Autores</a></li>
         <li><a href="EditorialsView.aspx">Editar Editoriales</a></li>
-        <li><a href="BookList.aspx">Libros de la biblioteca</a></li>        
+        <li><a href="BookView.aspx">Libros de la biblioteca</a></li>        
     </ul>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" runat="server">

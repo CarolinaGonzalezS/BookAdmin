@@ -138,6 +138,8 @@
     <Compile Include="org.SmarTech.entities\EntClsEditorial.cs" />
     <Compile Include="org.SmarTech.entities\EntClsFine.cs" />
     <Compile Include="org.SmarTech.entities\EntClsLoan.cs" />
+    <Compile Include="org.SmarTech.entities\EntClsReportFine.cs" />
+    <Compile Include="org.SmarTech.entities\EntClsReportLoan.cs" />
     <Compile Include="org.SmarTech.entities\EntClsReports.cs" />
     <Compile Include="org.SmarTech.entities\EntClsReturnBook.cs" />
     <Compile Include="org.SmarTech.entities\EntClsSearch.cs" />
@@ -384,7 +386,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>10578</DevelopmentServerPort>
+          <DevelopmentServerPort>53118</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
