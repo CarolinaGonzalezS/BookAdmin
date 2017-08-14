@@ -752,10 +752,23 @@ where Customer.identificationCard=dbo.FineCustomer.identificationCard and
 
 exec reportAllFine
 select * from book
-create procedure checkForCodeLoan
+alter procedure checkForCodeLoan
 @code varchar(10)
 as
-select id from loan
+select id,stateL from loan
 where code = @code
-select * from dbo.FineCustomer
-where id=1
+
+exec checkForCodeLoan '45456'
+
+create procedure deleteLoan
+@id int
+as
+delete dbo.Loan
+where id = @id
+
+select * from book
+
+select * from loan
+
+BACKUP DATABASE BDDLibrary
+to disk 'D:\BDDLibrary'

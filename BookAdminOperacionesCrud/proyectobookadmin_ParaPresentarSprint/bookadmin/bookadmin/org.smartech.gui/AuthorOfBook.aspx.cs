@@ -113,7 +113,7 @@ namespace BookAdmin.org.SmarTech.GUI
 
         protected void ShowAuthor(EntClsAuthor author)
         {
-            textName.Text = author.Name;
+            textName.Text = bsn_author.returnName(author.Name);
             textLastName.Text = author.LastName;
             textNationality.Text = author.Nationality;
         }

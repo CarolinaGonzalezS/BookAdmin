@@ -60,8 +60,8 @@ namespace BookAdmin.org.SmarTech.GUI
 
             if (ValidFull())
             {
-                SuccMessage();
-                listAdd();
+                Session.Add("book", ent_book.Code);
+                Response.Redirect("AuthorOfBook.aspx");
             }
             else
             {
